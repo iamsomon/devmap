@@ -15,7 +15,7 @@
 "codeExamples": [
 {
 "language": "cpp",
-"code": "#include <iostream>\n\nint main() {\n std::cout << "Hello, world!" << std::endl;\n return 0;\n}",
+"code": "#include <iostream>\n\nint main() {\n std::cout << \"Hello, world!\" << std::endl;\n return 0;\n}",
 "commentLanguage": "ru",
 "comment": "Пример простой программы, выводящей строку в консоль."
 },

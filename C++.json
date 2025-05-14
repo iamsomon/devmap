@@ -66,7 +66,7 @@
 "codeExamples": [
 {
 "language": "cpp",
-"code": "#include <iostream>\n\nint main() {\n int age = 30;\n double price = 9.99;\n char letter = 'A';\n bool isOpen = true;\n std::cout << age << ", " << price << ", " << letter << ", " << isOpen << std::endl;\n return 0;\n}",
+"code": "#include <iostream>\n\nint main() {\n int age = 30;\n double price = 9.99;\n char letter = 'A';\n bool isOpen = true;\n std::cout << age << \", \" << price << \", \" << letter << \", \" << isOpen << std::endl;\n return 0;\n}",
 "commentLanguage": "ru",
 "comment": "Пример объявления переменных разных типов и их вывода."
 },
@@ -187,8 +187,8 @@
 "correctAnswerIndex": 0
 },
 {
-"questionRu": "Что выведет код: int x = 3; if (x == 3) std::cout << "Yes"; else std::cout << "No";",
-"questionEn": "What will the code output: int x = 3; if (x == 3) std::cout << "Yes"; else std::cout << "No";",
+"questionRu": "Что выведет код: int x = 3; if (x == 3) std::cout << \"Yes\"; else std::cout << \"No\";",
+"questionEn": "What will the code output: int x = 3; if (x == 3) std::cout << \"Yes\"; else std::cout << \"No\";",
 "options": ["Yes", "No", "Compilation error", "Nothing"],
 "correctAnswerIndex": 0
 },
@@ -208,7 +208,7 @@
 "hintEn": "Use if-else-if statements.",
 "expectedResultRu": "Отрицательное число",
 "expectedResultEn": "Negative number",
-"solutionCode": "#include <iostream>\n\nint main() {\n int n = -5;\n if (n > 0) std::cout << "Positive number";\n else if (n < 0) std::cout << "Negative number";\n else std::cout << "Zero";\n return 0;\n}"
+"solutionCode": "#include <iostream>\n\nint main() {\n int n = -5;\n if (n > 0) std::cout << \"Positive number\";\n else if (n < 0) std::cout << \"Negative number\";\n else std::cout << \"Zero\";\n return 0;\n}"
 }
 },
 {
@@ -219,13 +219,13 @@
 "codeExamples": [
 {
 "language": "cpp",
-"code": "#include <iostream>\n\nint main() {\n for (int i = 1; i <= 5; i++) {\n std::cout << i << " ";\n }\n return 0;\n}",
+"code": "#include <iostream>\n\nint main() {\n for (int i = 1; i <= 5; i++) {\n std::cout << i << \" \";\n }\n return 0;\n}",
 "commentLanguage": "ru",
 "comment": "Пример цикла for, выводящего числа от 1 до 5."
 },
 {
 "language": "cpp",
-"code": "#include <iostream>\n\nint main() {\n int count = 3;\n while (count > 0) {\n std::cout << count << " ";\n count--;\n }\n return 0;\n}",
+"code": "#include <iostream>\n\nint main() {\n int count = 3;\n while (count > 0) {\n std::cout << count << \" \";\n count--;\n }\n return 0;\n}",
 "commentLanguage": "ru",
 "comment": "Пример цикла while."
 }
@@ -276,7 +276,7 @@
 },
 {
 "language": "cpp",
-"code": "#include <iostream>\n\nvoid printHello() {\n std::cout << "Hello!" << std::endl;\n}\n\nint main() {\n printHello();\n return 0;\n}",
+"code": "#include <iostream>\n\nvoid printHello() {\n std::cout << \"Hello!\" << std::endl;\n}\n\nint main() {\n printHello();\n return 0;\n}",
 "commentLanguage": "ru",
 "comment": "Пример функции с возвращаемым типом void."
 }
@@ -418,18 +418,18 @@
 {
 "titleRu": "Строки",
 "titleEn": "Strings",
-"descriptionRu": "Строки в C++ могут быть представлены как массив символов (C-строка), завершающийся нулевым символом '\0', либо как объект std::string из стандартной библиотеки (<string>). std::string проще в использовании и поддерживает операции конкатенации, поиска, получения длины и т.д. Для работы с C-строками обычно подключают <cstring> и используют функции вроде strcat, strcpy и strlen.",
-"descriptionEn": "Strings in C++ can be represented as a character array (C-string) ending with the null character '\0', or as an std::string object from the standard library (<string>). std::string is easier to use and supports concatenation, search, getting length, etc. For C-strings, you typically include <cstring> and use functions like strcat, strcpy, and strlen.",
+"descriptionRu": "Строки в C++ могут быть представлены как массив символов (C-строка), завершающийся нулевым символом '\\0', либо как объект std::string из стандартной библиотеки (<string>). std::string проще в использовании и поддерживает операции конкатенации, поиска, получения длины и т.д. Для работы с C-строками обычно подключают <cstring> и используют функции вроде strcat, strcpy и strlen.",
+"descriptionEn": "Strings in C++ can be represented as a character array (C-string) ending with the null character '\\0', or as an std::string object from the standard library (<string>). std::string is easier to use and supports concatenation, search, getting length, etc. For C-strings, you typically include <cstring> and use functions like strcat, strcpy, and strlen.",
 "codeExamples": [
 {
 "language": "cpp",
-"code": "#include <iostream>\n#include <string>\n\nint main() {\n std::string s = "Hello";\n s += " World";\n std::cout << s << std::endl;\n return 0;\n}",
+"code": "#include <iostream>\n#include <string>\n\nint main() {\n std::string s = \"Hello\";\n s += \" World\";\n std::cout << s << std::endl;\n return 0;\n}",
 "commentLanguage": "ru",
 "comment": "Конкатенация строк через std::string."
 },
 {
 "language": "cpp",
-"code": "#include <iostream>\n#include <cstring>\n\nint main() {\n char str1[20] = "Hello";\n char str2[20] = "World";\n std::strcat(str1, str2);\n std::cout << str1 << std::endl;\n return 0;\n}",
+"code": "#include <iostream>\n#include <cstring>\n\nint main() {\n char str1[20] = \"Hello\";\n char str2[20] = \"World\";\n std::strcat(str1, str2);\n std::cout << str1 << std::endl;\n return 0;\n}",
 "commentLanguage": "ru",
 "comment": "Объединение C-строк с помощью strcat."
 }
@@ -450,7 +450,7 @@
 {
 "questionRu": "Каким символом завершается C-строка (массив char)?",
 "questionEn": "Which character terminates a C-string (char array)?",
-"options": ["\0", "EOF", "\n", "NULL"],
+"options": ["\\0", "EOF", "\n", "NULL"],
 "correctAnswerIndex": 0
 }
 ],
@@ -463,7 +463,7 @@
 "hintEn": "Use the + operator or append method.",
 "expectedResultRu": "HelloC++",
 "expectedResultEn": "HelloC++",
-"solutionCode": "#include <iostream>\n#include <string>\n\nint main() {\n std::string s1 = "Hello";\n std::string s2 = "C++";\n std::string s = s1 + s2;\n std::cout << s << std::endl;\n return 0;\n}"
+"solutionCode": "#include <iostream>\n#include <string>\n\nint main() {\n std::string s1 = \"Hello\";\n std::string s2 = \"C++\";\n std::string s = s1 + s2;\n std::cout << s << std::endl;\n return 0;\n}"
 }
 },
 {
@@ -474,13 +474,13 @@
 "codeExamples": [
 {
 "language": "cpp",
-"code": "#include <iostream>\n#include <string>\n\nclass Person {\npublic:\n std::string name;\n int age;\n Person(std::string n, int a) : name(n), age(a) {}\n void greet() { std::cout << "Hello, my name is " << name << std::endl; }\n};\n\nint main() {\n Person p("Alice", 30);\n p.greet();\n return 0;\n}",
+"code": "#include <iostream>\n#include <string>\n\nclass Person {\npublic:\n std::string name;\n int age;\n Person(std::string n, int a) : name(n), age(a) {}\n void greet() { std::cout << \"Hello, my name is \" << name << std::endl; }\n};\n\nint main() {\n Person p(\"Alice\", 30);\n p.greet();\n return 0;\n}",
 "commentLanguage": "ru",
 "comment": "Класс с полями, конструктором и методом."
 },
 {
 "language": "cpp",
-"code": "#include <iostream>\n\nclass Point {\npublic:\n int x, y;\n Point(int px, int py) : x(px), y(py) {}\n};\n\nint main() {\n Point p1(10, 20);\n std::cout << p1.x << ", " << p1.y << std::endl;\n return 0;\n}",
+"code": "#include <iostream>\n\nclass Point {\npublic:\n int x, y;\n Point(int px, int py) : x(px), y(py) {}\n};\n\nint main() {\n Point p1(10, 20);\n std::cout << p1.x << \", \" << p1.y << std::endl;\n return 0;\n}",
 "commentLanguage": "ru",
 "comment": "Пример класса Point с конструктором и полями."
 }
@@ -525,7 +525,7 @@
 "codeExamples": [
 {
 "language": "cpp",
-"code": "#include <iostream>\n\nclass Animal {\npublic:\n void eat() { std::cout << "Eating" << std::endl; }\n};\n\nclass Dog : public Animal {\npublic:\n void bark() { std::cout << "Barking" << std::endl; }\n};\n\nint main() {\n Dog d;\n d.eat();\n d.bark();\n return 0;\n}",
+"code": "#include <iostream>\n\nclass Animal {\npublic:\n void eat() { std::cout << \"Eating\" << std::endl; }\n};\n\nclass Dog : public Animal {\npublic:\n void bark() { std::cout << \"Barking\" << std::endl; }\n};\n\nint main() {\n Dog d;\n d.eat();\n d.bark();\n return 0;\n}",
 "commentLanguage": "ru",
 "comment": "Наследование: класс Dog наследует метод eat() от Animal."
 },
@@ -565,7 +565,7 @@
 "hintEn": "Use public inheritance.",
 "expectedResultRu": "Drawing shape",
 "expectedResultEn": "Drawing shape",
-"solutionCode": "#include <iostream>\n\nclass Shape {\npublic:\n void draw() { std::cout << "Drawing shape" << std::endl; }\n};\n\nclass Circle : public Shape {\n};\n\nint main() {\n Circle c;\n c.draw();\n return 0;\n}"
+"solutionCode": "#include <iostream>\n\nclass Shape {\npublic:\n void draw() { std::cout << \"Drawing shape\" << std::endl; }\n};\n\nclass Circle : public Shape {\n};\n\nint main() {\n Circle c;\n c.draw();\n return 0;\n}"
 }
 },
 {
@@ -576,13 +576,13 @@
 "codeExamples": [
 {
 "language": "cpp",
-"code": "#include <iostream>\n\nclass Animal {\npublic:\n virtual void sound() { std::cout << "Animal sound" << std::endl; }\n};\n\nclass Cat : public Animal {\npublic:\n void sound() override { std::cout << "Meow" << std::endl; }\n};\n\nint main() {\n Animal a = new Cat();\n a->sound(); // вызовет Meow, благодаря virtual\n delete a;\n return 0;\n}",
+"code": "#include <iostream>\n\nclass Animal {\npublic:\n virtual void sound() { std::cout << \"Animal sound\" << std::endl; }\n};\n\nclass Cat : public Animal {\npublic:\n void sound() override { std::cout << \"Meow\" << std::endl; }\n};\n\nint main() {\n Animal a = new Cat();\n a->sound(); // вызовет Meow, благодаря virtual\n delete a;\n return 0;\n}",
 "commentLanguage": "ru",
 "comment": "Полиморфизм: виртуальный метод переопределён в производном классе."
 },
 {
 "language": "cpp",
-"code": "#include <iostream>\n\nclass Base {\npublic:\n void show() { std::cout << "Base" << std::endl; }\n};\n\nclass Derived : public Base {\npublic:\n void show() { std::cout << "Derived" << std::endl; }\n};\n\nint main() {\n Derived d;\n Base ptr = &d;\n ptr->show(); // выведет Base, метод не virtual\n return 0;\n}",
+"code": "#include <iostream>\n\nclass Base {\npublic:\n void show() { std::cout << \"Base\" << std::endl; }\n};\n\nclass Derived : public Base {\npublic:\n void show() { std::cout << \"Derived\" << std::endl; }\n};\n\nint main() {\n Derived d;\n Base ptr = &d;\n ptr->show(); // выведет Base, метод не virtual\n return 0;\n}",
 "commentLanguage": "ru",
 "comment": "Без virtual вызов метода не полиморфен."
 }
@@ -616,7 +616,7 @@
 "hintEn": "The draw() method should be virtual in the base class.",
 "expectedResultRu": "Drawing square",
 "expectedResultEn": "Drawing square",
-"solutionCode": "#include <iostream>\n\nclass Shape {\npublic:\n virtual void draw() { std::cout << "Drawing generic shape" << std::endl; }\n};\n\nclass Square : public Shape {\npublic:\n void draw() override { std::cout << "Drawing square" << std::endl; }\n};\n\nint main() {\n Shape s = new Square();\n s->draw();\n delete s;\n return 0;\n}"
+"solutionCode": "#include <iostream>\n\nclass Shape {\npublic:\n virtual void draw() { std::cout << \"Drawing generic shape\" << std::endl; }\n};\n\nclass Square : public Shape {\npublic:\n void draw() override { std::cout << \"Drawing square\" << std::endl; }\n};\n\nint main() {\n Shape s = new Square();\n s->draw();\n delete s;\n return 0;\n}"
 }
 },
 {
@@ -678,13 +678,13 @@
 "codeExamples": [
 {
 "language": "cpp",
-"code": "#include <iostream>\n#include <vector>\n\nint main() {\n std::vector<int> v = {1, 2, 3};\n v.push_back(4);\n for (int x : v) {\n std::cout << x << " ";\n }\n return 0;\n}",
+"code": "#include <iostream>\n#include <vector>\n\nint main() {\n std::vector<int> v = {1, 2, 3};\n v.push_back(4);\n for (int x : v) {\n std::cout << x << \" \";\n }\n return 0;\n}",
 "commentLanguage": "ru",
 "comment": "Использование std::vector и диапазонного цикла (C++11)."
 },
 {
 "language": "cpp",
-"code": "#include <iostream>\n#include <algorithm>\n#include <vector>\n\nint main() {\n std::vector<int> v = {3, 1, 2};\n std::sort(v.begin(), v.end());\n for (int x : v) {\n std::cout << x << " ";\n }\n return 0;\n}",
+"code": "#include <iostream>\n#include <algorithm>\n#include <vector>\n\nint main() {\n std::vector<int> v = {3, 1, 2};\n std::sort(v.begin(), v.end());\n for (int x : v) {\n std::cout << x << \" \";\n }\n return 0;\n}",
 "commentLanguage": "ru",
 "comment": "Использование алгоритма std::sort и итераторов."
 }
@@ -718,7 +718,7 @@
 "hintEn": "Use push_back and a loop to print.",
 "expectedResultRu": "1 2 3",
 "expectedResultEn": "1 2 3",
-"solutionCode": "#include <iostream>\n#include <vector>\n\nint main() {\n std::vector<int> v;\n v.push_back(1);\n v.push_back(2);\n v.push_back(3);\n for (int x : v) {\n std::cout << x << " ";\n }\n return 0;\n}"
+"solutionCode": "#include <iostream>\n#include <vector>\n\nint main() {\n std::vector<int> v;\n v.push_back(1);\n v.push_back(2);\n v.push_back(3);\n for (int x : v) {\n std::cout << x << \" \";\n }\n return 0;\n}"
 }
 },
 {
@@ -729,13 +729,13 @@
 "codeExamples": [
 {
 "language": "cpp",
-"code": "#include <iostream>\n#include <stdexcept>\n\nint main() {\n try {\n throw std::runtime_error("Error occurred");\n } catch (const std::exception& e) {\n std::cout << e.what() << std::endl;\n }\n return 0;\n}",
+"code": "#include <iostream>\n#include <stdexcept>\n\nint main() {\n try {\n throw std::runtime_error(\"Error occurred\");\n } catch (const std::exception& e) {\n std::cout << e.what() << std::endl;\n }\n return 0;\n}",
 "commentLanguage": "ru",
 "comment": "Генерация и обработка исключения std::runtime_error."
 },
 {
 "language": "cpp",
-"code": "#include <iostream>\n\nint main() {\n try {\n int x = 0;\n if (x == 0) throw 1;\n } catch (int e) {\n std::cout << "Division by zero" << std::endl;\n }\n return 0;\n}",
+"code": "#include <iostream>\n\nint main() {\n try {\n int x = 0;\n if (x == 0) throw 1;\n } catch (int e) {\n std::cout << \"Division by zero\" << std::endl;\n }\n return 0;\n}",
 "commentLanguage": "ru",
 "comment": "Бросок и перехват исключения типа int."
 }
@@ -763,13 +763,13 @@
 "task": {
 "titleRu": "Обработка исключения",
 "titleEn": "Exception Handling",
-"instructionRu": "Напишите программу, которая внутри try бросает исключение std::runtime_error("Error"), и перехватите его в catch, выводя сообщение исключения.",
-"instructionEn": "Write a program that throws a std::runtime_error("Error") inside a try block and catches it in a catch block, printing the exception message.",
+"instructionRu": "Напишите программу, которая внутри try бросает исключение std::runtime_error(\"Error\"), и перехватите его в catch, выводя сообщение исключения.",
+"instructionEn": "Write a program that throws a std::runtime_error(\"Error\") inside a try block and catches it in a catch block, printing the exception message.",
 "hintRu": "Используйте catch(const std::exception&).",
 "hintEn": "Use catch(const std::exception&).",
 "expectedResultRu": "Error",
 "expectedResultEn": "Error",
-"solutionCode": "#include <iostream>\n#include <stdexcept>\n\nint main() {\n try {\n throw std::runtime_error("Error");\n } catch (const std::exception& e) {\n std::cout << e.what() << std::endl;\n }\n return 0;\n}"
+"solutionCode": "#include <iostream>\n#include <stdexcept>\n\nint main() {\n try {\n throw std::runtime_error(\"Error\");\n } catch (const std::exception& e) {\n std::cout << e.what() << std::endl;\n }\n return 0;\n}"
 }
 },
 {
@@ -780,13 +780,13 @@
 "codeExamples": [
 {
 "language": "cpp",
-"code": "#include <iostream>\n\nnamespace MySpace {\n void hello() { std::cout << "Hi from MySpace" << std::endl; }\n}\n\nint main() {\n MySpace::hello();\n return 0;\n}",
+"code": "#include <iostream>\n\nnamespace MySpace {\n void hello() { std::cout << \"Hi from MySpace\" << std::endl; }\n}\n\nint main() {\n MySpace::hello();\n return 0;\n}",
 "commentLanguage": "ru",
 "comment": "Пример пользовательского пространства имен и вызова функции через область имени."
 },
 {
 "language": "cpp",
-"code": "#include <iostream>\nusing namespace std;\n\nint main() {\n cout << "Hello using namespace std" << endl;\n return 0;\n}",
+"code": "#include <iostream>\nusing namespace std;\n\nint main() {\n cout << \"Hello using namespace std\" << endl;\n return 0;\n}",
 "commentLanguage": "ru",
 "comment": "Использование директивы using namespace для стандартного пространства имен."
 }
@@ -820,7 +820,7 @@
 "hintEn": "Use namespace Utils { ... }.",
 "expectedResultRu": "Hello",
 "expectedResultEn": "Hello",
-"solutionCode": "#include <iostream>\n\nnamespace Utils {\n void printHello() { std::cout << "Hello" << std::endl; }\n}\n\nint main() {\n Utils::printHello();\n return 0;\n}"
+"solutionCode": "#include <iostream>\n\nnamespace Utils {\n void printHello() { std::cout << \"Hello\" << std::endl; }\n}\n\nint main() {\n Utils::printHello();\n return 0;\n}"
 }
 },
 {
@@ -831,13 +831,13 @@
 "codeExamples": [
 {
 "language": "cpp",
-"code": "#include <iostream>\n#include <fstream>\n\nint main() {\n std::ofstream out("out.txt");\n out << "Hello file" << std::endl;\n out.close();\n return 0;\n}",
+"code": "#include <iostream>\n#include <fstream>\n\nint main() {\n std::ofstream out(\"out.txt\");\n out << \"Hello file\" << std::endl;\n out.close();\n return 0;\n}",
 "commentLanguage": "ru",
 "comment": "Запись строки в файл out.txt."
 },
 {
 "language": "cpp",
-"code": "#include <iostream>\n#include <fstream>\n#include <string>\n\nint main() {\n std::ifstream in("out.txt");\n std::string s;\n in >> s;\n std::cout << s << std::endl;\n in.close();\n return 0;\n}",
+"code": "#include <iostream>\n#include <fstream>\n#include <string>\n\nint main() {\n std::ifstream in(\"out.txt\");\n std::string s;\n in >> s;\n std::cout << s << std::endl;\n in.close();\n return 0;\n}",
 "commentLanguage": "ru",
 "comment": "Чтение строки из файла out.txt."
 }
@@ -865,13 +865,13 @@
 "task": {
 "titleRu": "Запись и чтение файла",
 "titleEn": "Writing and Reading File",
-"instructionRu": "Напишите программу, которая записывает строку "Hello" в файл test.txt, а затем открывает этот файл и выводит содержимое на экран.",
-"instructionEn": "Write a program that writes the string "Hello" to a file test.txt, then opens this file and prints its content to the screen.",
+"instructionRu": "Напишите программу, которая записывает строку \"Hello\" в файл test.txt, а затем открывает этот файл и выводит содержимое на экран.",
+"instructionEn": "Write a program that writes the string \"Hello\" to a file test.txt, then opens this file and prints its content to the screen.",
 "hintRu": "Используйте std::ofstream для записи и std::ifstream для чтения.",
 "hintEn": "Use std::ofstream for writing and std::ifstream for reading.",
 "expectedResultRu": "Hello",
 "expectedResultEn": "Hello",
-"solutionCode": "#include <iostream>\n#include <fstream>\n#include <string>\n\nint main() {\n std::ofstream out("test.txt");\n out << "Hello";\n out.close();\n std::ifstream in("test.txt");\n std::string s;\n std::getline(in, s);\n std::cout << s << std::endl;\n in.close();\n return 0;\n}"
+"solutionCode": "#include <iostream>\n#include <fstream>\n#include <string>\n\nint main() {\n std::ofstream out(\"test.txt\");\n out << \"Hello\";\n out.close();\n std::ifstream in(\"test.txt\");\n std::string s;\n std::getline(in, s);\n std::cout << s << std::endl;\n in.close();\n return 0;\n}"
 }
 },
 {
@@ -939,7 +939,7 @@
 },
 {
 "language": "cpp",
-"code": "#include <iostream>\n#include <vector>\n#include <algorithm>\n\nint main() {\n std::vector<int> v = {1, 2, 3};\n std::for_each(v.begin(), v.end(), [](int x) {\n std::cout << x << " ";\n });\n return 0;\n}",
+"code": "#include <iostream>\n#include <vector>\n#include <algorithm>\n\nint main() {\n std::vector<int> v = {1, 2, 3};\n std::for_each(v.begin(), v.end(), [](int x) {\n std::cout << x << \" \";\n });\n return 0;\n}",
 "commentLanguage": "ru",
 "comment": "Лямбда с алгоритмом std::for_each."
 }
@@ -973,7 +973,7 @@
 "hintEn": "The lambda should compare two elements.",
 "expectedResultRu": "3 2 1",
 "expectedResultEn": "3 2 1",
-"solutionCode": "#include <iostream>\n#include <vector>\n#include <algorithm>\n\nint main() {\n std::vector<int> v = {3, 1, 2};\n std::sort(v.begin(), v.end(), [](int a, int b) {\n return a > b;\n });\n for (int x : v) std::cout << x << " ";\n return 0;\n}"
+"solutionCode": "#include <iostream>\n#include <vector>\n#include <algorithm>\n\nint main() {\n std::vector<int> v = {3, 1, 2};\n std::sort(v.begin(), v.end(), [](int a, int b) {\n return a > b;\n });\n for (int x : v) std::cout << x << \" \";\n return 0;\n}"
 }
 },
 {
@@ -984,13 +984,13 @@
 "codeExamples": [
 {
 "language": "cpp",
-"code": "#include <iostream>\n#include <vector>\n\nint main() {\n std::vector<int> v = {1, 2, 3};\n for (auto x : v) {\n std::cout << x << " ";\n }\n return 0;\n}",
+"code": "#include <iostream>\n#include <vector>\n\nint main() {\n std::vector<int> v = {1, 2, 3};\n for (auto x : v) {\n std::cout << x << \" \";\n }\n return 0;\n}",
 "commentLanguage": "ru",
 "comment": "Диапазонный цикл for с auto (C++11)."
 },
 {
 "language": "cpp",
-"code": "#include <iostream>\n\nint main() {\n int p = nullptr;\n if (p == nullptr) std::cout << "Pointer is null" << std::endl;\n return 0;\n}",
+"code": "#include <iostream>\n\nint main() {\n int p = nullptr;\n if (p == nullptr) std::cout << \"Pointer is null\" << std::endl;\n return 0;\n}",
 "commentLanguage": "ru",
 "comment": "Использование nullptr."
 }
@@ -1024,7 +1024,7 @@
 "hintEn": "auto will deduce the type int, and use nullptr for the pointer.",
 "expectedResultRu": "10 1",
 "expectedResultEn": "10 1",
-"solutionCode": "#include <iostream>\n\nint main() {\n auto x = 10;\n int *p = nullptr;\n std::cout << x << " " << (p == nullptr) << std::endl;\n return 0;\n}"
+"solutionCode": "#include <iostream>\n\nint main() {\n auto x = 10;\n int *p = nullptr;\n std::cout << x << \" \" << (p == nullptr) << std::endl;\n return 0;\n}"
 }
 },
 {
@@ -1120,7 +1120,7 @@
 "hintEn": "Use a coroutine return type, for example, a generator.",
 "expectedResultRu": "0 1 2",
 "expectedResultEn": "0 1 2",
-"solutionCode": "#include <iostream>\n#include <experimental/coroutine>\n\nstd::experimental::generator<int> seq() {\n for (int i = 0; i < 3; ++i) co_yield i;\n}\n\nint main() {\n for (auto v : seq()) std::cout << v << " ";\n return 0;\n}"
+"solutionCode": "#include <iostream>\n#include <experimental/coroutine>\n\nstd::experimental::generator<int> seq() {\n for (int i = 0; i < 3; ++i) co_yield i;\n}\n\nint main() {\n for (auto v : seq()) std::cout << v << \" \";\n return 0;\n}"
 }
 },
 {
@@ -1176,7 +1176,7 @@
 "codeExamples": [
 {
 "language": "cpp",
-"code": "#include <iostream>\n#include <vector>\n#include <ranges>\n\nint main() {\n std::vector<int> v = {1, 2, 3, 4};\n for (int x : v | std::ranges::views::filter([](int n){ return n % 2 == 0; })) {\n std::cout << x << " ";\n }\n return 0;\n}",
+"code": "#include <iostream>\n#include <vector>\n#include <ranges>\n\nint main() {\n std::vector<int> v = {1, 2, 3, 4};\n for (int x : v | std::ranges::views::filter([](int n){ return n % 2 == 0; })) {\n std::cout << x << \" \";\n }\n return 0;\n}",
 "commentLanguage": "ru",
 "comment": "Фильтрация диапазона с помощью std::ranges::views::filter."
 }

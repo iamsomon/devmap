@@ -1,0 +1,1217 @@
+{
+"courseTitle": {"ru": "Полный курс по C++", "en": "Comprehensive C++ Course"},
+"language": "C++",
+"iconUrl": "https://cdn.jsdelivr.net/npm/simple-icons@3.13.0/icons/cplusplus.svg",
+"description": {
+"ru": "Этот курс по C++ охватывает как базовые, так и современные возможности языка C++ вплоть до стандарта C++20. В нем рассматриваются синтаксис языка, типы данных, операторы, условия и циклы, функции, массивы, указатели, строки, ООП (классы, наследование, полиморфизм), шаблоны, стандартная библиотека (STL), обработка исключений, пространства имен, файловый ввод/вывод, умные указатели, лямбда-выражения, а также новые возможности C++11-20 (модули, корутины, концепты, диапазоны и др.).",
+"en": "This C++ course covers both basic and modern features of the C++ language up to the C++20 standard. It includes language syntax, data types, operators, conditional statements and loops, functions, arrays, pointers, strings, OOP (classes, inheritance, polymorphism), templates, the standard library (STL), exception handling, namespaces, file I/O, smart pointers, lambda expressions, as well as new features of C++11-20 (modules, coroutines, concepts, ranges, etc.)."
+},
+"topics": [
+{
+"titleRu": "Базовый синтаксис и структура программы",
+"titleEn": "Basic Syntax and Program Structure",
+"descriptionRu": "В самом начале курса по C++ важно ознакомиться с базовым синтаксисом и структурой программы. Программа на C++ состоит из функций, где главной функцией является main(). Каждая инструкция C++ заканчивается точкой с запятой. Блоки кода заключаются в фигурные скобки. Также используются директивы препроцессора (#include, #define) для подключения библиотек и определения макросов.",
+"descriptionEn": "Before diving deeper, one should understand the basic syntax of C++. A C++ program consists of functions, where the entry point is the main() function. Every statement ends with a semicolon. Code blocks are enclosed in curly braces. Preprocessor directives (#include, #define) are used to include libraries and define macros.",
+"codeExamples": [
+{
+"language": "cpp",
+"code": "#include <iostream>\n\nint main() {\n std::cout << "Hello, world!" << std::endl;\n return 0;\n}",
+"commentLanguage": "ru",
+"comment": "Пример простой программы, выводящей строку в консоль."
+},
+{
+"language": "cpp",
+"code": "#include <iostream>\n\nint main() {\n int a = 5;\n double b = 3.14;\n double sum = a + b;\n std::cout << "Sum: " << sum << std::endl;\n return 0;\n}",
+"commentLanguage": "ru",
+"comment": "Пример объявления переменных разных типов и их суммирования."
+}
+],
+"quiz": [
+{
+"questionRu": "С какой функции начинается выполнение программы на C++?",
+"questionEn": "From which function does execution of a C++ program begin?",
+"options": ["main()", "print()", "start()", "run()"],
+"correctAnswerIndex": 0
+},
+{
+"questionRu": "Каждая инструкция в C++ должна заканчиваться чем?",
+"questionEn": "Each statement in C++ should end with what?",
+"options": ["semicolon", "period", "comma", "colon"],
+"correctAnswerIndex": 0
+},
+{
+"questionRu": "Директива #include используется для чего?",
+"questionEn": "What is the purpose of the #include directive?",
+"options": ["to include header files", "to define macros", "to create functions", "to start the program"],
+"correctAnswerIndex": 0
+}
+],
+"task": {
+"titleRu": "Программа Hello World",
+"titleEn": "Hello World Program",
+"instructionRu": "Напишите программу на C++, которая выводит 'Hello, World!' на экран.",
+"instructionEn": "Write a C++ program that prints 'Hello, World!' to the screen.",
+"hintRu": "Используйте std::cout и директиву #include <iostream>.",
+"hintEn": "Use std::cout and #include <iostream>.",
+"expectedResultRu": "Hello, World!",
+"expectedResultEn": "Hello, World!",
+"solutionCode": "#include <iostream>\n\nint main() {\n std::cout << "Hello, World!" << std::endl;\n return 0;\n}"
+}
+},
+{
+"titleRu": "Типы данных и переменные",
+"titleEn": "Data Types and Variables",
+"descriptionRu": "C++ поддерживает различные базовые типы данных: целые (int), числа с плавающей точкой (float, double), символы (char), логические значения (bool) и др. Каждая переменная должна быть объявлена с указанием типа. Кроме того, существуют модификаторы типа (signed, unsigned, short, long). Начиная с C++11 доступно ключевое слово auto для автоматического определения типа переменной. Важно понимать правила приведения типов и область видимости переменных.",
+"descriptionEn": "C++ supports various fundamental data types: integer (int), floating-point (float, double), character (char), boolean (bool), and more. Every variable must be declared with a type. Additionally, there are type modifiers (signed, unsigned, short, long). Since C++11, the keyword auto allows automatic type deduction of variables. It is important to understand type conversion rules and variable scope.",
+"codeExamples": [
+{
+"language": "cpp",
+"code": "#include <iostream>\n\nint main() {\n int age = 30;\n double price = 9.99;\n char letter = 'A';\n bool isOpen = true;\n std::cout << age << ", " << price << ", " << letter << ", " << isOpen << std::endl;\n return 0;\n}",
+"commentLanguage": "ru",
+"comment": "Пример объявления переменных разных типов и их вывода."
+},
+{
+"language": "cpp",
+"code": "#include <iostream>\n\nint main() {\n double pi = 3.14;\n int n = pi; // неявное преобразование типов\n std::cout << n << std::endl;\n return 0;\n}",
+"commentLanguage": "ru",
+"comment": "Пример неявного преобразования типов (double к int)."
+}
+],
+"quiz": [
+{
+"questionRu": "Какой базовый тип используется для хранения целых чисел?",
+"questionEn": "Which basic type is used to store whole numbers?",
+"options": ["int", "double", "char", "bool"],
+"correctAnswerIndex": 0
+},
+{
+"questionRu": "Что может хранить значение типа bool?",
+"questionEn": "A bool type can hold what?",
+"options": ["true or false", "An integer", "A character", "A string"],
+"correctAnswerIndex": 0
+},
+{
+"questionRu": "Что означает ключевое слово 'auto' при объявлении переменной?",
+"questionEn": "What does the keyword 'auto' do when declaring a variable?",
+"options": ["Automatic type deduction", "Static storage", "External linkage", "Alias for int"],
+"correctAnswerIndex": 0
+}
+],
+"task": {
+"titleRu": "Переменные и их инициализация",
+"titleEn": "Variables and Initialization",
+"instructionRu": "Напишите программу, в которой объявлены переменные типов int, double, char и bool. Присвойте им значения и выведите через пробел.",
+"instructionEn": "Write a program where you declare variables of types int, double, char, and bool. Assign values to them and print them separated by spaces.",
+"hintRu": "Используйте std::cout и соответствующие литералы.",
+"hintEn": "Use std::cout and appropriate literals.",
+"expectedResultRu": "3 2.5 A 1",
+"expectedResultEn": "3 2.5 A 1",
+"solutionCode": "#include <iostream>\n\nint main() {\n int a = 3;\n double b = 2.5;\n char c = 'A';\n bool f = true;\n std::cout << a << " " << b << " " << c << " " << f << std::endl;\n return 0;\n}"
+}
+},
+{
+"titleRu": "Операторы и выражения",
+"titleEn": "Operators and Expressions",
+"descriptionRu": "Операторы в C++ позволяют выполнять различные операции. Сюда входят арифметические операторы (+, -, , /), оператор присваивания (=), операторы сравнения (==, !=, <, >, <=, >=) и логические операторы (&&, ||, !). Выражения строятся с помощью операторов и операндов, при этом приоритет операторов определяет порядок вычислений. C++ также поддерживает инкремент (++) и декремент (--), а также побитовые операторы (&, |, ^, <<, >>).",
+"descriptionEn": "Operators in C++ allow performing various operations. This includes arithmetic operators (+, -, , /), the assignment operator (=), comparison operators (==, !=, <, >, <=, >=) and logical operators (&&, ||, !). Expressions are constructed using operators and operands, with operator precedence dictating the order of evaluation. C++ also supports increment (++) and decrement (--), as well as bitwise operators (&, |, ^, <<, >>).",
+"codeExamples": [
+{
+"language": "cpp",
+"code": "#include <iostream>\n\nint main() {\n int a = 5 + 3 * 2; // 3 * 2 вычисляется первым, результат 11\n std::cout << a << std::endl;\n return 0;\n}",
+"commentLanguage": "ru",
+"comment": "Арифметические операции и приоритет (32 вычисляется перед сложением)."
+},
+{
+"language": "cpp",
+"code": "#include <iostream>\n\nint main() {\n bool result = (5 > 3) && (2 < 4);\n std::cout << result << std::endl;\n return 0;\n}",
+"commentLanguage": "ru",
+"comment": "Логический оператор && возвращает true, если оба условия истинны."
+}
+],
+"quiz": [
+{
+"questionRu": "Какой оператор сравнения проверяет равенство?",
+"questionEn": "Which comparison operator checks for equality?",
+"options": ["==", "=", ">", "<"],
+"correctAnswerIndex": 0
+},
+{
+"questionRu": "Чему равно значение выражения 2 + 3 * 4?",
+"questionEn": "What is the value of the expression 2 + 3 * 4?",
+"options": ["14", "20", "11", "None of the above"],
+"correctAnswerIndex": 0
+},
+{
+"questionRu": "Какую операцию выполняет оператор &&?",
+"questionEn": "What operation does the && operator perform?",
+"options": ["Logical AND", "Logical OR", "Bitwise AND", "Bitwise OR"],
+"correctAnswerIndex": 0
+}
+],
+"task": {
+"titleRu": "Вычисление выражения",
+"titleEn": "Expression Calculation",
+"instructionRu": "Напишите программу, вычисляющую значение выражения (5 + 3) * 2 и выводящую результат.",
+"instructionEn": "Write a program that calculates the value of the expression (5 + 3) * 2 and prints the result.",
+"hintRu": "Используйте скобки для правильного порядка выполнения операций.",
+"hintEn": "Use parentheses to ensure correct order of operations.",
+"expectedResultRu": "16",
+"expectedResultEn": "16",
+"solutionCode": "#include <iostream>\n\nint main() {\n int result = (5 + 3) * 2;\n std::cout << result << std::endl;\n return 0;\n}"
+}
+},
+{
+"titleRu": "Условные операторы",
+"titleEn": "Conditional Statements",
+"descriptionRu": "Условные операторы используются для ветвления выполнения программы. C++ поддерживает конструкции if, else if и else для проверки условий. Также существует тернарный оператор (?:) и оператор switch для множественного выбора. При написании условий применяются операторы сравнения (==, !=, <, >, <=, >=), результатом которых является булево значение (true или false).",
+"descriptionEn": "Conditional statements are used for branching program execution. C++ supports if, else if, and else constructs to check conditions. There is also the ternary operator (?:) and the switch statement for multiple choice. When writing conditions, comparison operators (==, !=, <, >, <=, >=) are used, resulting in a boolean value (true or false).",
+"codeExamples": [
+{
+"language": "cpp",
+"code": "#include <iostream>\n\nint main() {\n int x = 10;\n if (x > 5) {\n std::cout << "x is greater than 5" << std::endl;\n } else {\n std::cout << "x is 5 or less" << std::endl;\n }\n return 0;\n}",
+"commentLanguage": "ru",
+"comment": "Пример использования конструкций if и else."
+},
+{
+"language": "cpp",
+"code": "#include <iostream>\n\nint main() {\n int num = 2;\n switch (num) {\n case 1: std::cout << "One"; break;\n case 2: std::cout << "Two"; break;\n default: std::cout << "Other";\n }\n return 0;\n}",
+"commentLanguage": "ru",
+"comment": "Пример оператора switch для множественного выбора."
+}
+],
+"quiz": [
+{
+"questionRu": "Какой оператор используется для условного ветвления?",
+"questionEn": "Which statement is used for conditional branching?",
+"options": ["if", "for", "while", "switch"],
+"correctAnswerIndex": 0
+},
+{
+"questionRu": "Что выведет код: int x = 3; if (x == 3) std::cout << "Yes"; else std::cout << "No";",
+"questionEn": "What will the code output: int x = 3; if (x == 3) std::cout << "Yes"; else std::cout << "No";",
+"options": ["Yes", "No", "Compilation error", "Nothing"],
+"correctAnswerIndex": 0
+},
+{
+"questionRu": "Для чего используется оператор switch?",
+"questionEn": "What is the switch statement used for?",
+"options": ["Multiple choice branching", "Loops", "Exception handling", "Input/output"],
+"correctAnswerIndex": 0
+}
+],
+"task": {
+"titleRu": "Проверка числа",
+"titleEn": "Number Check",
+"instructionRu": "Напишите программу, которая проверяет, является ли число положительным, отрицательным или нулем, и выводит соответствующее сообщение.",
+"instructionEn": "Write a program that checks if a number is positive, negative, or zero and prints the corresponding message.",
+"hintRu": "Используйте конструкции if-else-if.",
+"hintEn": "Use if-else-if statements.",
+"expectedResultRu": "Отрицательное число",
+"expectedResultEn": "Negative number",
+"solutionCode": "#include <iostream>\n\nint main() {\n int n = -5;\n if (n > 0) std::cout << "Positive number";\n else if (n < 0) std::cout << "Negative number";\n else std::cout << "Zero";\n return 0;\n}"
+}
+},
+{
+"titleRu": "Циклы",
+"titleEn": "Loops",
+"descriptionRu": "Циклы позволяют повторять блок кода несколько раз. В C++ существуют циклы for (когда известно количество итераций) и while (выполняется, пока условие истинно). Также есть цикл do-while, который гарантированно выполнит тело хотя бы один раз. В циклах обычно используются счетчики и условия. Для досрочного прерывания цикла служит оператор break, а continue позволяет перейти к следующей итерации.",
+"descriptionEn": "Loops allow repeating a block of code multiple times. In C++, the for loop is used when the number of iterations is known, and the while loop runs as long as a condition is true. There is also a do-while loop, which will execute its body at least once. Loops typically use counters and conditions. The break statement can exit a loop prematurely, and continue skips to the next iteration.",
+"codeExamples": [
+{
+"language": "cpp",
+"code": "#include <iostream>\n\nint main() {\n for (int i = 1; i <= 5; i++) {\n std::cout << i << " ";\n }\n return 0;\n}",
+"commentLanguage": "ru",
+"comment": "Пример цикла for, выводящего числа от 1 до 5."
+},
+{
+"language": "cpp",
+"code": "#include <iostream>\n\nint main() {\n int count = 3;\n while (count > 0) {\n std::cout << count << " ";\n count--;\n }\n return 0;\n}",
+"commentLanguage": "ru",
+"comment": "Пример цикла while."
+}
+],
+"quiz": [
+{
+"questionRu": "Какой цикл гарантированно выполнит тело хотя бы один раз?",
+"questionEn": "Which loop will always execute its body at least once?",
+"options": ["do-while", "for", "while", "None"],
+"correctAnswerIndex": 0
+},
+{
+"questionRu": "Что выведет код: for(int i = 0; i < 3; ++i) std::cout << i;",
+"questionEn": "What will the code output: for(int i = 0; i < 3; ++i) std::cout << i;",
+"options": ["012", "123", "3", "None of the above"],
+"correctAnswerIndex": 0
+},
+{
+"questionRu": "Какой оператор используется для досрочного выхода из цикла?",
+"questionEn": "Which statement is used to exit a loop prematurely?",
+"options": ["break", "continue", "exit", "stop"],
+"correctAnswerIndex": 0
+}
+],
+"task": {
+"titleRu": "Сумма чисел с помощью цикла",
+"titleEn": "Sum with Loop",
+"instructionRu": "Напишите программу, которая вычисляет сумму чисел от 1 до 100 с помощью цикла.",
+"instructionEn": "Write a program that calculates the sum of numbers from 1 to 100 using a loop.",
+"hintRu": "Используйте цикл for или while.",
+"hintEn": "Use a for or while loop.",
+"expectedResultRu": "5050",
+"expectedResultEn": "5050",
+"solutionCode": "#include <iostream>\n\nint main() {\n int sum = 0;\n for (int i = 1; i <= 100; ++i) {\n sum += i;\n }\n std::cout << sum << std::endl;\n return 0;\n}"
+}
+},
+{
+"titleRu": "Функции",
+"titleEn": "Functions",
+"descriptionRu": "Функции позволяют разбивать программу на логические части. Функция объявляется с указанием возвращаемого типа, имени и списка параметров. Основная функция main() возвращает int. Функции могут принимать аргументы и возвращать значения. Модификатор void означает, что функция не возвращает значения. Передача параметров происходит по значению (копии) или по ссылке (с помощью &).",
+"descriptionEn": "Functions allow dividing a program into logical parts. A function is declared with a return type, name, and parameter list. The main function returns int. Functions can take arguments and return values. The void modifier means that the function returns no value. Parameters are passed by value (copied) or by reference (using &).",
+"codeExamples": [
+{
+"language": "cpp",
+"code": "#include <iostream>\n\nint add(int a, int b) {\n return a + b;\n}\n\nint main() {\n int sum = add(3, 4);\n std::cout << sum << std::endl;\n return 0;\n}",
+"commentLanguage": "ru",
+"comment": "Определение функции add и её вызов."
+},
+{
+"language": "cpp",
+"code": "#include <iostream>\n\nvoid printHello() {\n std::cout << "Hello!" << std::endl;\n}\n\nint main() {\n printHello();\n return 0;\n}",
+"commentLanguage": "ru",
+"comment": "Пример функции с возвращаемым типом void."
+}
+],
+"quiz": [
+{
+"questionRu": "Что означает возвращаемый тип void у функции?",
+"questionEn": "What does the return type void indicate for a function?",
+"options": ["Функция не возвращает значение", "Функция возвращает 0", "Функция возвращает строку", "Такого типа нет"],
+"correctAnswerIndex": 0
+},
+{
+"questionRu": "Что такое перегрузка функций?",
+"questionEn": "What is function overloading in C++?",
+"options": ["Несколько функций с одним именем, разными параметрами", "Функция, вызывающая себя", "Функция без параметров", "Использование указателей на функцию"],
+"correctAnswerIndex": 0
+},
+{
+"questionRu": "Как вызвать функцию sum(a, b)?",
+"questionEn": "How do you call a function named sum taking two arguments?",
+"options": ["sum(a, b);", "sum = (a, b);", "sum(a);", "call sum(a, b);"],
+"correctAnswerIndex": 0
+}
+],
+"task": {
+"titleRu": "Функция multiply",
+"titleEn": "Multiply Function",
+"instructionRu": "Напишите функцию multiply(int x, int y), возвращающую произведение двух целых чисел. В main вызовите эту функцию и выведите результат.",
+"instructionEn": "Write a function multiply(int x, int y) that returns the product of two integers. In main, call this function and print the result.",
+"hintRu": "Не забудьте объявить функцию до её использования.",
+"hintEn": "Don't forget to declare the function before using it.",
+"expectedResultRu": "35",
+"expectedResultEn": "35",
+"solutionCode": "#include <iostream>\n\nint multiply(int x, int y) {\n return x * y;\n}\n\nint main() {\n int result = multiply(5, 7);\n std::cout << result << std::endl;\n return 0;\n}"
+}
+},
+{
+"titleRu": "Массивы",
+"titleEn": "Arrays",
+"descriptionRu": "Массивы позволяют хранить набор элементов одного типа под одним именем. Каждый элемент массива доступен по индексу, начиная с 0. Размер массива задается при объявлении (статический массив) и не меняется во время выполнения. Массивы часто используются для хранения последовательностей данных, которые удобно обрабатывать в циклах.",
+"descriptionEn": "Arrays allow storing a sequence of elements of the same type under one name. Each element of the array is accessed by its index, starting from 0. The size of the array is specified at declaration (static array) and cannot change during execution. Arrays are often used to store sequences of data that are easily processed in loops.",
+"codeExamples": [
+{
+"language": "cpp",
+"code": "#include <iostream>\n\nint main() {\n int arr[5] = {1, 2, 3, 4, 5};\n std::cout << arr[2] << std::endl; // доступ к третьему элементу\n return 0;\n}",
+"commentLanguage": "ru",
+"comment": "Объявление массива и доступ к элементу по индексу."
+},
+{
+"language": "cpp",
+"code": "#include <iostream>\n\nint main() {\n int sum = 0;\n int arr[3] = {10, 20, 30};\n for (int i = 0; i < 3; ++i) {\n sum += arr[i];\n }\n std::cout << sum << std::endl; // сумма элементов\n return 0;\n}",
+"commentLanguage": "ru",
+"comment": "Перебор массива в цикле и вычисление суммы элементов."
+}
+],
+"quiz": [
+{
+"questionRu": "С какого индекса начинается массив в C++?",
+"questionEn": "At which index does a C++ array start?",
+"options": ["0", "1", "-1", "10"],
+"correctAnswerIndex": 0
+},
+{
+"questionRu": "Что такое динамический массив?",
+"questionEn": "What is a dynamic array in C++?",
+"options": ["Массив, размер которого можно изменить во время выполнения", "Фиксированный массив фиксированной длины", "Массив строк", "Указатель на массив"],
+"correctAnswerIndex": 0
+},
+{
+"questionRu": "Как объявить массив из 10 элементов типа int?",
+"questionEn": "How to declare an array of 10 elements of type int?",
+"options": ["int arr[10];", "int arr;", "std::array<int,10> arr;", "int arr = new int[10];"],
+"correctAnswerIndex": 0
+}
+],
+"task": {
+"titleRu": "Сумма элементов массива",
+"titleEn": "Array Sum",
+"instructionRu": "Напишите программу, создающую массив из 5 элементов, заполните его числами от 1 до 5 и вычислите сумму элементов.",
+"instructionEn": "Write a program that creates an array of 5 elements, fills it with numbers 1 through 5, and computes the sum of the elements.",
+"hintRu": "Используйте цикл для заполнения массива и подсчета суммы.",
+"hintEn": "Use a loop to fill the array and calculate the sum.",
+"expectedResultRu": "15",
+"expectedResultEn": "15",
+"solutionCode": "#include <iostream>\n\nint main() {\n int arr[5];\n for (int i = 0; i < 5; ++i) {\n arr[i] = i + 1;\n }\n int sum = 0;\n for (int i = 0; i < 5; ++i) {\n sum += arr[i];\n }\n std::cout << sum << std::endl;\n return 0;\n}"
+}
+},
+{
+"titleRu": "Указатели и ссылки",
+"titleEn": "Pointers and References",
+"descriptionRu": "Указатели хранят адреса памяти, а ссылки (reference) позволяют работать с переменными по альтернативному имени. Указатель объявляется с символом , а ссылка – с & после типа. Указатели могут быть переназначены и иметь значение nullptr. Ссылки после инициализации нельзя переназначить. Оператор & используется для получения адреса переменной, а * – для разыменования указателя и доступа к значению по адресу.",
+"descriptionEn": "Pointers store memory addresses, while references allow working with variables under an alias. A pointer is declared with * after the type, and a reference with &. Pointers can be reassigned and can be nullptr. A reference, once initialized, cannot be changed to refer to another variable. The & operator is used to get the address of a variable, and * is used to dereference a pointer and access the value at that address.",
+"codeExamples": [
+{
+"language": "cpp",
+"code": "#include <iostream>\n\nint main() {\n int a = 10;\n int p = &a;\n std::cout << p << std::endl; // разыменование указателя\n return 0;\n}",
+"commentLanguage": "ru",
+"comment": "Пример указателя на переменную и разыменования."
+},
+{
+"language": "cpp",
+"code": "#include <iostream>\n\nint main() {\n int x = 5;\n int &ref = x;\n ref = 10;\n std::cout << x << std::endl;\n return 0;\n}",
+"commentLanguage": "ru",
+"comment": "Пример ссылки, изменение через ссылку."
+}
+],
+"quiz": [
+{
+"questionRu": "Что хранит переменная-указатель?",
+"questionEn": "What does a pointer variable store?",
+"options": ["Адрес в памяти", "Значение", "Размер объекта", "Имя переменной"],
+"correctAnswerIndex": 0
+},
+{
+"questionRu": "Какой оператор используется для разыменования указателя?",
+"questionEn": "Which operator is used to dereference a pointer?",
+"options": ["", "&", "->", "."],
+"correctAnswerIndex": 0
+},
+{
+"questionRu": "Можно ли изменить адрес ссылки после инициализации?",
+"questionEn": "Can you change the address a reference refers to after initialization?",
+"options": ["Нет, ссылка неизменна", "Да, как указатель", "Да, используя &", "Только если ссылка const"],
+"correctAnswerIndex": 0
+}
+],
+"task": {
+"titleRu": "Изменение значения через указатель",
+"titleEn": "Change Value via Pointer",
+"instructionRu": "Напишите программу, которая создаёт переменную int, присваивает ей значение, а затем использует указатель для изменения этого значения.",
+"instructionEn": "Write a program that creates an int variable, assigns it a value, and then uses a pointer to change that value.",
+"hintRu": "Определите указатель на эту переменную и используйте разыменование.",
+"hintEn": "Define a pointer to this variable and use dereferencing.",
+"expectedResultRu": "15",
+"expectedResultEn": "15",
+"solutionCode": "#include <iostream>\n\nint main() {\n int a = 7;\n int p = &a;\n p = 15;\n std::cout << a << std::endl;\n return 0;\n}"
+}
+},
+{
+"titleRu": "Строки",
+"titleEn": "Strings",
+"descriptionRu": "Строки в C++ могут быть представлены как массив символов (C-строка), завершающийся нулевым символом '\0', либо как объект std::string из стандартной библиотеки (<string>). std::string проще в использовании и поддерживает операции конкатенации, поиска, получения длины и т.д. Для работы с C-строками обычно подключают <cstring> и используют функции вроде strcat, strcpy и strlen.",
+"descriptionEn": "Strings in C++ can be represented as a character array (C-string) ending with the null character '\0', or as an std::string object from the standard library (<string>). std::string is easier to use and supports concatenation, search, getting length, etc. For C-strings, you typically include <cstring> and use functions like strcat, strcpy, and strlen.",
+"codeExamples": [
+{
+"language": "cpp",
+"code": "#include <iostream>\n#include <string>\n\nint main() {\n std::string s = "Hello";\n s += " World";\n std::cout << s << std::endl;\n return 0;\n}",
+"commentLanguage": "ru",
+"comment": "Конкатенация строк через std::string."
+},
+{
+"language": "cpp",
+"code": "#include <iostream>\n#include <cstring>\n\nint main() {\n char str1[20] = "Hello";\n char str2[20] = "World";\n std::strcat(str1, str2);\n std::cout << str1 << std::endl;\n return 0;\n}",
+"commentLanguage": "ru",
+"comment": "Объединение C-строк с помощью strcat."
+}
+],
+"quiz": [
+{
+"questionRu": "Какой заголовочный файл нужен для std::string?",
+"questionEn": "Which header is needed for std::string?",
+"options": ["<string>", "<cstring>", "<iostream>", "<vector>"],
+"correctAnswerIndex": 0
+},
+{
+"questionRu": "Как получить длину строки std::string s?",
+"questionEn": "How do you get the length of the std::string s?",
+"options": ["s.length()", "s.size()", "strlen(s.c_str())", "len(s)"],
+"correctAnswerIndex": 0
+},
+{
+"questionRu": "Каким символом завершается C-строка (массив char)?",
+"questionEn": "Which character terminates a C-string (char array)?",
+"options": ["\0", "EOF", "\n", "NULL"],
+"correctAnswerIndex": 0
+}
+],
+"task": {
+"titleRu": "Конкатенация строк",
+"titleEn": "String Concatenation",
+"instructionRu": "Напишите программу, которая соединяет две строки (используя std::string) и выводит результат.",
+"instructionEn": "Write a program that concatenates two strings (using std::string) and outputs the result.",
+"hintRu": "Используйте оператор + или метод append.",
+"hintEn": "Use the + operator or append method.",
+"expectedResultRu": "HelloC++",
+"expectedResultEn": "HelloC++",
+"solutionCode": "#include <iostream>\n#include <string>\n\nint main() {\n std::string s1 = "Hello";\n std::string s2 = "C++";\n std::string s = s1 + s2;\n std::cout << s << std::endl;\n return 0;\n}"
+}
+},
+{
+"titleRu": "Классы и объекты (ООП)",
+"titleEn": "Classes and Objects (OOP)",
+"descriptionRu": "C++ поддерживает объектно-ориентированное программирование. Класс – это пользовательский тип данных, содержащий поля (атрибуты) и методы (функции). Объект – это экземпляр класса. Поля могут быть приватными (private) или публичными (public). Конструкторы позволяют инициализировать поля объекта. Ключевое слово this указывает на текущий объект. Основные принципы ООП: инкапсуляция, наследование и полиморфизм.",
+"descriptionEn": "C++ supports object-oriented programming. A class is a user-defined data type that contains fields (attributes) and methods (functions). An object is an instance of a class. Fields can be private or public. Constructors initialize the object's fields. The keyword this refers to the current object. Main OOP principles include encapsulation, inheritance, and polymorphism.",
+"codeExamples": [
+{
+"language": "cpp",
+"code": "#include <iostream>\n#include <string>\n\nclass Person {\npublic:\n std::string name;\n int age;\n Person(std::string n, int a) : name(n), age(a) {}\n void greet() { std::cout << "Hello, my name is " << name << std::endl; }\n};\n\nint main() {\n Person p("Alice", 30);\n p.greet();\n return 0;\n}",
+"commentLanguage": "ru",
+"comment": "Класс с полями, конструктором и методом."
+},
+{
+"language": "cpp",
+"code": "#include <iostream>\n\nclass Point {\npublic:\n int x, y;\n Point(int px, int py) : x(px), y(py) {}\n};\n\nint main() {\n Point p1(10, 20);\n std::cout << p1.x << ", " << p1.y << std::endl;\n return 0;\n}",
+"commentLanguage": "ru",
+"comment": "Пример класса Point с конструктором и полями."
+}
+],
+"quiz": [
+{
+"questionRu": "Что такое объект в C++?",
+"questionEn": "What is an object in C++?",
+"options": ["Экземпляр класса", "Функция внутри класса", "Глобальная переменная", "Указатель на класс"],
+"correctAnswerIndex": 0
+},
+{
+"questionRu": "Как объявить поле класса приватным?",
+"questionEn": "How do you declare a class field as private?",
+"options": ["Использовать private:", "Использовать protected:", "Использовать public:", "Нельзя сделать приватным"],
+"correctAnswerIndex": 0
+},
+{
+"questionRu": "Что делает конструктор класса?",
+"questionEn": "What does a class constructor do?",
+"options": ["Инициализирует объект при создании", "Освобождает память объекта", "Переопределяет метод", "Вызывает main()"],
+"correctAnswerIndex": 0
+}
+],
+"task": {
+"titleRu": "Площадь прямоугольника",
+"titleEn": "Rectangle Area",
+"instructionRu": "Создайте класс Rectangle с полями width и height. Добавьте метод area(), возвращающий площадь (width * height). В main создайте объект Rectangle и выведите его площадь.",
+"instructionEn": "Create a class Rectangle with fields width and height. Add a method area() that returns the area (width * height). In main, create a Rectangle object and output its area.",
+"hintRu": "Не забудьте сделать поля публичными или добавить геттеры.",
+"hintEn": "Don't forget to make fields public or provide getters.",
+"expectedResultRu": "12",
+"expectedResultEn": "12",
+"solutionCode": "#include <iostream>\n\nclass Rectangle {\npublic:\n int width, height;\n Rectangle(int w, int h) : width(w), height(h) {}\n int area() { return width * height; }\n};\n\nint main() {\n Rectangle r(3, 4);\n std::cout << r.area() << std::endl;\n return 0;\n}"
+}
+},
+{
+"titleRu": "Наследование",
+"titleEn": "Inheritance",
+"descriptionRu": "Наследование позволяет создать новый класс на основе уже существующего (базового) класса. Производный класс получает все поля и методы базового класса. В C++ для наследования используется двоеточие после имени класса (например, class B : public A). Конструкторы и деструкторы базового класса вызываются автоматически при создании/удалении объекта производного класса. Модификаторы доступа (public, protected, private) при наследовании определяют видимость унаследованных членов.",
+"descriptionEn": "Inheritance allows creating a new class based on an existing (base) class. The derived class inherits all fields and methods from the base class. In C++, inheritance is specified with a colon after the class name (e.g., class B : public A). Constructors and destructors of the base class are automatically called when creating/destroying a derived class object. Access specifiers (public, protected, private) in inheritance determine the visibility of inherited members.",
+"codeExamples": [
+{
+"language": "cpp",
+"code": "#include <iostream>\n\nclass Animal {\npublic:\n void eat() { std::cout << "Eating" << std::endl; }\n};\n\nclass Dog : public Animal {\npublic:\n void bark() { std::cout << "Barking" << std::endl; }\n};\n\nint main() {\n Dog d;\n d.eat();\n d.bark();\n return 0;\n}",
+"commentLanguage": "ru",
+"comment": "Наследование: класс Dog наследует метод eat() от Animal."
+},
+{
+"language": "cpp",
+"code": "#include <iostream>\n\nclass A {\npublic:\n int x = 5;\n};\n\nclass B : public A {\n};\n\nint main() {\n B b;\n std::cout << b.x << std::endl;\n return 0;\n}",
+"commentLanguage": "ru",
+"comment": "Доступ к унаследованному полю базового класса."
+}
+],
+"quiz": [
+{
+"questionRu": "Как объявить класс B, наследующий от класса A?",
+"questionEn": "How to declare class B inheriting from class A?",
+"options": ["class B : public A", "class B inherits A", "class A : public B", "class B extends A"],
+"correctAnswerIndex": 0
+},
+{
+"questionRu": "Наследуются ли private-поля базового класса?",
+"questionEn": "Does a derived class inherit private fields of the base class?",
+"options": ["Нет", "Да", "Только при protected-наследовании", "Только если friend"],
+"correctAnswerIndex": 0
+},
+{
+"questionRu": "Что означает полиморфизм в C++?",
+"questionEn": "What does polymorphism mean in C++?",
+"options": ["Возможность вызывать методы разных классов через один указатель", "Множественное наследование", "Перегрузка операторов", "Доступ к приватным полям"],
+"correctAnswerIndex": 0
+}
+],
+"task": {
+"titleRu": "Простое наследование",
+"titleEn": "Simple Inheritance",
+"instructionRu": "Создайте базовый класс Shape и производный класс Circle, унаследовав public-метод draw() от Shape. В main создайте объект Circle и вызовите метод draw().",
+"instructionEn": "Create a base class Shape and a derived class Circle inheriting a public draw() method from Shape. In main, create a Circle object and call its draw() method.",
+"hintRu": "Используйте public-наследование.",
+"hintEn": "Use public inheritance.",
+"expectedResultRu": "Drawing shape",
+"expectedResultEn": "Drawing shape",
+"solutionCode": "#include <iostream>\n\nclass Shape {\npublic:\n void draw() { std::cout << "Drawing shape" << std::endl; }\n};\n\nclass Circle : public Shape {\n};\n\nint main() {\n Circle c;\n c.draw();\n return 0;\n}"
+}
+},
+{
+"titleRu": "Полиморфизм",
+"titleEn": "Polymorphism",
+"descriptionRu": "Полиморфизм позволяет объектам разного типа иметь одинаковый интерфейс. В C++ полиморфизм достигается через виртуальные функции. Если метод базового класса объявлен virtual, то при вызове его через указатель или ссылку на базовый класс будет выполнена версия метода из производного класса.",
+"descriptionEn": "Polymorphism allows objects of different types to share the same interface. In C++, polymorphism is achieved through virtual functions. If a method in the base class is declared virtual, then when it is called through a pointer or reference to the base class, the version of the method in the derived class will be executed.",
+"codeExamples": [
+{
+"language": "cpp",
+"code": "#include <iostream>\n\nclass Animal {\npublic:\n virtual void sound() { std::cout << "Animal sound" << std::endl; }\n};\n\nclass Cat : public Animal {\npublic:\n void sound() override { std::cout << "Meow" << std::endl; }\n};\n\nint main() {\n Animal a = new Cat();\n a->sound(); // вызовет Meow, благодаря virtual\n delete a;\n return 0;\n}",
+"commentLanguage": "ru",
+"comment": "Полиморфизм: виртуальный метод переопределён в производном классе."
+},
+{
+"language": "cpp",
+"code": "#include <iostream>\n\nclass Base {\npublic:\n void show() { std::cout << "Base" << std::endl; }\n};\n\nclass Derived : public Base {\npublic:\n void show() { std::cout << "Derived" << std::endl; }\n};\n\nint main() {\n Derived d;\n Base ptr = &d;\n ptr->show(); // выведет Base, метод не virtual\n return 0;\n}",
+"commentLanguage": "ru",
+"comment": "Без virtual вызов метода не полиморфен."
+}
+],
+"quiz": [
+{
+"questionRu": "Почему метод объявляют virtual?",
+"questionEn": "Why declare a method virtual?",
+"options": ["Для динамического связывания", "Чтобы метод не наследовался", "Чтобы метод был приватным", "Чтобы метод был статическим"],
+"correctAnswerIndex": 0
+},
+{
+"questionRu": "Что выведет этот код при виртуальном show? Base ptr = new Derived; ptr->show();",
+"questionEn": "What will this code output if show is virtual? Base ptr = new Derived; ptr->show();",
+"options": ["Derived", "Base", "Error", "Nothing"],
+"correctAnswerIndex": 0
+},
+{
+"questionRu": "Что такое динамическое связывание?",
+"questionEn": "What is dynamic binding?",
+"options": ["Вызов метода производного класса через указатель на базовый", "Статическое связывание функций", "Компоновка данных", "Ничего из перечисленного"],
+"correctAnswerIndex": 0
+}
+],
+"task": {
+"titleRu": "Полиморфное поведение",
+"titleEn": "Polymorphic Behavior",
+"instructionRu": "Создайте класс Shape с виртуальным методом draw(), и класс Square, наследующий от Shape и переопределяющий draw(). В main создайте указатель Shape на объект Square и вызовите draw().",
+"instructionEn": "Create a class Shape with a virtual draw() method, and a class Square inheriting from Shape that overrides draw(). In main, create a Shape pointer to a Square object and call draw().",
+"hintRu": "Метод draw() должен быть virtual в базовом классе.",
+"hintEn": "The draw() method should be virtual in the base class.",
+"expectedResultRu": "Drawing square",
+"expectedResultEn": "Drawing square",
+"solutionCode": "#include <iostream>\n\nclass Shape {\npublic:\n virtual void draw() { std::cout << "Drawing generic shape" << std::endl; }\n};\n\nclass Square : public Shape {\npublic:\n void draw() override { std::cout << "Drawing square" << std::endl; }\n};\n\nint main() {\n Shape s = new Square();\n s->draw();\n delete s;\n return 0;\n}"
+}
+},
+{
+"titleRu": "Шаблоны (Templates)",
+"titleEn": "Templates",
+"descriptionRu": "Шаблоны позволяют создавать обобщённый (generic) код. Функциональный шаблон объявляется с помощью template<typename T> и может работать с разными типами данных. Аналогично можно определять шаблоны классов. Шаблоны широко используются в стандартной библиотеке, например, для контейнеров STL.",
+"descriptionEn": "Templates allow writing generic code. A function template is declared with template<typename T> and can work with different data types. Similarly, class templates can be defined. Templates are widely used in the standard library, for example for STL containers.",
+"codeExamples": [
+{
+"language": "cpp",
+"code": "#include <iostream>\n\ntemplate <typename T>\nT add(T a, T b) {\n return a + b;\n}\n\nint main() {\n std::cout << add<int>(3, 4) << std::endl;\n std::cout << add<double>(2.5, 1.5) << std::endl;\n return 0;\n}",
+"commentLanguage": "ru",
+"comment": "Шаблон функции add для разных типов данных."
+},
+{
+"language": "cpp",
+"code": "#include <iostream>\n\ntemplate <typename T>\nclass Pair {\npublic:\n T first, second;\n Pair(T f, T s) : first(f), second(s) {}\n T getMax() { return (first > second) ? first : second; }\n};\n\nint main() {\n Pair<int> p(3, 7);\n std::cout << p.getMax() << std::endl;\n return 0;\n}",
+"commentLanguage": "ru",
+"comment": "Шаблон класса Pair."
+}
+],
+"quiz": [
+{
+"questionRu": "Как объявить шаблон функции для типа T?",
+"questionEn": "How to declare a function template for type T?",
+"options": ["template<typename T>", "generic<T>", "template(T)", "#template"],
+"correctAnswerIndex": 0
+},
+{
+"questionRu": "Что означает запись template<typename T>?",
+"questionEn": "What does the statement template<typename T> mean?",
+"options": ["Объявление шаблона типа T", "Определение нового типа", "Конструктор класса", "Новый оператор"],
+"correctAnswerIndex": 0
+},
+{
+"questionRu": "Шаблон класса Pair<int> создаёт экземпляр какого типа?",
+"questionEn": "A class template Pair<int> creates an instance of what type?",
+"options": ["Pair<int>", "Pair<T>", "Pair", "int"],
+"correctAnswerIndex": 0
+}
+],
+"task": {
+"titleRu": "Обобщенная функция maxValue",
+"titleEn": "Generic maxValue Function",
+"instructionRu": "Напишите функциональный шаблон maxValue(T a, T b), возвращающий максимальное из двух значений. В main продемонстрируйте его работу с типами int и double.",
+"instructionEn": "Write a function template maxValue(T a, T b) that returns the maximum of two values. In main, demonstrate its usage with int and double types.",
+"hintRu": "Используйте шаблонную функцию с параметром типа.",
+"hintEn": "Use a function template with a type parameter.",
+"expectedResultRu": "7\n2.5",
+"expectedResultEn": "7\n2.5",
+"solutionCode": "#include <iostream>\n\ntemplate <typename T>\nT maxValue(T a, T b) {\n return (a > b) ? a : b;\n}\n\nint main() {\n std::cout << maxValue<int>(3, 7) << std::endl;\n std::cout << maxValue<double>(2.5, 1.2) << std::endl;\n return 0;\n}"
+}
+},
+{
+"titleRu": "Стандартная библиотека (STL)",
+"titleEn": "Standard Library (STL)",
+"descriptionRu": "STL (Standard Template Library) – это набор шаблонных классов и функций для распространённых структур данных и алгоритмов. Основные контейнеры STL: std::vector (динамический массив), std::list, std::map, std::set и др. Алгоритмы STL, такие как std::sort, std::find, работают с итераторами, которые обеспечивают единый способ перебора контейнеров.",
+"descriptionEn": "STL (Standard Template Library) is a collection of class and function templates for common data structures and algorithms. The main STL containers include std::vector (dynamic array), std::list, std::map, std::set, etc. STL algorithms, such as std::sort and std::find, work with iterators that provide a uniform way to traverse containers.",
+"codeExamples": [
+{
+"language": "cpp",
+"code": "#include <iostream>\n#include <vector>\n\nint main() {\n std::vector<int> v = {1, 2, 3};\n v.push_back(4);\n for (int x : v) {\n std::cout << x << " ";\n }\n return 0;\n}",
+"commentLanguage": "ru",
+"comment": "Использование std::vector и диапазонного цикла (C++11)."
+},
+{
+"language": "cpp",
+"code": "#include <iostream>\n#include <algorithm>\n#include <vector>\n\nint main() {\n std::vector<int> v = {3, 1, 2};\n std::sort(v.begin(), v.end());\n for (int x : v) {\n std::cout << x << " ";\n }\n return 0;\n}",
+"commentLanguage": "ru",
+"comment": "Использование алгоритма std::sort и итераторов."
+}
+],
+"quiz": [
+{
+"questionRu": "Какой заголовочный файл нужен для std::vector?",
+"questionEn": "Which header is needed for std::vector?",
+"options": ["<vector>", "<list>", "<map>", "<algorithm>"],
+"correctAnswerIndex": 0
+},
+{
+"questionRu": "Что делает функция std::sort?",
+"questionEn": "What does the function std::sort do?",
+"options": ["Сортирует диапазон", "Ищет элемент", "Удаляет дубликаты", "Разворачивает контейнер"],
+"correctAnswerIndex": 0
+},
+{
+"questionRu": "Как можно перебрать элементы std::vector?",
+"questionEn": "How can you iterate over elements of std::vector?",
+"options": ["Используя итератор или range-based for", "Только по индексу", "Нельзя перебрать", "Используя только алгоритмы"],
+"correctAnswerIndex": 0
+}
+],
+"task": {
+"titleRu": "Использование std::vector",
+"titleEn": "Using std::vector",
+"instructionRu": "Напишите программу, которая создаёт std::vector<int>, добавляет в него несколько чисел и выводит их.",
+"instructionEn": "Write a program that creates a std::vector<int>, adds several numbers to it, and prints them.",
+"hintRu": "Используйте метод push_back и цикл для вывода.",
+"hintEn": "Use push_back and a loop to print.",
+"expectedResultRu": "1 2 3",
+"expectedResultEn": "1 2 3",
+"solutionCode": "#include <iostream>\n#include <vector>\n\nint main() {\n std::vector<int> v;\n v.push_back(1);\n v.push_back(2);\n v.push_back(3);\n for (int x : v) {\n std::cout << x << " ";\n }\n return 0;\n}"
+}
+},
+{
+"titleRu": "Исключения",
+"titleEn": "Exceptions",
+"descriptionRu": "Механизм обработки ошибок в C++ основан на исключениях. Конструкция try используется для обёртывания кода, который может вызвать ошибку, а ключевое слово throw – для генерации исключения. Блок catch перехватывает исключение для обработки. Стандартные исключения обычно наследуются от std::exception и имеют метод what() для получения описания ошибки.",
+"descriptionEn": "The error handling mechanism in C++ is based on exceptions. The try block is used to wrap code that may throw an error, and the throw keyword is used to generate an exception. A catch block catches the exception for processing. Standard exceptions typically inherit from std::exception and have a what() method to get the error description.",
+"codeExamples": [
+{
+"language": "cpp",
+"code": "#include <iostream>\n#include <stdexcept>\n\nint main() {\n try {\n throw std::runtime_error("Error occurred");\n } catch (const std::exception& e) {\n std::cout << e.what() << std::endl;\n }\n return 0;\n}",
+"commentLanguage": "ru",
+"comment": "Генерация и обработка исключения std::runtime_error."
+},
+{
+"language": "cpp",
+"code": "#include <iostream>\n\nint main() {\n try {\n int x = 0;\n if (x == 0) throw 1;\n } catch (int e) {\n std::cout << "Division by zero" << std::endl;\n }\n return 0;\n}",
+"commentLanguage": "ru",
+"comment": "Бросок и перехват исключения типа int."
+}
+],
+"quiz": [
+{
+"questionRu": "Что делает ключевое слово throw?",
+"questionEn": "What does the throw keyword do?",
+"options": ["Бросает исключение", "Создает объект", "Вызывает abort()", "Записывает лог"],
+"correctAnswerIndex": 0
+},
+{
+"questionRu": "Какой блок используется для перехвата исключений?",
+"questionEn": "Which block is used to catch exceptions?",
+"options": ["catch", "finally", "try", "handle"],
+"correctAnswerIndex": 0
+},
+{
+"questionRu": "Что возвращает метод what() у std::exception?",
+"questionEn": "What does the what() method of std::exception return?",
+"options": ["Описание ошибки", "NULL", "Ноль", "Ничего"],
+"correctAnswerIndex": 0
+}
+],
+"task": {
+"titleRu": "Обработка исключения",
+"titleEn": "Exception Handling",
+"instructionRu": "Напишите программу, которая внутри try бросает исключение std::runtime_error("Error"), и перехватите его в catch, выводя сообщение исключения.",
+"instructionEn": "Write a program that throws a std::runtime_error("Error") inside a try block and catches it in a catch block, printing the exception message.",
+"hintRu": "Используйте catch(const std::exception&).",
+"hintEn": "Use catch(const std::exception&).",
+"expectedResultRu": "Error",
+"expectedResultEn": "Error",
+"solutionCode": "#include <iostream>\n#include <stdexcept>\n\nint main() {\n try {\n throw std::runtime_error("Error");\n } catch (const std::exception& e) {\n std::cout << e.what() << std::endl;\n }\n return 0;\n}"
+}
+},
+{
+"titleRu": "Пространства имён",
+"titleEn": "Namespaces",
+"descriptionRu": "Пространства имен используются для предотвращения конфликтов имен. Стандартная библиотека объявлена в пространстве имен std. Чтобы использовать имена из определенного пространства, можно применять префикс (например, std::cout) или директиву using namespace std. Пользовательские пространства имен создаются с помощью ключевого слова namespace.",
+"descriptionEn": "Namespaces are used to prevent name conflicts. The standard library is defined in the std namespace. To use names from a namespace, you can use a prefix (e.g., std::cout) or the directive using namespace std. Custom namespaces are created with the namespace keyword.",
+"codeExamples": [
+{
+"language": "cpp",
+"code": "#include <iostream>\n\nnamespace MySpace {\n void hello() { std::cout << "Hi from MySpace" << std::endl; }\n}\n\nint main() {\n MySpace::hello();\n return 0;\n}",
+"commentLanguage": "ru",
+"comment": "Пример пользовательского пространства имен и вызова функции через область имени."
+},
+{
+"language": "cpp",
+"code": "#include <iostream>\nusing namespace std;\n\nint main() {\n cout << "Hello using namespace std" << endl;\n return 0;\n}",
+"commentLanguage": "ru",
+"comment": "Использование директивы using namespace для стандартного пространства имен."
+}
+],
+"quiz": [
+{
+"questionRu": "Какой префикс используется для имен из стандартного пространства имен?",
+"questionEn": "What prefix is used for names from the standard namespace?",
+"options": ["std::", "using::", "namespace::", "lib::"],
+"correctAnswerIndex": 0
+},
+{
+"questionRu": "Что делает директива 'using namespace std'?",
+"questionEn": "What does the directive 'using namespace std' do?",
+"options": ["Позволяет использовать имена из std без префикса", "Объявляет новое пространство имен", "Отключает область видимости", "Включает библиотеку std"],
+"correctAnswerIndex": 0
+},
+{
+"questionRu": "Можно ли объявлять несколько namespace с одинаковым именем?",
+"questionEn": "Can you declare multiple namespaces with the same name?",
+"options": ["Да, они объединяются", "Нет", "Только глобально", "Только внутри классов"],
+"correctAnswerIndex": 0
+}
+],
+"task": {
+"titleRu": "Создание пространства имен",
+"titleEn": "Namespace Creation",
+"instructionRu": "Создайте пространство имен Utils с функцией printHello(), которая выводит сообщение. В main вызовите Utils::printHello().",
+"instructionEn": "Create a namespace Utils with a function printHello() that prints a message. In main, call Utils::printHello().",
+"hintRu": "Используйте namespace Utils { ... }. ",
+"hintEn": "Use namespace Utils { ... }.",
+"expectedResultRu": "Hello",
+"expectedResultEn": "Hello",
+"solutionCode": "#include <iostream>\n\nnamespace Utils {\n void printHello() { std::cout << "Hello" << std::endl; }\n}\n\nint main() {\n Utils::printHello();\n return 0;\n}"
+}
+},
+{
+"titleRu": "Файловый ввод/вывод",
+"titleEn": "File I/O",
+"descriptionRu": "Для работы с файлами используются потоки из заголовка <fstream>. std::ofstream предназначен для записи в файл, std::ifstream — для чтения из файла, а std::fstream может делать и то, и другое. Файл открывается при создании потока или через метод open(), и должен быть закрыт методом close(). Для чтения и записи применяются операторы >> и << аналогично std::cin и std::cout.",
+"descriptionEn": "To work with files, streams from <fstream> are used. std::ofstream is used for writing to a file, std::ifstream for reading from a file, and std::fstream can do both. A file is opened when creating the stream or via the open() method, and should be closed with close(). The >> and << operators are used for reading and writing similar to std::cin and std::cout.",
+"codeExamples": [
+{
+"language": "cpp",
+"code": "#include <iostream>\n#include <fstream>\n\nint main() {\n std::ofstream out("out.txt");\n out << "Hello file" << std::endl;\n out.close();\n return 0;\n}",
+"commentLanguage": "ru",
+"comment": "Запись строки в файл out.txt."
+},
+{
+"language": "cpp",
+"code": "#include <iostream>\n#include <fstream>\n#include <string>\n\nint main() {\n std::ifstream in("out.txt");\n std::string s;\n in >> s;\n std::cout << s << std::endl;\n in.close();\n return 0;\n}",
+"commentLanguage": "ru",
+"comment": "Чтение строки из файла out.txt."
+}
+],
+"quiz": [
+{
+"questionRu": "Какой класс используется для открытия файла для чтения?",
+"questionEn": "Which class is used to open a file for reading?",
+"options": ["std::ifstream", "std::ofstream", "std::iostream", "std::fstream"],
+"correctAnswerIndex": 0
+},
+{
+"questionRu": "Какой метод используется для закрытия файлового потока?",
+"questionEn": "Which method is used to close a file stream?",
+"options": ["close()", "shutdown()", "destroy()", "end()"],
+"correctAnswerIndex": 0
+},
+{
+"questionRu": "Что делает метод open() у файловых потоков?",
+"questionEn": "What does the open() method of file streams do?",
+"options": ["Открывает файл", "Читает файл", "Закрывает файл", "Ничего не делает"],
+"correctAnswerIndex": 0
+}
+],
+"task": {
+"titleRu": "Запись и чтение файла",
+"titleEn": "Writing and Reading File",
+"instructionRu": "Напишите программу, которая записывает строку "Hello" в файл test.txt, а затем открывает этот файл и выводит содержимое на экран.",
+"instructionEn": "Write a program that writes the string "Hello" to a file test.txt, then opens this file and prints its content to the screen.",
+"hintRu": "Используйте std::ofstream для записи и std::ifstream для чтения.",
+"hintEn": "Use std::ofstream for writing and std::ifstream for reading.",
+"expectedResultRu": "Hello",
+"expectedResultEn": "Hello",
+"solutionCode": "#include <iostream>\n#include <fstream>\n#include <string>\n\nint main() {\n std::ofstream out("test.txt");\n out << "Hello";\n out.close();\n std::ifstream in("test.txt");\n std::string s;\n std::getline(in, s);\n std::cout << s << std::endl;\n in.close();\n return 0;\n}"
+}
+},
+{
+"titleRu": "Умные указатели",
+"titleEn": "Smart Pointers",
+"descriptionRu": "В C++11 появились умные указатели для автоматического управления динамической памятью: std::unique_ptr (эксклюзивное владение), std::shared_ptr (разделяемое владение), std::weak_ptr (слабая ссылка). unique_ptr владеет объектом единолично, а shared_ptr позволяет нескольким указателям совместно владеть объектом (с подсчетом ссылок). Для работы с ними подключают заголовок <memory>.",
+"descriptionEn": "In C++11, smart pointers were introduced for automatic memory management: std::unique_ptr (exclusive ownership), std::shared_ptr (shared ownership), and std::weak_ptr (weak reference). unique_ptr owns an object exclusively, while shared_ptr allows multiple pointers to share ownership (with reference counting). Include <memory> to use them.",
+"codeExamples": [
+{
+"language": "cpp",
+"code": "#include <iostream>\n#include <memory>\n\nint main() {\n std::unique_ptr<int> p = std::make_unique<int>(10);\n std::cout << p << std::endl;\n return 0;\n}",
+"commentLanguage": "ru",
+"comment": "std::unique_ptr и std::make_unique для выделения памяти."
+},
+{
+"language": "cpp",
+"code": "#include <iostream>\n#include <memory>\n\nint main() {\n std::shared_ptr<int> p1 = std::make_shared<int>(5);\n std::shared_ptr<int> p2 = p1;\n std::cout << p2 << std::endl;\n return 0;\n}",
+"commentLanguage": "ru",
+"comment": "std::shared_ptr совместно использует владение объектом."
+}
+],
+"quiz": [
+{
+"questionRu": "Что означает std::unique_ptr?",
+"questionEn": "What does std::unique_ptr mean?",
+"options": ["Умный указатель с единоличным владением", "Указатель на уникальный объект", "Указатель на shared_ptr", "Указатель на int"],
+"correctAnswerIndex": 0
+},
+{
+"questionRu": "Что делает std::make_shared<int>(5)?",
+"questionEn": "What does std::make_shared<int>(5) do?",
+"options": ["Создает shared_ptr на int(5)", "Создает указатель на int", "Вызывает конструктор int", "Освобождает память"],
+"correctAnswerIndex": 0
+},
+{
+"questionRu": "Можно ли копировать std::unique_ptr?",
+"questionEn": "Can std::unique_ptr be copied?",
+"options": ["Нет", "Да", "Только через std::move", "Только в C++11"],
+"correctAnswerIndex": 0
+}
+],
+"task": {
+"titleRu": "Пример unique_ptr",
+"titleEn": "unique_ptr Example",
+"instructionRu": "Напишите программу, которая создает std::unique_ptr<int>, выделяет в нем память с помощью std::make_unique, присваивает значение и выводит его.",
+"instructionEn": "Write a program that creates a std::unique_ptr<int>, allocates memory for it using std::make_unique, assigns a value, and prints it.",
+"hintRu": "Используйте std::make_unique.",
+"hintEn": "Use std::make_unique.",
+"expectedResultRu": "42",
+"expectedResultEn": "42",
+"solutionCode": "#include <iostream>\n#include <memory>\n\nint main() {\n std::unique_ptr<int> p = std::make_unique<int>(42);\n std::cout << p << std::endl;\n return 0;\n}"
+}
+},
+{
+"titleRu": "Лямбда-выражения",
+"titleEn": "Lambda Expressions",
+"descriptionRu": "Лямбда-выражения (C++11) позволяют объявлять анонимные функции прямо в месте использования. Синтаксис лямбды: [захват] (параметры) { тело }. В списке захвата в квадратных скобках указываются переменные внешней области, которые нужно захватить (по значению или по ссылке). Лямбды часто используются для передачи коротких функций в алгоритмы STL.",
+"descriptionEn": "Lambda expressions (C++11) allow declaring anonymous functions inline in code. The lambda syntax is: [capture] (parameters) { body }. The capture list in brackets specifies which external variables to capture (by value or by reference). Lambdas are often used to pass small functions to STL algorithms.",
+"codeExamples": [
+{
+"language": "cpp",
+"code": "#include <iostream>\n\nint main() {\n auto f = [](int x) { return x * x; };\n std::cout << f(5) << std::endl;\n return 0;\n}",
+"commentLanguage": "ru",
+"comment": "Лямбда, возводящая число в квадрат."
+},
+{
+"language": "cpp",
+"code": "#include <iostream>\n#include <vector>\n#include <algorithm>\n\nint main() {\n std::vector<int> v = {1, 2, 3};\n std::for_each(v.begin(), v.end(), [](int x) {\n std::cout << x << " ";\n });\n return 0;\n}",
+"commentLanguage": "ru",
+"comment": "Лямбда с алгоритмом std::for_each."
+}
+],
+"quiz": [
+{
+"questionRu": "Что означает часть [ ] в лямбда-выражении?",
+"questionEn": "What does the [ ] part in a lambda expression indicate?",
+"options": ["Список захвата переменных", "Тело функции", "Возвращаемый тип", "Параметры функции"],
+"correctAnswerIndex": 0
+},
+{
+"questionRu": "Как объявить лямбду, принимающую int и возвращающую void?",
+"questionEn": "How to declare a lambda that takes an int and returns void?",
+"options": ["[](int x) { /.../ }", " { /.../ }", "[](int x) -> int { /.../ }", "lambda(int x)"],
+"correctAnswerIndex": 0
+},
+{
+"questionRu": "Если указан [&] в лямбде, как будут захвачены переменные?",
+"questionEn": "How are variables captured if [&] is specified in a lambda?",
+"options": ["По ссылке", "По значению", "Не захватываются", "Только статические"],
+"correctAnswerIndex": 0
+}
+],
+"task": {
+"titleRu": "Сортировка с лямбдой",
+"titleEn": "Sorting with Lambda",
+"instructionRu": "Используйте std::sort с лямбда-выражением для сортировки вектора целых по убыванию.",
+"instructionEn": "Use std::sort with a lambda expression to sort a vector of integers in descending order.",
+"hintRu": "Лямбда должна сравнивать два элемента.",
+"hintEn": "The lambda should compare two elements.",
+"expectedResultRu": "3 2 1",
+"expectedResultEn": "3 2 1",
+"solutionCode": "#include <iostream>\n#include <vector>\n#include <algorithm>\n\nint main() {\n std::vector<int> v = {3, 1, 2};\n std::sort(v.begin(), v.end(), [](int a, int b) {\n return a > b;\n });\n for (int x : v) std::cout << x << " ";\n return 0;\n}"
+}
+},
+{
+"titleRu": "Современные возможности C++ (C++11+)",
+"titleEn": "Modern C++ Features (C++11+)",
+"descriptionRu": "Начиная с C++11 и далее в язык добавлены новые возможности: автоматическое определение типа (auto), литерал nullptr вместо NULL, цикл for по диапазону (range-based for), перемещение семантики (rvalue-ссылки), enum class без неявного преобразования в int, списки инициализации (initializer list) и другие улучшения.",
+"descriptionEn": "Starting from C++11 and later, new features were added: automatic type deduction (auto), the nullptr literal instead of NULL, range-based for loops, move semantics (rvalue references), enum class without implicit conversion to int, initializer lists, and other improvements.",
+"codeExamples": [
+{
+"language": "cpp",
+"code": "#include <iostream>\n#include <vector>\n\nint main() {\n std::vector<int> v = {1, 2, 3};\n for (auto x : v) {\n std::cout << x << " ";\n }\n return 0;\n}",
+"commentLanguage": "ru",
+"comment": "Диапазонный цикл for с auto (C++11)."
+},
+{
+"language": "cpp",
+"code": "#include <iostream>\n\nint main() {\n int p = nullptr;\n if (p == nullptr) std::cout << "Pointer is null" << std::endl;\n return 0;\n}",
+"commentLanguage": "ru",
+"comment": "Использование nullptr."
+}
+],
+"quiz": [
+{
+"questionRu": "Что такое nullptr?",
+"questionEn": "What is nullptr?",
+"options": ["Литерал для нулевого указателя", "Тип int", "Макрос для NULL", "Ключевое слово"],
+"correctAnswerIndex": 0
+},
+{
+"questionRu": "Что делает auto x = 5?",
+"questionEn": "What happens with auto x = 5?",
+"options": ["Компилятор выведет тип int для x", "x станет типом double", "x будет указателем", "auto не поддерживается"],
+"correctAnswerIndex": 0
+},
+{
+"questionRu": "Чем отличается enum class от enum?",
+"questionEn": "How is enum class different from enum?",
+"options": ["Нет неявного преобразования в int", "Можно хранить методы", "Всегда глобальный", "Не отличается"],
+"correctAnswerIndex": 0
+}
+],
+"task": {
+"titleRu": "Использование auto и nullptr",
+"titleEn": "Using auto and nullptr",
+"instructionRu": "Напишите программу, которая объявляет переменную с помощью auto, присваивает ей значение 10, а указатель инициализирует nullptr. Выведите значение переменной и проверку указателя.",
+"instructionEn": "Write a program that declares a variable using auto with value 10, and initializes a pointer to nullptr. Print the variable value and a check of the pointer.",
+"hintRu": "auto позволит компилятору вывести тип int, а для указателя используйте nullptr.",
+"hintEn": "auto will deduce the type int, and use nullptr for the pointer.",
+"expectedResultRu": "10 1",
+"expectedResultEn": "10 1",
+"solutionCode": "#include <iostream>\n\nint main() {\n auto x = 10;\n int *p = nullptr;\n std::cout << x << " " << (p == nullptr) << std::endl;\n return 0;\n}"
+}
+},
+{
+"titleRu": "Модули",
+"titleEn": "Modules",
+"descriptionRu": "Модули (введены в C++20) – новая система организации кода вместо заголовочных файлов. Модуль объявляется с помощью ключевого слова module и его можно экспортировать с помощью export. Чтобы использовать функции модуля в другой единице трансляции, используется директива import. Модули ускоряют компиляцию и устраняют проблемы с повторным включением.",
+"descriptionEn": "Modules (introduced in C++20) are a new code organization system instead of header files. A module is declared with the keyword module and can export symbols with the export keyword. To use module functions in another translation unit, the import directive is used. Modules speed up compilation and eliminate issues with multiple inclusions.",
+"codeExamples": [
+{
+"language": "cpp",
+"code": "export module Math;\nexport int add(int a, int b) { return a + b; }",
+"commentLanguage": "ru",
+"comment": "Объявление модуля Math и экспорт функции add."
+},
+{
+"language": "cpp",
+"code": "import Math;\nint main() { std::cout << add(2, 3) << std::endl; }",
+"commentLanguage": "ru",
+"comment": "Импорт модуля Math и использование функции add."
+}
+],
+"quiz": [
+{
+"questionRu": "Какие ключевые слова используются для модулей в C++20?",
+"questionEn": "Which keywords are used for modules in C++20?",
+"options": ["module и import", "namespace и using", "#include", "export и import"],
+"correctAnswerIndex": 0
+},
+{
+"questionRu": "Что является главным преимуществом модулей?",
+"questionEn": "What is the main advantage of modules?",
+"options": ["Ускорение компиляции", "Уменьшение размера кода", "Новый синтаксис функций", "Совместимость с C"],
+"correctAnswerIndex": 0
+},
+{
+"questionRu": "Чему могут заменять модули?",
+"questionEn": "Modules can replace what?",
+"options": ["Заголовочные файлы", "Классы", "Пространства имен", "Функции"],
+"correctAnswerIndex": 0
+}
+],
+"task": {
+"titleRu": "Пример модуля Math",
+"titleEn": "Math Module Example",
+"instructionRu": "Напишите модуль Math с функцией add, экспортируйте его и импортируйте в main для использования add().",
+"instructionEn": "Write a module Math with a function add, export it, and import it in main to use add().",
+"hintRu": "Используйте ключевые слова module и import.",
+"hintEn": "Use the keywords module and import.",
+"expectedResultRu": "3",
+"expectedResultEn": "3",
+"solutionCode": "export module Math;\nexport int add(int a, int b) { return a + b; }\n\n// В другом файле\nimport Math;\nint main() { std::cout << add(1, 2) << std::endl; return 0; }"
+}
+},
+{
+"titleRu": "Короутины",
+"titleEn": "Coroutines",
+"descriptionRu": "Короутины (введены в C++20) позволяют приостанавливать и возобновлять выполнение функций, что упрощает написание асинхронного кода. Внутри корутины используются ключевые слова co_await, co_yield, co_return. Функция-корутина должна возвращать специальный coroutine-тип (например, std::future или генератор).",
+"descriptionEn": "Coroutines (introduced in C++20) allow suspending and resuming function execution, making it easier to write asynchronous code. Inside a coroutine, the keywords co_await, co_yield, and co_return are used. A coroutine function must return a special coroutine-aware type (e.g., std::future or a generator).",
+"codeExamples": [
+{
+"language": "cpp",
+"code": "#include <iostream>\n#include <future>\n\nstd::future<int> foo() {\n co_return 10;\n}\n\nint main() {\n auto f = foo();\n std::cout << f.get() << std::endl;\n return 0;\n}",
+"commentLanguage": "ru",
+"comment": "Пример корутины, возвращающей значение через co_return."
+}
+],
+"quiz": [
+{
+"questionRu": "Какие ключевые слова используются в корутинах C++20?",
+"questionEn": "Which keywords are used in C++20 coroutines?",
+"options": ["co_await, co_yield, co_return", "async, await", "try, catch", "fork, join"],
+"correctAnswerIndex": 0
+},
+{
+"questionRu": "Что должна возвращать функция-корутина?",
+"questionEn": "What should a coroutine function return?",
+"options": ["Специальный coroutine-тип (например std::future)", "int", "void", "std::thread"],
+"correctAnswerIndex": 0
+},
+{
+"questionRu": "Что делает оператор co_yield?",
+"questionEn": "What does the co_yield operator do?",
+"options": ["Возвращает значение вызывающему и приостанавливает корутину", "Завершает корутину", "Пробрасывает исключение", "Ничего"],
+"correctAnswerIndex": 0
+}
+],
+"task": {
+"titleRu": "Пример корутины",
+"titleEn": "Coroutine Example",
+"instructionRu": "Напишите функцию-корутина, которая возвращает последовательность чисел с помощью co_yield.",
+"instructionEn": "Write a coroutine function that returns a sequence of numbers using co_yield.",
+"hintRu": "Используйте возвращаемый тип coroutine, например, std::experimental::generator.",
+"hintEn": "Use a coroutine return type, for example, a generator.",
+"expectedResultRu": "0 1 2",
+"expectedResultEn": "0 1 2",
+"solutionCode": "#include <iostream>\n#include <experimental/coroutine>\n\nstd::experimental::generator<int> seq() {\n for (int i = 0; i < 3; ++i) co_yield i;\n}\n\nint main() {\n for (auto v : seq()) std::cout << v << " ";\n return 0;\n}"
+}
+},
+{
+"titleRu": "Концепты",
+"titleEn": "Concepts",
+"descriptionRu": "Концепты (C++20) позволяют накладывать ограничения на шаблонные параметры. Они объявляются с помощью ключевого слова concept. Пример: concept Integral = std::is_integral_v<T>; и используются как template<Integral T>.",
+"descriptionEn": "Concepts (C++20) allow constraining template parameters. They are declared with the concept keyword. For example: concept Integral = std::is_integral_v<T>; and used as template<Integral T>.",
+"codeExamples": [
+{
+"language": "cpp",
+"code": "#include <iostream>\n#include <concepts>\n\ntemplate<std::integral T>\nT add(T a, T b) {\n return a + b;\n}\n\nint main() {\n std::cout << add(3, 4) << std::endl;\n return 0;\n}",
+"commentLanguage": "ru",
+"comment": "Пример использования концепта std::integral."
+}
+],
+"quiz": [
+{
+"questionRu": "Что объявляет ключевое слово concept?",
+"questionEn": "What does the keyword concept declare?",
+"options": ["Концепт", "Шаблон", "Макрос", "Класс"],
+"correctAnswerIndex": 0
+},
+{
+"questionRu": "Как использовать концепт Integral?",
+"questionEn": "How to use the Integral concept?",
+"options": ["template<Integral T>", "template<typename Integral>", "template<T Integral>", "template<concept Integral T>"],
+"correctAnswerIndex": 0
+},
+{
+"questionRu": "Что могут проверять концепты?",
+"questionEn": "What can concepts check?",
+"options": ["Свойства типов (например, integral)", "Значения переменных", "Размер объектов", "Тип исключений"],
+"correctAnswerIndex": 0
+}
+],
+"task": {
+"titleRu": "Пример концепта",
+"titleEn": "Concept Example",
+"instructionRu": "Объявите концепт Named, который проверяет, является ли тип std::string, и используйте его в шаблонной функции.",
+"instructionEn": "Declare a concept Named that checks if a type is std::string, and use it in a template function.",
+"hintRu": "Используйте std::is_same_v.",
+"hintEn": "Use std::is_same_v.",
+"expectedResultRu": "",
+"expectedResultEn": "",
+"solutionCode": ""
+}
+},
+{
+"titleRu": "Ranges (диапазоны)",
+"titleEn": "Ranges",
+"descriptionRu": "Библиотека диапазонов (C++20) расширяет возможности STL, позволяя работать с диапазонами элементов. Предоставляются views для фильтрации, трансформации и прочих операций над диапазонами без создания промежуточных контейнеров.",
+"descriptionEn": "The ranges library (C++20) extends STL capabilities by allowing working with ranges of elements. It provides views for filtering, transforming, and other operations on ranges without creating intermediate containers.",
+"codeExamples": [
+{
+"language": "cpp",
+"code": "#include <iostream>\n#include <vector>\n#include <ranges>\n\nint main() {\n std::vector<int> v = {1, 2, 3, 4};\n for (int x : v | std::ranges::views::filter([](int n){ return n % 2 == 0; })) {\n std::cout << x << " ";\n }\n return 0;\n}",
+"commentLanguage": "ru",
+"comment": "Фильтрация диапазона с помощью std::ranges::views::filter."
+}
+],
+"quiz": [
+{
+"questionRu": "Что такое std::ranges?",
+"questionEn": "What is std::ranges?",
+"options": ["Новая библиотека алгоритмов C++20", "Указатель на массив", "Функция сортировки", "Класс ввода"],
+"correctAnswerIndex": 0
+},
+{
+"questionRu": "Что такое view в контексте ranges?",
+"questionEn": "What is a view in the context of ranges?",
+"options": ["Ленивая последовательность элементов", "Стандартный вектор", "Выходной поток", "Функция фильтрации"],
+"correctAnswerIndex": 0
+},
+{
+"questionRu": "Как применить фильтр к вектору v через ranges?",
+"questionEn": "How to apply a filter to vector v using ranges?",
+"options": ["v | std::ranges::views::filter(...)", "filter(v.begin(), v.end())", "std::filter(v)", "v.filter(...)"],
+"correctAnswerIndex": 0
+}
+],
+"task": {
+"titleRu": "Использование ranges",
+"titleEn": "Using Ranges",
+"instructionRu": "Используйте std::ranges::views для фильтрации элементов вектора.",
+"instructionEn": "Use std::ranges::views to filter elements of a vector.",
+"hintRu": "Используйте views::filter.",
+"hintEn": "Use views::filter.",
+"expectedResultRu": "",
+"expectedResultEn": "",
+"solutionCode": ""
+}
+}
+]
+}

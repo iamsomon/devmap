@@ -23,6 +23,8 @@
 "language": "cpp",
 "code": "#include <iostream>\n\nint main() {\n int a = 5;\n double b = 3.14;\n double sum = a + b;\n std::cout << \"Sum: \" << sum << std::endl;\n return 0;\n}",
 "commentLanguage": "ru",
+"descriptionRu": "122В самом начале курса по C++ важно ознакомиться с базовым синтаксисом и структурой программы. Программа на C++ состоит из функций, где главной функцией является main(). Каждая инструкция C++ заканчивается точкой с запятой. Блоки кода заключаются в фигурные скобки. Также используются директивы препроцессора (#include, #define) для подключения библиотек и определения макросов.",
+"descriptionEn": "122Before diving deeper, one should understand the basic syntax of C++. A C++ program consists of functions, where the entry point is the main() function. Every statement ends with a semicolon. Code blocks are enclosed in curly braces. Preprocessor directives (#include, #define) are used to include libraries and define macros.",
 "comment": "Пример объявления переменных разных типов и их суммирования."
 }
 ],

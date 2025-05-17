@@ -1,0 +1,1358 @@
+{
+  "courseTitle": {
+    "ru": "Полный курс по Python",
+    "en": "Complete Python Course"
+  },
+  "language": "Python",
+  "iconUrl": "https://s3.dualstack.us-east-2.amazonaws.com/pythondotorg-assets/media/community/logos/python-logo-only.png",
+  "description": {
+    "ru": "Этот полный курс по Python охватывает все, от базового синтаксиса и типов данных до продвинутых возможностей Python 3.10 и выше. Он включает практические примеры, упражнения, викторины и задачи для каждой темы на русском и английском языках. По окончании курса вы получите прочные знания Python-программирования и сможете применять их в реальных проектах.",
+    "en": "This comprehensive Python course covers everything from basic syntax and data types to advanced features of Python 3.10 and above. It includes practical examples, exercises, quizzes, and tasks for each topic in both Russian and English. By the end of the course, you will have a solid understanding of Python programming and be able to apply it to real-world projects."
+  },
+  "topics": [
+    {
+      "titleRu": "Введение. Базовый синтаксис и типы данных",
+      "titleEn": "Introduction: Basic Syntax and Data Types",
+      "descriptionRu": "В этом разделе рассматривается основной синтаксис Python и базовые типы данных. Вы узнаете, как правильно писать простые программы на Python, объявлять переменные и работать с числами, строками, булевыми значениями и None. Также будет показан простой ввод-вывод.",
+      "descriptionEn": "In this section, we cover the basic syntax of Python and fundamental data types. You will learn how to write simple Python programs, declare variables, and work with numbers, strings, booleans, and None. Simple input/output will also be demonstrated.",
+      "codeExamples": [
+        {
+          "language": "python",
+          "code": "print(\"Hello, World!\")",
+          "commentLanguage": "ru",
+          "comment": "Выводит 'Hello, World!' на экран."
+        },
+        {
+          "language": "python",
+          "code": "x = 5\nprint(type(x))",
+          "commentLanguage": "en",
+          "comment": "Define an integer variable and print its type."
+        },
+        {
+          "language": "python",
+          "code": "y = 3.14\nprint(type(y))",
+          "commentLanguage": "en",
+          "comment": "A float variable."
+        },
+        {
+          "language": "python",
+          "code": "name = 'Alice'\nprint(f\"Hello, {name}!\")",
+          "commentLanguage": "ru",
+          "comment": "Склеивание строки с переменной и вывод."
+        }
+      ],
+      "quiz": [
+        {
+          "questionRu": "Какой тип данных имеет значение 3.14 в Python?",
+          "questionEn": "What data type is the value 3.14 in Python?",
+          "options": [
+            "int",
+            "float",
+            "str",
+            "bool"
+          ],
+          "correctAnswerIndex": 1
+        },
+        {
+          "questionRu": "Что выведет код: print(2 + 3 * 4)?",
+          "questionEn": "What will the code print: print(2 + 3 * 4)?",
+          "options": [
+            "20",
+            "14",
+            "12",
+            "10"
+          ],
+          "correctAnswerIndex": 1
+        }
+      ],
+      "task": {
+        "titleRu": "Простая арифметика",
+        "titleEn": "Simple Arithmetic",
+        "instructionRu": "Напишите программу, которая добавляет два числа и выводит результат на экран.",
+        "instructionEn": "Write a program that adds two numbers and prints the result.",
+        "hintRu": "Используйте оператор \"+\" для сложения.",
+        "hintEn": "Use the \"+\" operator for addition.",
+        "expectedResultRu": "Если ввести числа 2 и 3, программа должна вывести 5.",
+        "expectedResultEn": "If you input the numbers 2 and 3, the program should output 5.",
+        "solutionCode": "a = 2\nb = 3\nprint(a + b)"
+      }
+    },
+    {
+      "titleRu": "Условия, циклы и функции",
+      "titleEn": "Control Flow and Functions",
+      "descriptionRu": "Здесь изучаются управляющие конструкции Python: условные операторы (if, elif, else) и циклы (for, while, break, continue), а также определение функций. Вы узнаете, как выполнять разветвление логики программы, повторять действия с помощью циклов и группировать код в функции.",
+      "descriptionEn": "This section covers Python control structures: conditional statements (if, elif, else) and loops (for, while, break, continue), as well as function definitions. You will learn how to branch program logic, repeat actions with loops, and encapsulate code in functions.",
+      "codeExamples": [
+        {
+          "language": "python",
+          "code": "x = 10\nif x > 5:\n    print(\"x больше 5\")\nelse:\n    print(\"x меньше или равен 5\")",
+          "commentLanguage": "ru",
+          "comment": "Проверяем значение x и выводим соответствующее сообщение."
+        },
+        {
+          "language": "python",
+          "code": "for i in range(3):\n    print(i)",
+          "commentLanguage": "en",
+          "comment": "Loop from 0 to 2 and print each number."
+        },
+        {
+          "language": "python",
+          "code": "i = 0\nwhile i < 3:\n    print(i)\n    i += 1",
+          "commentLanguage": "ru",
+          "comment": "Цикл while, печатающий числа 0, 1, 2."
+        },
+        {
+          "language": "python",
+          "code": "def greet(name):\n    return f\"Hello, {name}!\"\n\nprint(greet(\"Bob\"))",
+          "commentLanguage": "en",
+          "comment": "Defines a function that greets a person by name."
+        },
+        {
+          "language": "python",
+          "code": "if (n := len(\"Hello, world!\")) > 5:\n    print(f\"Length is {n}\")",
+          "commentLanguage": "en",
+          "comment": "Using the walrus operator to assign and compare in one expression."
+        }
+      ],
+      "quiz": [
+        {
+          "questionRu": "Какой оператор используется для обработки нескольких условий?",
+          "questionEn": "Which operator is used to handle multiple conditions?",
+          "options": [
+            "if",
+            "elif",
+            "else",
+            "for"
+          ],
+          "correctAnswerIndex": 1
+        },
+        {
+          "questionRu": "Что делает оператор break внутри цикла?",
+          "questionEn": "What does the 'break' statement do inside a loop?",
+          "options": [
+            "Заканчивает цикл досрочно",
+            "Пропускает итерацию",
+            "Создает новый цикл",
+            "Продолжает программу"
+          ],
+          "correctAnswerIndex": 0
+        },
+        {
+          "questionRu": "Что вернет следующая функция? def f(x): return x * 2; print(f(3))",
+          "questionEn": "What will the following code output? def f(x): return x * 2; print(f(3))",
+          "options": [
+            "5",
+            "6",
+            "3",
+            "None"
+          ],
+          "correctAnswerIndex": 1
+        }
+      ],
+      "task": {
+        "titleRu": "Сумма элементов списка",
+        "titleEn": "Sum of List Elements",
+        "instructionRu": "Напишите функцию, которая принимает список чисел и возвращает сумму всех элементов.",
+        "instructionEn": "Write a function that takes a list of numbers and returns the sum of all elements.",
+        "hintRu": "Используйте цикл for или встроенную функцию sum().",
+        "hintEn": "Use a for loop or the built-in sum() function.",
+        "expectedResultRu": "Например, для списка [1, 2, 3] функция должна вернуть 6.",
+        "expectedResultEn": "For example, for the list [1, 2, 3] the function should return 6.",
+        "solutionCode": "def sum_list(numbers):\n    total = 0\n    for num in numbers:\n        total += num\n    return total\n\nprint(sum_list([1, 2, 3]))"
+      }
+    },
+    {
+      "titleRu": "Списки, словари, множества и кортежи",
+      "titleEn": "Lists, Dictionaries, Sets, and Tuples",
+      "descriptionRu": "В этом разделе изучаются основные коллекции Python: списки (list), словари (dict), множества (set) и кортежи (tuple). Вы узнаете об их синтаксисе, различиях (например, изменяемость списков vs неизменяемость кортежей), а также о базовых методах для работы с ними.",
+      "descriptionEn": "This section covers Python's main collection data types: lists, dictionaries, sets, and tuples. You will learn their syntax, differences (e.g., mutability of lists vs immutability of tuples), and basic methods for working with them.",
+      "codeExamples": [
+        {
+          "language": "python",
+          "code": "my_list = [1, 2, 3]\nprint(my_list[0])  # первый элемент списка",
+          "commentLanguage": "ru",
+          "comment": "Создаем список и выводим его первый элемент."
+        },
+        {
+          "language": "python",
+          "code": "my_dict = {'a': 1, 'b': 2}\nprint(my_dict['b'])",
+          "commentLanguage": "en",
+          "comment": "Access dictionary value by key."
+        },
+        {
+          "language": "python",
+          "code": "my_tuple = (1, 2, 3)\nprint(len(my_tuple))",
+          "commentLanguage": "ru",
+          "comment": "Тупл неизменяем; выводим его длину."
+        },
+        {
+          "language": "python",
+          "code": "my_set = {1, 2, 2, 3}\nprint(my_set)",
+          "commentLanguage": "en",
+          "comment": "Sets automatically remove duplicate elements."
+        }
+      ],
+      "quiz": [
+        {
+          "questionRu": "Какой тип коллекции в Python не допускает изменения элементов после создания?",
+          "questionEn": "Which type of collection in Python does not allow modification of elements after creation?",
+          "options": [
+            "list",
+            "tuple",
+            "dict",
+            "set"
+          ],
+          "correctAnswerIndex": 1
+        },
+        {
+          "questionRu": "Что делает метод append() для списка?",
+          "questionEn": "What does the append() method do for a list?",
+          "options": [
+            "Удаляет последний элемент",
+            "Добавляет элемент в конец списка",
+            "Сортирует список",
+            "Очищает список"
+          ],
+          "correctAnswerIndex": 1
+        },
+        {
+          "questionRu": "Что выведет следующий код: print({1, 2, 1, 3})?",
+          "questionEn": "What will the code output: print({1, 2, 1, 3})?",
+          "options": [
+            "{1, 2, 1, 3}",
+            "{1, 2, 3}",
+            "Error",
+            "[1, 2, 3]"
+          ],
+          "correctAnswerIndex": 1
+        }
+      ],
+      "task": {
+        "titleRu": "Уникальные элементы",
+        "titleEn": "Unique Elements",
+        "instructionRu": "Напишите функцию, которая получает список чисел и возвращает новый список с уникальными элементами (удаляя дубликаты).",
+        "instructionEn": "Write a function that takes a list of numbers and returns a new list with unique elements (removing duplicates).",
+        "hintRu": "Можно использовать множество (set) для удаления дубликатов, затем преобразовать обратно в список.",
+        "hintEn": "You can use a set to remove duplicates and then convert back to a list.",
+        "expectedResultRu": "Например, для списка [1, 2, 2, 3] функция должна вернуть [1, 2, 3].",
+        "expectedResultEn": "For example, for the list [1, 2, 2, 3] the function should return [1, 2, 3].",
+        "solutionCode": "def unique_elements(lst):\n    return list(set(lst))\n\nprint(unique_elements([1, 2, 2, 3]))"
+      }
+    },
+    {
+      "titleRu": "Строки и методы",
+      "titleEn": "Strings and Methods",
+      "descriptionRu": "В этом разделе изучаются строки (тип str) и способы работы с ними. Вы узнаете, как создавать строки, объединять их, использовать форматирование (f-строки), а также базовые методы строк: upper, lower, split, join и другие. Строки в Python неизменяемы (immutable).",
+      "descriptionEn": "This section covers strings (type str) and ways to work with them. You will learn how to create strings, concatenate them, use formatting (f-strings), and basic string methods: upper, lower, split, join, and others. Strings in Python are immutable.",
+      "codeExamples": [
+        {
+          "language": "python",
+          "code": "greeting = \"Hello\"\nname = \"Alice\"\nprint(f\"{greeting}, {name}!\")",
+          "commentLanguage": "ru",
+          "comment": "Использование f-строки для форматирования."
+        },
+        {
+          "language": "python",
+          "code": "text = \"Hello, World!\"\nprint(text.upper())",
+          "commentLanguage": "en",
+          "comment": "Convert string to uppercase."
+        },
+        {
+          "language": "python",
+          "code": "words = \"a,b,c\".split(',')\nprint(words)",
+          "commentLanguage": "en",
+          "comment": "Split a string by comma into a list."
+        },
+        {
+          "language": "python",
+          "code": "joined = '-'.join(['2021','12','31'])\nprint(joined)",
+          "commentLanguage": "ru",
+          "comment": "Объединяем список строк через дефис."
+        }
+      ],
+      "quiz": [
+        {
+          "questionRu": "Какой метод переведет строку в верхний регистр?",
+          "questionEn": "Which method will convert a string to uppercase?",
+          "options": [
+            "upper()",
+            "lower()",
+            "split()",
+            "append()"
+          ],
+          "correctAnswerIndex": 0
+        },
+        {
+          "questionRu": "Что вернет выражение 'abc'[::-1]?",
+          "questionEn": "What does the expression 'abc'[::-1] return?",
+          "options": [
+            "'abc'",
+            "'cba'",
+            "'' (empty string)",
+            "Error"
+          ],
+          "correctAnswerIndex": 1
+        },
+        {
+          "questionRu": "Какая особенность строк в Python?",
+          "questionEn": "What is a characteristic of strings in Python?",
+          "options": [
+            "Strings are mutable",
+            "Strings can be changed in place",
+            "Strings are immutable",
+            "Strings are the same as lists"
+          ],
+          "correctAnswerIndex": 2
+        }
+      ],
+      "task": {
+        "titleRu": "Палиндром",
+        "titleEn": "Palindrome",
+        "instructionRu": "Напишите функцию, которая проверяет, является ли строка палиндромом (одинаково читается спереди и сзади).",
+        "instructionEn": "Write a function that checks if a string is a palindrome (reads the same forwards and backwards).",
+        "hintRu": "Можно обратиться к строке в обратном порядке с помощью среза [::-1].",
+        "hintEn": "You can reverse the string using slicing [::-1].",
+        "expectedResultRu": "Например, для строки 'level' функция должна вернуть True.",
+        "expectedResultEn": "For example, for the string 'level' the function should return True.",
+        "solutionCode": "def is_palindrome(s):\n    return s == s[::-1]\n\nprint(is_palindrome(\"level\"))"
+      }
+    },
+    {
+      "titleRu": "Модули и пакеты",
+      "titleEn": "Modules and Packages",
+      "descriptionRu": "В этом разделе вы узнаете, как организовывать код в модули и пакеты. Модуль — это файл с кодом Python, а пакет — папка с модулями (с файлом __init__.py). Мы рассмотрим, как импортировать модули (встроенные и пользовательские), а также использовать ключевое слово import для доступа к функциям и переменным другого файла.",
+      "descriptionEn": "In this section, you will learn how to organize code into modules and packages. A module is a Python file, and a package is a folder of modules (with an __init__.py file). We will see how to import modules (built-in and custom) and how to use the import keyword to access functions and variables from another file.",
+      "codeExamples": [
+        {
+          "language": "python",
+          "code": "import math\nprint(math.pi)",
+          "commentLanguage": "en",
+          "comment": "Import the math module and print the value of pi."
+        },
+        {
+          "language": "python",
+          "code": "from math import sqrt\nprint(sqrt(9))",
+          "commentLanguage": "ru",
+          "comment": "Импортируем только функцию sqrt и вычисляем корень из 9."
+        },
+        {
+          "language": "python",
+          "code": "import datetime as dt\nprint(dt.datetime.now().year)",
+          "commentLanguage": "en",
+          "comment": "Import datetime module with alias and get current year."
+        },
+        {
+          "language": "python",
+          "code": "# В отдельном файле greetings.py:\ndef greet(name):\n    print(f\"Hello, {name}!\")\n\n# В основном файле:\nimport greetings\ngreetings.greet(\"Alice\")",
+          "commentLanguage": "ru",
+          "comment": "Пример создания собственного модуля greetings и его использование."
+        }
+      ],
+      "quiz": [
+        {
+          "questionRu": "Как импортировать только функцию sqrt из модуля math?",
+          "questionEn": "How to import only the sqrt function from the math module?",
+          "options": [
+            "import math.sqrt",
+            "from math import sqrt",
+            "import sqrt from math",
+            "include math.sqrt"
+          ],
+          "correctAnswerIndex": 1
+        },
+        {
+          "questionRu": "Что такое пакет в Python?",
+          "questionEn": "What is a package in Python?",
+          "options": [
+            "Один Python-файл",
+            "Папка с модулями и файлом __init__.py",
+            "Сторонняя библиотека",
+            "Переменная типа dict"
+          ],
+          "correctAnswerIndex": 1
+        },
+        {
+          "questionRu": "Какой файл нужен для определения пакета в Python?",
+          "questionEn": "Which file is needed to define a package in Python?",
+          "options": [
+            "main.py",
+            "__init__.py",
+            "setup.py",
+            "requirements.txt"
+          ],
+          "correctAnswerIndex": 1
+        }
+      ],
+      "task": {
+        "titleRu": "Квадратный корень",
+        "titleEn": "Square Root",
+        "instructionRu": "Напишите программу, которая импортирует модуль math и использует его функцию sqrt для вычисления квадратного корня числа 16.",
+        "instructionEn": "Write a program that imports the math module and uses its sqrt function to compute the square root of 16.",
+        "hintRu": "Не забудьте в начале файла написать import math.",
+        "hintEn": "Don't forget to write import math at the beginning of the file.",
+        "expectedResultRu": "Программа должна вывести 4.0.",
+        "expectedResultEn": "The program should output 4.0.",
+        "solutionCode": "import math\nprint(math.sqrt(16))"
+      }
+    },
+    {
+      "titleRu": "Исключения",
+      "titleEn": "Exceptions",
+      "descriptionRu": "Этот раздел посвящен обработке ошибок и исключений. Вы научитесь использовать конструкции try, except, else и finally для отлова исключений во время выполнения программы. Обсуждаются также генерация собственных исключений с помощью raise и работа с различными типами исключений.",
+      "descriptionEn": "This section is dedicated to error handling and exceptions. You will learn how to use the try, except, else, and finally constructs to catch exceptions at runtime. Also discussed are raising your own exceptions with the raise keyword and working with different exception types.",
+      "codeExamples": [
+        {
+          "language": "python",
+          "code": "try:\n    print(1 / 0)\nexcept ZeroDivisionError:\n    print(\"Cannot divide by zero!\")",
+          "commentLanguage": "en",
+          "comment": "Handle division by zero exception."
+        },
+        {
+          "language": "python",
+          "code": "try:\n    num = int('abc')\nexcept ValueError as e:\n    print(f\"ValueError occurred: {e}\")",
+          "commentLanguage": "ru",
+          "comment": "Отлавливаем ValueError при неверном преобразовании типа."
+        },
+        {
+          "language": "python",
+          "code": "try:\n    print(\"No errors here\")\nexcept Exception:\n    print(\"Caught an exception\")\nelse:\n    print(\"No exception occurred\")",
+          "commentLanguage": "en",
+          "comment": "The else block runs when no exception occurred."
+        },
+        {
+          "language": "python",
+          "code": "def check_age(age):\n    if age < 0:\n        raise ValueError(\"Возраст не может быть отрицательным\")\n\ncheck_age(-1)",
+          "commentLanguage": "ru",
+          "comment": "Генерируем собственное исключение при недопустимом аргументе."
+        }
+      ],
+      "quiz": [
+        {
+          "questionRu": "Какой блок кода выполняется всегда при наличии блока try/except?",
+          "questionEn": "Which block of code always executes when there is a try/except structure?",
+          "options": [
+            "try",
+            "except",
+            "else",
+            "finally"
+          ],
+          "correctAnswerIndex": 3
+        },
+        {
+          "questionRu": "Как поймать исключение деления на ноль?",
+          "questionEn": "How to catch a division by zero exception?",
+          "options": [
+            "using except TypeError",
+            "using except ZeroDivisionError",
+            "using except ValueError",
+            "using except IndexError"
+          ],
+          "correctAnswerIndex": 1
+        },
+        {
+          "questionRu": "Что делает инструкция raise?",
+          "questionEn": "What does the 'raise' statement do?",
+          "options": [
+            "Переходит к следующему циклу",
+            "Инициализирует новый объект",
+            "Генерирует исключение",
+            "Ничего не делает"
+          ],
+          "correctAnswerIndex": 2
+        }
+      ],
+      "task": {
+        "titleRu": "Деление с обработкой ошибки",
+        "titleEn": "Division with Error Handling",
+        "instructionRu": "Напишите программу, которая запрашивает два числа и выводит результат деления первого на второе. Обработайте исключение деления на ноль.",
+        "instructionEn": "Write a program that asks for two numbers and prints the result of dividing the first by the second. Handle the division by zero exception.",
+        "hintRu": "Используйте конструкцию try/except вокруг операции деления.",
+        "hintEn": "Use a try/except construct around the division operation.",
+        "expectedResultRu": "Если пользователь введет 10 и 0, программа должна вывести сообщение об ошибке деления на ноль.",
+        "expectedResultEn": "If the user inputs 10 and 0, the program should print a message about division by zero error.",
+        "solutionCode": "a = 10\nb = 0\ntry:\n    result = a / b\n    print(result)\nexcept ZeroDivisionError:\n    print(\"Cannot divide by zero.\")"
+      }
+    },
+    {
+      "titleRu": "Файловый ввод/вывод",
+      "titleEn": "File I/O",
+      "descriptionRu": "Этот раздел посвящен работе с файлами. Вы узнаете, как открывать файлы для чтения и записи (режимы 'r', 'w', 'a'), читать их содержимое и записывать новые данные. Также рассмотрим использование конструкции with для автоматического закрытия файла после работы.",
+      "descriptionEn": "This section is about file operations. You will learn how to open files for reading and writing (modes 'r', 'w', 'a'), read their contents, and write new data. We will also cover using the 'with' statement to automatically close files after working with them.",
+      "codeExamples": [
+        {
+          "language": "python",
+          "code": "with open('example.txt', 'w') as f:\n    f.write('Hello, World!')",
+          "commentLanguage": "en",
+          "comment": "Open file in write mode and write a string to it."
+        },
+        {
+          "language": "python",
+          "code": "f = open('example.txt', 'r')\ncontent = f.read()\nf.close()\nprint(content)",
+          "commentLanguage": "ru",
+          "comment": "Открываем файл для чтения, читаем все содержимое и закрываем файл."
+        },
+        {
+          "language": "python",
+          "code": "with open('example.txt', 'a') as f:\n    f.write(\"\\nAppend this.\")",
+          "commentLanguage": "en",
+          "comment": "Append a new line to the existing file."
+        },
+        {
+          "language": "python",
+          "code": "for line in open('example.txt'):\n    print(line.strip())",
+          "commentLanguage": "ru",
+          "comment": "Читаем файл построчно и выводим без перевода строки в конце."
+        }
+      ],
+      "quiz": [
+        {
+          "questionRu": "Какой режим открытия файла записывает данные (перезаписывает файл)?",
+          "questionEn": "Which file mode opens the file for writing (overwriting)?",
+          "options": [
+            "r",
+            "w",
+            "a",
+            "x"
+          ],
+          "correctAnswerIndex": 1
+        },
+        {
+          "questionRu": "Что делает конструкция with при работе с файлами?",
+          "questionEn": "What does the 'with' statement do when working with files?",
+          "options": [
+            "Automatically closes the file",
+            "Reads all data",
+            "Appends data",
+            "Deletes the file"
+          ],
+          "correctAnswerIndex": 0
+        },
+        {
+          "questionRu": "Какой метод считывает содержимое всего файла в одну строку?",
+          "questionEn": "Which method reads the entire content of a file into a single string?",
+          "options": [
+            "read()",
+            "write()",
+            "readline()",
+            "readlines()"
+          ],
+          "correctAnswerIndex": 0
+        }
+      ],
+      "task": {
+        "titleRu": "Запись и чтение файла",
+        "titleEn": "File Write and Read",
+        "instructionRu": "Напишите программу, которая создаст файл 'output.txt', запишет в него строку 'Hello, file!' и затем прочитает эту же строку и выведет на экран.",
+        "instructionEn": "Write a program that creates a file 'output.txt', writes the string 'Hello, file!' to it, then reads the same string and prints it.",
+        "hintRu": "Используйте режимы 'w' для записи и 'r' для чтения.",
+        "hintEn": "Use 'w' mode to write and 'r' mode to read.",
+        "expectedResultRu": "Программа должна вывести 'Hello, file!'.",
+        "expectedResultEn": "The program should output 'Hello, file!'.",
+        "solutionCode": "with open('output.txt', 'w') as f:\n    f.write('Hello, file!')\n\nwith open('output.txt', 'r') as f:\n    content = f.read()\nprint(content)"
+      }
+    },
+    {
+      "titleRu": "Классы и ООП: наследование, инкапсуляция, полиморфизм",
+      "titleEn": "Classes and OOP: Inheritance, Encapsulation, Polymorphism",
+      "descriptionRu": "В этом разделе мы изучаем объектно-ориентированное программирование в Python. Вы узнаете, как создавать классы и объекты, использовать конструктор __init__, определять атрибуты и методы. Также рассмотрим наследование классов (subclassing), инкапсуляцию (приватные атрибуты) и полиморфизм (переопределение методов в подклассах).",
+      "descriptionEn": "In this section, we explore object-oriented programming in Python. You will learn how to create classes and objects, use the __init__ constructor, and define attributes and methods. We will also cover class inheritance (subclassing), encapsulation (private attributes), and polymorphism (method overriding in subclasses).",
+      "codeExamples": [
+        {
+          "language": "python",
+          "code": "class Person:\n    def __init__(self, name, age):\n        self.name = name\n        self.age = age\n\np = Person(\"Alice\", 30)\nprint(p.name, p.age)",
+          "commentLanguage": "ru",
+          "comment": "Определяем класс Person с конструктором и атрибутами name и age."
+        },
+        {
+          "language": "python",
+          "code": "class Animal:\n    def speak(self):\n        print(\"Some sound\")\n\nclass Dog(Animal):\n    def speak(self):\n        print(\"Woof!\")\n\nmy_dog = Dog()\nmy_dog.speak()",
+          "commentLanguage": "en",
+          "comment": "Inheritance and method overriding: Dog overrides speak() method."
+        },
+        {
+          "language": "python",
+          "code": "class Counter:\n    def __init__(self):\n        self._count = 0  # private attribute\n    def increment(self):\n        self._count += 1\n    def get_count(self):\n        return self._count\n\nc = Counter()\nc.increment()\nprint(c.get_count())",
+          "commentLanguage": "ru",
+          "comment": "Пример инкапсуляции: атрибут _count считается приватным."
+        },
+        {
+          "language": "python",
+          "code": "class Cat(Animal):\n    pass\n\nanimals = [Dog(), Cat()]\nfor animal in animals:\n    animal.speak()",
+          "commentLanguage": "en",
+          "comment": "Demonstrating polymorphism: both Dog and Cat have a speak() method."
+        }
+      ],
+      "quiz": [
+        {
+          "questionRu": "Как объявить класс в Python?",
+          "questionEn": "How do you declare a class in Python?",
+          "options": [
+            "def MyClass:",
+            "class MyClass:",
+            "function MyClass:",
+            "class: MyClass"
+          ],
+          "correctAnswerIndex": 1
+        },
+        {
+          "questionRu": "Что такое инкапсуляция в контексте классов?",
+          "questionEn": "What is encapsulation in the context of classes?",
+          "options": [
+            "Процесс создания объекта",
+            "Сокрытие внутренних данных класса",
+            "Наследование функций",
+            "Переопределение методов"
+          ],
+          "correctAnswerIndex": 1
+        },
+        {
+          "questionRu": "Как вызвать конструктор базового класса из подкласса?",
+          "questionEn": "How to call the base class constructor from a subclass?",
+          "options": [
+            "super().__init__(...)",
+            "base.__init__(self, ...)",
+            "parent(...)",
+            "base.super(...)"
+          ],
+          "correctAnswerIndex": 0
+        }
+      ],
+      "task": {
+        "titleRu": "Наследование классов",
+        "titleEn": "Class Inheritance",
+        "instructionRu": "Создайте класс Animal с методом speak(), который печатает «Some sound». Затем создайте класс Dog, наследующий Animal, и переопределяющий метод speak(), чтобы печатать 'Woof!'.",
+        "instructionEn": "Create a class Animal with a method speak() that prints 'Some sound'. Then create a class Dog that inherits Animal and overrides the speak() method to print 'Woof!'.",
+        "hintRu": "Используйте синтаксис class Dog(Animal): и определите метод speak().",
+        "hintEn": "Use the syntax class Dog(Animal): and define the speak() method.",
+        "expectedResultRu": "При вызове speak() у экземпляра Dog на экран должно вывести 'Woof!'.",
+        "expectedResultEn": "When calling speak() on an instance of Dog, it should print 'Woof!'.",
+        "solutionCode": "class Animal:\n    def speak(self):\n        print(\"Some sound\")\n\nclass Dog(Animal):\n    def speak(self):\n        print(\"Woof!\")\n\nmy_dog = Dog()\nmy_dog.speak()"
+      }
+    },
+    {
+      "titleRu": "Итераторы и генераторы",
+      "titleEn": "Iterators and Generators",
+      "descriptionRu": "В этом разделе разбираются итераторы и генераторы в Python. Вы узнаете о протоколе итераторов (методы __iter__ и __next__), а также как использовать генераторные функции с ключевым словом yield для ленивой генерации последовательностей.",
+      "descriptionEn": "This section covers iterators and generators in Python. You will learn about the iterator protocol (methods __iter__ and __next__), as well as how to use generator functions with the 'yield' keyword to lazily generate sequences.",
+      "codeExamples": [
+        {
+          "language": "python",
+          "code": "my_list = [1, 2, 3]\nitr = iter(my_list)\nprint(next(itr))  # 1\nprint(next(itr))  # 2",
+          "commentLanguage": "ru",
+          "comment": "Создаем итератор из списка и получаем элементы по одному."
+        },
+        {
+          "language": "python",
+          "code": "def count_up_to(n):\n    count = 1\n    while count <= n:\n        yield count\n        count += 1\n\nfor num in count_up_to(3):\n    print(num)",
+          "commentLanguage": "en",
+          "comment": "Generator function that yields numbers from 1 to n."
+        },
+        {
+          "language": "python",
+          "code": "squares = (x*x for x in range(5))\nprint(next(squares), next(squares))",
+          "commentLanguage": "ru",
+          "comment": "Генераторное выражение для квадратов чисел."
+        },
+        {
+          "language": "python",
+          "code": "class MyIter:\n    def __iter__(self):\n        return self\n    def __next__(self):\n        raise StopIteration\n\nit = MyIter()\nprint(iter(it) is it)",
+          "commentLanguage": "en",
+          "comment": "A simple iterator class where __iter__ returns self."
+        }
+      ],
+      "quiz": [
+        {
+          "questionRu": "Что возвращает функция-генератор вместо обычного return?",
+          "questionEn": "What does a generator function use instead of a normal return?",
+          "options": [
+            "yield",
+            "yield from",
+            "return",
+            "print"
+          ],
+          "correctAnswerIndex": 0
+        },
+        {
+          "questionRu": "Как получить следующий элемент из итератора?",
+          "questionEn": "How do you get the next element from an iterator?",
+          "options": [
+            "iterator.next()",
+            "iterator.__next__()",
+            "next(iterator)",
+            "iterator.goto()"
+          ],
+          "correctAnswerIndex": 2
+        },
+        {
+          "questionRu": "Что делает StopIteration?",
+          "questionEn": "What does StopIteration do?",
+          "options": [
+            "Перезапускает итератор",
+            "Завершает итерацию",
+            "Выводит сообщение",
+            "Ничего не делает"
+          ],
+          "correctAnswerIndex": 1
+        }
+      ],
+      "task": {
+        "titleRu": "Генератор Фибоначчи",
+        "titleEn": "Fibonacci Generator",
+        "instructionRu": "Напишите генераторную функцию, которая генерирует последовательность чисел Фибоначчи до N-го члена.",
+        "instructionEn": "Write a generator function that yields the Fibonacci sequence up to the N-th term.",
+        "hintRu": "Генератор должен использовать yield внутри цикла для генерации каждого следующего числа Фибоначчи.",
+        "hintEn": "The generator should use yield inside a loop to generate each next Fibonacci number.",
+        "expectedResultRu": "Например, для N=5 последовательность будет: 0, 1, 1, 2, 3.",
+        "expectedResultEn": "For example, for N=5 the sequence should be: 0, 1, 1, 2, 3.",
+        "solutionCode": "def fib_generator(n):\n    a, b = 0, 1\n    for _ in range(n):\n        yield a\n        a, b = b, a + b\n\nprint(list(fib_generator(5)))"
+      }
+    },
+    {
+      "titleRu": "Декораторы и менеджеры контекста",
+      "titleEn": "Decorators and Context Managers",
+      "descriptionRu": "Этот раздел посвящен декораторам и менеджерам контекста. Вы узнаете, как создавать декораторы для расширения функциональности функций (с помощью синтаксиса @) и как работают замыкания. Также рассмотрим менеджеры контекста, которые позволяют определять действия при входе и выходе из блока 'with' (__enter__ и __exit__).",
+      "descriptionEn": "This section is about decorators and context managers. You will learn how to create decorators to extend function functionality (using the @ syntax) and how closures work. We will also cover context managers, which let you define actions on entering and exiting a 'with' block (__enter__ and __exit__).",
+      "codeExamples": [
+        {
+          "language": "python",
+          "code": "def decorator(func):\n    def wrapper():\n        print(\"Before call\")\n        func()\n        print(\"After call\")\n    return wrapper\n\n@decorator\ndef say_hello():\n    print(\"Hello!\")\n\nsay_hello()",
+          "commentLanguage": "en",
+          "comment": "A simple decorator that prints messages before and after a function call."
+        },
+        {
+          "language": "python",
+          "code": "with open('file.txt', 'w') as f:\n    f.write('Hello')",
+          "commentLanguage": "ru",
+          "comment": "Использование менеджера контекста для файлов (автоматически закроет файл после выхода)."
+        },
+        {
+          "language": "python",
+          "code": "from contextlib import contextmanager\n\n@contextmanager\ndef my_context():\n    print(\"Enter\")\n    yield\n    print(\"Exit\")\n\nwith my_context():\n    print(\"Inside\")",
+          "commentLanguage": "en",
+          "comment": "Example of a custom context manager using contextlib."
+        },
+        {
+          "language": "python",
+          "code": "# Декоратор для регистрации имени функции\ndef register(func):\n    registry = []\n    def wrapper(*args, **kwargs):\n        registry.append(func.__name__)\n        return func(*args, **kwargs)\n    return wrapper",
+          "commentLanguage": "ru",
+          "comment": "Пример декоратора, сохраняющего имя функции в списке при каждом вызове."
+        }
+      ],
+      "quiz": [
+        {
+          "questionRu": "Как пометить функцию-декоратор при определении?",
+          "questionEn": "How do you mark a function as a decorator when defining another function?",
+          "options": [
+            "use keyword decorator",
+            "use symbol @decorator_name",
+            "import decorator from module",
+            "suffix function name with _decorator"
+          ],
+          "correctAnswerIndex": 1
+        },
+        {
+          "questionRu": "Что делает менеджер контекста?",
+          "questionEn": "What does a context manager do?",
+          "options": [
+            "Вызывает функции перед передачей аргументов",
+            "Управляет входом и выходом из блока with",
+            "Автоматически вызывает garbage collector",
+            "Обрабатывает исключения"
+          ],
+          "correctAnswerIndex": 1
+        },
+        {
+          "questionRu": "Какой метод вызывается при выходе из блока with в пользовательском менеджере контекста?",
+          "questionEn": "Which method is called upon exiting a with block in a custom context manager?",
+          "options": [
+            "__init__",
+            "__enter__",
+            "__exit__",
+            "__call__"
+          ],
+          "correctAnswerIndex": 2
+        }
+      ],
+      "task": {
+        "titleRu": "Простой декоратор",
+        "titleEn": "Simple Decorator",
+        "instructionRu": "Напишите декоратор print_debug, который выводит сообщение 'Вызов функции' перед выполнением оборачиваемой функции.",
+        "instructionEn": "Write a decorator print_debug that prints the message 'Function called' before executing the decorated function.",
+        "hintRu": "Определите функцию-декоратор, которая оборачивает исходную функцию и печатает сообщение перед её вызовом.",
+        "hintEn": "Define a decorator function that wraps the original function and prints the message before its call.",
+        "expectedResultRu": "При вызове обернутой функции сначала на экран будет выведено 'Вызов функции', затем результат функции.",
+        "expectedResultEn": "When calling the wrapped function, 'Function called' should be printed first, followed by the function's result.",
+        "solutionCode": "def print_debug(func):\n    def wrapper(*args, **kwargs):\n        print(\"Function called\")\n        return func(*args, **kwargs)\n    return wrapper\n\n@print_debug\ndef greet():\n    print(\"Hello!\")\n\ngreet()"
+      }
+    },
+    {
+      "titleRu": "Регулярные выражения",
+      "titleEn": "Regular Expressions",
+      "descriptionRu": "В этом разделе рассматриваются регулярные выражения в Python с использованием модуля re. Вы узнаете, как составлять шаблоны для поиска, использовать функции re.search, re.findall и re.sub для поиска и замены текстовых фрагментов по шаблону регулярного выражения.",
+      "descriptionEn": "This section covers regular expressions in Python using the re module. You will learn how to create patterns for searching, and use functions like re.search, re.findall, and re.sub to search and replace text fragments based on regex patterns.",
+      "codeExamples": [
+        {
+          "language": "python",
+          "code": "import re\ntext = \"The rain in Spain\"\nmatches = re.findall(r\"\\b\\w{5}\\b\", text)\nprint(matches)",
+          "commentLanguage": "en",
+          "comment": "Find all 5-letter words in the text."
+        },
+        {
+          "language": "python",
+          "code": "import re\nmatch = re.search(r\"\\d+\", \"Age: 20\")\nprint(match.group())",
+          "commentLanguage": "ru",
+          "comment": "Ищем первое число в строке."
+        },
+        {
+          "language": "python",
+          "code": "import re\ntext = \"one two one\"\nnew_text = re.sub(r\"one\", \"1\", text)\nprint(new_text)",
+          "commentLanguage": "en",
+          "comment": "Replace all occurrences of 'one' with '1'."
+        },
+        {
+          "language": "python",
+          "code": "import re\ntext = \"Contact: support@example.com\"\nm = re.match(r\"[^@]+@[^@]+\\.[^@]+\", text.split()[1])\nprint(m.group() if m else \"No match\")",
+          "commentLanguage": "ru",
+          "comment": "Ищем email-адрес с помощью re.match."
+        }
+      ],
+      "quiz": [
+        {
+          "questionRu": "Какая функция ищет все вхождения шаблона в строке?",
+          "questionEn": "Which function finds all occurrences of a pattern in a string?",
+          "options": [
+            "re.search",
+            "re.match",
+            "re.findall",
+            "re.split"
+          ],
+          "correctAnswerIndex": 2
+        },
+        {
+          "questionRu": "Что обозначает \\d в регулярных выражениях?",
+          "questionEn": "What does \\d represent in regular expressions?",
+          "options": [
+            "Любой символ",
+            "Цифру",
+            "Букву",
+            "Конец строки"
+          ],
+          "correctAnswerIndex": 1
+        },
+        {
+          "questionRu": "Что делает функция re.sub?",
+          "questionEn": "What does the re.sub function do?",
+          "options": [
+            "Split string by pattern",
+            "Find substring",
+            "Replace occurrences of pattern",
+            "Search from start"
+          ],
+          "correctAnswerIndex": 2
+        }
+      ],
+      "task": {
+        "titleRu": "Поиск email",
+        "titleEn": "Email Search",
+        "instructionRu": "Напишите программу, которая находит все email-адреса в заданной строке с помощью регулярного выражения.",
+        "instructionEn": "Write a program that finds all email addresses in a given string using a regular expression.",
+        "hintRu": "Используйте re.findall с подходящим шаблоном для email (например, [\\w.-]+@[\\w.-]+\\.[a-z]+).",
+        "hintEn": "Use re.findall with an appropriate email pattern (e.g., [\\w.-]+@[\\w.-]+\\.[a-z]+).",
+        "expectedResultRu": "Для строки 'Contact us at support@example.com or sales@domain.org' программа должна найти ['support@example.com', 'sales@domain.org'].",
+        "expectedResultEn": "For the string 'Contact us at support@example.com or sales@domain.org', the program should find ['support@example.com', 'sales@domain.org'].",
+        "solutionCode": "import re\ntext = \"Contact us at support@example.com or sales@domain.org\"\nemails = re.findall(r\"[\\w\\.-]+@[\\w\\.-]+\\.[a-z]+\", text)\nprint(emails)"
+      }
+    },
+    {
+      "titleRu": "Работа с JSON",
+      "titleEn": "Working with JSON",
+      "descriptionRu": "В этом разделе рассматривается работа с форматом JSON. Вы узнаете, как преобразовывать объекты Python (например, dict) в JSON-строки с помощью json.dumps, а также как считывать JSON из строк и файлов с помощью json.loads или json.load. Также обсудим запись JSON в файл и чтение из файла.",
+      "descriptionEn": "This section covers working with JSON format. You will learn how to convert Python objects (e.g., dict) to JSON strings using json.dumps, and how to read JSON from strings and files using json.loads or json.load. We will also discuss writing JSON to a file and reading from a file.",
+      "codeExamples": [
+        {
+          "language": "python",
+          "code": "import json\ndata = {'name': 'Bob', 'age': 25}\njson_str = json.dumps(data)\nprint(json_str)",
+          "commentLanguage": "ru",
+          "comment": "Преобразуем словарь в JSON-строку."
+        },
+        {
+          "language": "python",
+          "code": "import json\njson_str = '{\"x\": 10, \"y\": 20}'\ndata = json.loads(json_str)\nprint(data['x'])",
+          "commentLanguage": "en",
+          "comment": "Load a JSON string into a Python dict."
+        },
+        {
+          "language": "python",
+          "code": "import json\ndata = {'pi': 3.14}\nwith open('data.json', 'w') as f:\n    json.dump(data, f)",
+          "commentLanguage": "ru",
+          "comment": "Записываем словарь в файл в формате JSON."
+        },
+        {
+          "language": "python",
+          "code": "import json\nwith open('data.json', 'r') as f:\n    data = json.load(f)\nprint(data)",
+          "commentLanguage": "en",
+          "comment": "Read JSON from file into Python object."
+        }
+      ],
+      "quiz": [
+        {
+          "questionRu": "Какая функция преобразует Python-объект в JSON-строку?",
+          "questionEn": "Which function converts a Python object into a JSON string?",
+          "options": [
+            "json.load",
+            "json.loads",
+            "json.dump",
+            "json.dumps"
+          ],
+          "correctAnswerIndex": 3
+        },
+        {
+          "questionRu": "Чем отличается json.load от json.loads?",
+          "questionEn": "What is the difference between json.load and json.loads?",
+          "options": [
+            "load читает JSON из строки, loads из файла",
+            "load читается из файла, loads из строки",
+            "оба делают одно и то же",
+            "load записывает JSON в файл"
+          ],
+          "correctAnswerIndex": 1
+        },
+        {
+          "questionRu": "Как сохранить Python-объект в файл в формате JSON?",
+          "questionEn": "How to save a Python object to a file in JSON format?",
+          "options": [
+            "json.dumps(object, filename)",
+            "json.write(object, 'file.json')",
+            "json.dump(object, file)",
+            "file.save(object)"
+          ],
+          "correctAnswerIndex": 2
+        }
+      ],
+      "task": {
+        "titleRu": "Конвертация JSON",
+        "titleEn": "JSON Conversion",
+        "instructionRu": "Напишите программу, которая берет словарь Python и конвертирует его в JSON-строку с помощью json.dumps, а затем обратно конвертирует строку в словарь с помощью json.loads.",
+        "instructionEn": "Write a program that takes a Python dictionary, converts it to a JSON string using json.dumps, and then converts the string back to a dictionary using json.loads.",
+        "hintRu": "Используйте функции json.dumps и json.loads из модуля json.",
+        "hintEn": "Use json.dumps and json.loads from the json module.",
+        "expectedResultRu": "Программа должна вывести исходный словарь после двойного преобразования.",
+        "expectedResultEn": "The program should output the original dictionary after double conversion.",
+        "solutionCode": "import json\ndata = {\"name\": \"Alice\", \"age\": 30}\njson_str = json.dumps(data)\nrestored = json.loads(json_str)\nprint(restored)"
+      }
+    },
+    {
+      "titleRu": "Встроенные модули: os, sys, math, random, datetime",
+      "titleEn": "Built-in Modules: os, sys, math, random, datetime",
+      "descriptionRu": "Этот раздел рассматривает несколько важных встроенных модулей Python: os (работа с операционной системой: файлы и папки), sys (взаимодействие с интерпретатором и аргументы командной строки), math (математические функции), random (генерация случайных чисел), datetime (дата и время). Вы увидите основные функции этих модулей.",
+      "descriptionEn": "This section covers several important built-in Python modules: os (interacting with the operating system: files and directories), sys (interacting with the interpreter and command-line arguments), math (mathematical functions), random (random number generation), and datetime (date and time). You will see the main functionalities of these modules.",
+      "codeExamples": [
+        {
+          "language": "python",
+          "code": "import os\nprint(os.getcwd())",
+          "commentLanguage": "en",
+          "comment": "Print the current working directory using os module."
+        },
+        {
+          "language": "python",
+          "code": "import sys\nprint(sys.argv)",
+          "commentLanguage": "ru",
+          "comment": "Список аргументов командной строки, переданных скрипту."
+        },
+        {
+          "language": "python",
+          "code": "import math\nprint(math.pi, math.sqrt(16))",
+          "commentLanguage": "en",
+          "comment": "Using the math module for pi and sqrt."
+        },
+        {
+          "language": "python",
+          "code": "import random\nprint(random.randint(1, 10))",
+          "commentLanguage": "ru",
+          "comment": "Генерируем случайное целое число от 1 до 10."
+        },
+        {
+          "language": "python",
+          "code": "import datetime\nprint(datetime.datetime.now())",
+          "commentLanguage": "en",
+          "comment": "Get the current date and time."
+        },
+        {
+          "language": "python",
+          "code": "dict1 = {'a': 1}\ndict2 = {'b': 2}\nunion = dict1 | dict2\nprint(union)",
+          "commentLanguage": "en",
+          "comment": "Using the dict union operator (Python 3.9+)."
+        }
+      ],
+      "quiz": [
+        {
+          "questionRu": "Как получить список файлов в текущем каталоге?",
+          "questionEn": "How to get the list of files in the current directory?",
+          "options": [
+            "os.listdir()",
+            "os.getcwd()",
+            "sys.list()",
+            "os.files()"
+          ],
+          "correctAnswerIndex": 0
+        },
+        {
+          "questionRu": "Что содержит sys.argv?",
+          "questionEn": "What does sys.argv contain?",
+          "options": [
+            "Номер версии Python",
+            "Аргументы командной строки",
+            "Список процессов",
+            "Информацию о системе"
+          ],
+          "correctAnswerIndex": 1
+        },
+        {
+          "questionRu": "Как сгенерировать случайное число от 1 до 6?",
+          "questionEn": "How to generate a random number from 1 to 6?",
+          "options": [
+            "random.randint(1, 6)",
+            "random.random(1,6)",
+            "random.random()*6",
+            "random.choice(6)"
+          ],
+          "correctAnswerIndex": 0
+        },
+        {
+          "questionRu": "Как получить текущее время?",
+          "questionEn": "How to get the current time?",
+          "options": [
+            "datetime.datetime.now()",
+            "time.time()",
+            "random.time()",
+            "math.now()"
+          ],
+          "correctAnswerIndex": 0
+        }
+      ],
+      "task": {
+        "titleRu": "Каталог и файлы",
+        "titleEn": "Directory and Files",
+        "instructionRu": "Напишите программу, которая выводит текущий рабочий каталог и список файлов в этом каталоге.",
+        "instructionEn": "Write a program that prints the current working directory and the list of files in that directory.",
+        "hintRu": "Используйте os.getcwd() и os.listdir().",
+        "hintEn": "Use os.getcwd() and os.listdir().",
+        "expectedResultRu": "Программа должна вывести путь к текущей папке и список имен файлов.",
+        "expectedResultEn": "The program should output the path to the current folder and a list of file names.",
+        "solutionCode": "import os\ncwd = os.getcwd()\nfiles = os.listdir(cwd)\nprint(cwd)\nprint(files)"
+      }
+    },
+    {
+      "titleRu": "Типизация (typing) и dataclass",
+      "titleEn": "Type Hints (typing) and dataclass",
+      "descriptionRu": "В этом разделе рассматриваются подсказки типов (type hints) и модуль dataclasses (Python 3.7+). Вы узнаете, как указывать типы аргументов функций и возвращаемых значений (например, def add(a: int, b: int) -> int), а также познакомитесь с декоратором @dataclass для быстрого создания классов со свойствами.",
+      "descriptionEn": "This section covers type hints and the dataclasses module (Python 3.7+). You will learn how to specify types for function arguments and return values (for example, def add(a: int, b: int) -> int), and also get familiar with the @dataclass decorator for quickly creating classes with fields.",
+      "codeExamples": [
+        {
+          "language": "python",
+          "code": "from typing import List\n\ndef greet(name: str) -> str:\n    return f\"Hello, {name}!\"\n\nprint(greet(\"Alice\"))",
+          "commentLanguage": "en",
+          "comment": "Function with type hints for parameter and return type."
+        },
+        {
+          "language": "python",
+          "code": "from dataclasses import dataclass\n\n@dataclass\nclass Point:\n    x: float\n    y: float\n\np = Point(1.5, 2.0)\nprint(p)",
+          "commentLanguage": "ru",
+          "comment": "@dataclass автоматически создает методы __init__ и __repr__ для класса Point."
+        },
+        {
+          "language": "python",
+          "code": "from typing import Dict\n\ndef count_letters(s: str) -> Dict[str, int]:\n    counts: Dict[str, int] = {}\n    for char in s:\n        counts[char] = counts.get(char, 0) + 1\n    return counts\n\nprint(count_letters(\"hello\"))",
+          "commentLanguage": "en",
+          "comment": "Using typing.Dict for type hint of a dictionary."
+        },
+        {
+          "language": "python",
+          "code": "# Пример объявленного типа списка:\nnumbers: List[int] = [1, 2, 3]\nprint(numbers)",
+          "commentLanguage": "ru",
+          "comment": "Аннотация типов для списка чисел."
+        }
+      ],
+      "quiz": [
+        {
+          "questionRu": "Как обозначить аннотацию типа для аргумента целого числа?",
+          "questionEn": "How to annotate an integer type for a function argument?",
+          "options": [
+            "a: integer",
+            "a: int",
+            "int a",
+            "a -> int"
+          ],
+          "correctAnswerIndex": 1
+        },
+        {
+          "questionRu": "Что делает декоратор @dataclass?",
+          "questionEn": "What does the @dataclass decorator do?",
+          "options": [
+            "Создает экземпляр класса",
+            "Добавляет методы для автоматического создания __init__ и других",
+            "Очищает поля класса",
+            "Конвертирует класс в словарь"
+          ],
+          "correctAnswerIndex": 1
+        },
+        {
+          "questionRu": "Какой модуль используется для подсказок типов коллекций (например List[int])?",
+          "questionEn": "Which module is used for collection type hints (e.g., List[int])?",
+          "options": [
+            "collections",
+            "typing",
+            "types",
+            "mymodule"
+          ],
+          "correctAnswerIndex": 1
+        }
+      ],
+      "task": {
+        "titleRu": "Класс Dataclass",
+        "titleEn": "Dataclass",
+        "instructionRu": "Создайте dataclass Book с полями title (str), author (str) и year (int), затем создайте экземпляр книги и выведите его.",
+        "instructionEn": "Create a dataclass Book with fields title (str), author (str), and year (int), then create an instance of a book and print it.",
+        "hintRu": "Используйте декоратор @dataclass перед определением класса Book.",
+        "hintEn": "Use the @dataclass decorator before the definition of the Book class.",
+        "expectedResultRu": "При печати экземпляра Book вы увидите что-то вроде Book(title='1984', author='Orwell', year=1949).",
+        "expectedResultEn": "When printing an instance of Book, you should see something like Book(title='1984', author='Orwell', year=1949).",
+        "solutionCode": "from dataclasses import dataclass\n\n@dataclass\nclass Book:\n    title: str\n    author: str\n    year: int\n\nbook = Book(\"1984\", \"George Orwell\", 1949)\nprint(book)"
+      }
+    },
+    {
+      "titleRu": "Асинхронность (async/await, asyncio)",
+      "titleEn": "Asynchronous Programming (async/await, asyncio)",
+      "descriptionRu": "В этом разделе рассматривается асинхронное программирование в Python с использованием asyncio. Вы научитесь определять асинхронные функции с ключевым словом async и приостанавливать их выполнение с помощью await. Также узнаете про цикл событий и методы asyncio.run, asyncio.create_task для параллельного выполнения корутин.",
+      "descriptionEn": "This section covers asynchronous programming in Python using asyncio. You will learn how to define asynchronous functions with the async keyword and suspend their execution with await. You will also learn about the event loop and methods like asyncio.run and asyncio.create_task for parallel execution of coroutines.",
+      "codeExamples": [
+        {
+          "language": "python",
+          "code": "import asyncio\n\nasync def say_after(delay, what):\n    await asyncio.sleep(delay)\n    print(what)\n\nasync def main():\n    await say_after(1, \"Hello\")\n    await say_after(1, \"World\")\n\nasyncio.run(main())",
+          "commentLanguage": "en",
+          "comment": "Example of sequential async calls with asyncio."
+        },
+        {
+          "language": "python",
+          "code": "import asyncio\n\nasync def hello():\n    await asyncio.sleep(1)\n    print(\"Hello\")\n\nasync def world():\n    await asyncio.sleep(2)\n    print(\"World\")\n\nasync def main():\n    task1 = asyncio.create_task(hello())\n    task2 = asyncio.create_task(world())\n    await task1\n    await task2\n\nasyncio.run(main())",
+          "commentLanguage": "ru",
+          "comment": "Запускаем две асинхронные задачи параллельно."
+        },
+        {
+          "language": "python",
+          "code": "import time\n\ndef blocking():\n    time.sleep(1)\n    print(\"Blocking done\")\n\nasync def nonblocking():\n    await asyncio.sleep(1)\n    print(\"Non-blocking done\")",
+          "commentLanguage": "en",
+          "comment": "Разница между блокирующими и неблокирующими задержками."
+        },
+        {
+          "language": "python",
+          "code": "import asyncio\n\nasync def fetch_data():\n    return 42\n\nresult = asyncio.run(fetch_data())\nprint(result)",
+          "commentLanguage": "ru",
+          "comment": "Запускаем простую корутину и получаем результат."
+        }
+      ],
+      "quiz": [
+        {
+          "questionRu": "Какой ключевым словом определяется асинхронная функция?",
+          "questionEn": "Which keyword is used to define an asynchronous function?",
+          "options": [
+            "async",
+            "await",
+            "asyncio",
+            "defer"
+          ],
+          "correctAnswerIndex": 0
+        },
+        {
+          "questionRu": "Что делает ключевое слово await?",
+          "questionEn": "What does the keyword await do?",
+          "options": [
+            "Запускает цикл",
+            "Приостанавливает выполнение до завершения корутины",
+            "Создает новый поток",
+            "Ничего не делает"
+          ],
+          "correctAnswerIndex": 1
+        },
+        {
+          "questionRu": "Как запустить корутину из основной программы?",
+          "questionEn": "How to run a coroutine from the main program?",
+          "options": [
+            "thread.start",
+            "asyncio.run",
+            "time.run",
+            "async.run"
+          ],
+          "correctAnswerIndex": 1
+        }
+      ],
+      "task": {
+        "titleRu": "Параллельные корутины",
+        "titleEn": "Parallel Coroutines",
+        "instructionRu": "Напишите две асинхронные функции func1 и func2: первая ждет 1 секунду и затем печатает 'First', вторая ждет 2 секунды и затем печатает 'Second'. Запустите их параллельно, а затем закончите программу.",
+        "instructionEn": "Write two asynchronous functions func1 and func2: the first waits 1 second and then prints 'First', the second waits 2 seconds and then prints 'Second'. Run them in parallel, then finish the program.",
+        "hintRu": "Используйте asyncio.create_task для запуска корутин и asyncio.run для запуска главной функции.",
+        "hintEn": "Use asyncio.create_task to run coroutines and asyncio.run to start the main function.",
+        "expectedResultRu": "Вы должны увидеть 'First' и 'Second' (в любом порядке, в зависимости от задержек).",
+        "expectedResultEn": "You should see 'First' and 'Second' (in any order, depending on delays).",
+        "solutionCode": "import asyncio\n\nasync def func1():\n    await asyncio.sleep(1)\n    print(\"First\")\n\nasync def func2():\n    await asyncio.sleep(2)\n    print(\"Second\")\n\nasync def main():\n    t1 = asyncio.create_task(func1())\n    t2 = asyncio.create_task(func2())\n    await t1\n    await t2\n\nasyncio.run(main())"
+      }
+    },
+    {
+      "titleRu": "Структурное сопоставление (match-case)",
+      "titleEn": "Structural Pattern Matching (match-case)",
+      "descriptionRu": "Этот раздел посвящен новой конструкции match-case, добавленной в Python 3.10. С помощью match можно выполнять сравнение значений и структур данных по образцу. Вы изучите, как использовать шаблоны case для чисел, строк, списков, кортежей и других структур, а также подчеркивание _ как wildcard.",
+      "descriptionEn": "This section covers the new match-case construct introduced in Python 3.10. With match, you can compare values and data structures against patterns. You will learn how to use case patterns for numbers, strings, lists, tuples, and other structures, as well as underscore _ as a wildcard.",
+      "codeExamples": [
+        {
+          "language": "python",
+          "code": "def http_status(code):\n    match code:\n        case 200:\n            return \"OK\"\n        case 404:\n            return \"Not Found\"\n        case _:\n            return \"Unknown\"\n\nprint(http_status(200))",
+          "commentLanguage": "en",
+          "comment": "Using match-case to handle different HTTP status codes."
+        },
+        {
+          "language": "python",
+          "code": "match point:\n    case (0, 0):\n        print(\"Origin\")\n    case (x, 0):\n        print(f\"On X axis at {x}\")\n    case (0, y):\n        print(f\"On Y axis at {y}\")\n    case (x, y):\n        print(f\"Point at ({x}, {y})\")",
+          "commentLanguage": "ru",
+          "comment": "Сопоставление для координатной точки с кортежем."
+        },
+        {
+          "language": "python",
+          "code": "value = [1, 2, 3]\nmatch value:\n    case [1, x, 3]:\n        print(f\"Second element is {x}\")\n    case _:\n        print(\"No match\")",
+          "commentLanguage": "en",
+          "comment": "Pattern matching on a list with a wildcard."
+        },
+        {
+          "language": "python",
+          "code": "text = \"hello\"\nmatch text:\n    case \"hello\":\n        print(\"Greeting\")\n    case _:\n        print(\"Something else\")",
+          "commentLanguage": "ru",
+          "comment": "Сопоставление строки с фиксированным шаблоном."
+        }
+      ],
+      "quiz": [
+        {
+          "questionRu": "С какой версии Python появился match-case?",
+          "questionEn": "Which version of Python introduced match-case?",
+          "options": [
+            "3.8",
+            "3.9",
+            "3.10",
+            "3.11"
+          ],
+          "correctAnswerIndex": 2
+        },
+        {
+          "questionRu": "Что означает '_' в шаблоне case?",
+          "questionEn": "What does '_' signify in a case pattern?",
+          "options": [
+            "Все значения",
+            "Ничего не означает",
+            "Переменная",
+            "Ошибка синтаксиса"
+          ],
+          "correctAnswerIndex": 0
+        },
+        {
+          "questionRu": "Какой шаблон совпадет со списком [1, 2, 3]?",
+          "questionEn": "Which pattern will match the list [1, 2, 3]?",
+          "options": [
+            "case [1, x, 3]",
+            "case (1, x, 3)",
+            "case [1, 2, 3, 4]",
+            "case 1, 2, 3"
+          ],
+          "correctAnswerIndex": 0
+        }
+      ],
+      "task": {
+        "titleRu": "День недели",
+        "titleEn": "Day of Week",
+        "instructionRu": "Напишите функцию, которая получает число от 1 до 7 и с помощью match-case возвращает название дня недели: 1 - \"Monday\", 2 - \"Tuesday\" и т.д. Если число вне диапазона, вернуть \"Unknown\".",
+        "instructionEn": "Write a function that takes a number from 1 to 7 and uses match-case to return the name of the weekday: 1 - 'Monday', 2 - 'Tuesday', etc. If the number is out of range, return 'Unknown'.",
+        "hintRu": "Используйте конструкцию match number: case 1: return 'Monday', case _: return 'Unknown'.",
+        "hintEn": "Use match number: case 1: return 'Monday', case _: return 'Unknown'.",
+        "expectedResultRu": "Если передать 3, функция вернет 'Wednesday'. Если 9, то 'Unknown'.",
+        "expectedResultEn": "If you pass 3, the function returns 'Wednesday'. If 9, then 'Unknown'.",
+        "solutionCode": "def day_name(n):\n    match n:\n        case 1:\n            return \"Monday\"\n        case 2:\n            return \"Tuesday\"\n        case 3:\n            return \"Wednesday\"\n        case 4:\n            return \"Thursday\"\n        case 5:\n            return \"Friday\"\n        case 6:\n            return \"Saturday\"\n        case 7:\n            return \"Sunday\"\n        case _:\n            return \"Unknown\"\n\nprint(day_name(3))"
+      }
+    },
+    {
+      "titleRu": "Генераторы списков и словарей",
+      "titleEn": "List and Dict Comprehensions",
+      "descriptionRu": "В этом разделе изучаются списковые и словарные включения (comprehensions). С помощью списковых включений можно создавать списки из другого итерируемого объекта компактным синтаксисом. Словарные включения позволяют создавать словари по схожему принципу. Вы также увидите, как добавлять условие внутрь включения.",
+      "descriptionEn": "This section covers list and dictionary comprehensions. Using list comprehensions, you can create lists from another iterable with concise syntax. Dictionary comprehensions allow creating dictionaries in a similar manner. You will also learn how to add conditions inside a comprehension.",
+      "codeExamples": [
+        {
+          "language": "python",
+          "code": "squares = [x*x for x in range(5)]\nprint(squares)",
+          "commentLanguage": "ru",
+          "comment": "Список квадратов чисел от 0 до 4."
+        },
+        {
+          "language": "python",
+          "code": "even = [x for x in range(10) if x % 2 == 0]\nprint(even)",
+          "commentLanguage": "en",
+          "comment": "List comprehension with a condition to get even numbers."
+        },
+        {
+          "language": "python",
+          "code": "squares_dict = {x: x*x for x in range(5)}\nprint(squares_dict)",
+          "commentLanguage": "ru",
+          "comment": "Словарное включение: ключ - число, значение - квадрат."
+        },
+        {
+          "language": "python",
+          "code": "unique_letters = {c for c in 'mississippi'}\nprint(unique_letters)",
+          "commentLanguage": "en",
+          "comment": "Set comprehension to get unique characters from a string."
+        }
+      ],
+      "quiz": [
+        {
+          "questionRu": "Какой результат выражения: [x*2 for x in [1,2,3]]?",
+          "questionEn": "What is the result of [x*2 for x in [1,2,3]]?",
+          "options": [
+            "[1,2,3]",
+            "[2,4,6]",
+            "[1,4,9]",
+            "[2,3,4]"
+          ],
+          "correctAnswerIndex": 1
+        },
+        {
+          "questionRu": "Какой тип объкта создает {x: x*x for x in range(3)}?",
+          "questionEn": "What type of object does {x: x*x for x in range(3)} create?",
+          "options": [
+            "list",
+            "tuple",
+            "set",
+            "dict"
+          ],
+          "correctAnswerIndex": 3
+        },
+        {
+          "questionRu": "Как добавить условие во включение?",
+          "questionEn": "How to add a condition in a comprehension?",
+          "options": [
+            "Использовать if внутри []",
+            "Добавить else перед for",
+            "Использовать try/except",
+            "Никак не добавить"
+          ],
+          "correctAnswerIndex": 0
+        }
+      ],
+      "task": {
+        "titleRu": "Список квадратов",
+        "titleEn": "Squares List",
+        "instructionRu": "Используя списковое включение, создайте список квадратов чисел от 0 до 9.",
+        "instructionEn": "Using a list comprehension, create a list of squares of numbers from 0 to 9.",
+        "hintRu": "Синтаксис: [x*x for x in range(10)].",
+        "hintEn": "Syntax: [x*x for x in range(10)].",
+        "expectedResultRu": "Результат: [0, 1, 4, 9, ..., 81].",
+        "expectedResultEn": "Result: [0, 1, 4, 9, ..., 81].",
+        "solutionCode": "squares = [x*x for x in range(10)]\nprint(squares)"
+      }
+    }
+  ]
+}

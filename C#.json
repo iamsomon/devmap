@@ -1,0 +1,584 @@
+{
+  "courseTitle": {
+    "ru": "Полный курс по C#",
+    "en": "Complete C# Course"
+  },
+  "language": "C#",
+  "iconUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bd/Logo_C_sharp.svg/768px-Logo_C_sharp.svg.png",
+  "description": {
+    "ru": "Этот курс охватывает C# от основ синтаксиса и структуры программы до продвинутых тем: LINQ, асинхронного программирования, делегатов, событий и многого другого. Включает теорию, примеры кода, тестовые вопросы и практические задания.",
+    "en": "This course covers C# from basic syntax and program structure to advanced topics: LINQ, asynchronous programming, delegates, events, and more. It includes theory, code examples, quizzes, and practical tasks."
+  },
+  "topics": [
+    {
+      "titleRu": "Синтаксис и структура программы",
+      "titleEn": "Syntax and Program Structure",
+      "descriptionRu": "В C# каждая программа организована в namespace и содержит класс с методом Main, который служит точкой входа. Операторы завершаются точкой с запятой, блоки кода обозначаются фигурными скобками. Директивы using подключают пространства имен.",
+      "descriptionEn": "In C#, every program is organized into namespaces and contains a class with a Main method, which is the entry point. Statements end with semicolons, code blocks are delimited by curly braces, and using directives import namespaces.",
+      "codeExamples": [
+        {
+          "language": "csharp",
+          "code": "using System;\n\nnamespace HelloApp\n{\n    class Program\n    {\n        static void Main(string[] args)\n        {\n            Console.WriteLine(\"Hello, world!\");\n        }\n    }\n}",
+          "commentLanguage": "ru",
+          "comment": "Простейшая программа, выводящая «Hello, world!»."
+        }
+      ],
+      "quiz": [
+        {
+          "questionRu": "Какой метод является точкой входа в приложение C#?",
+          "questionEn": "Which method is the entry point of a C# application?",
+          "options": [
+            "Main",
+            "Start",
+            "Init",
+            "Program"
+          ],
+          "correctAnswerIndex": 0
+        }
+      ],
+      "task": {
+        "titleRu": "Hello World",
+        "titleEn": "Hello World",
+        "instructionRu": "Напишите программу, которая выводит «Hello, C#!» в консоль.",
+        "instructionEn": "Write a program that prints \"Hello, C#!\" to the console.",
+        "hintRu": "Используйте Console.WriteLine внутри метода Main.",
+        "hintEn": "Use Console.WriteLine inside the Main method.",
+        "expectedResultRu": "В консоли появится строка «Hello, C#!».",
+        "expectedResultEn": "The console will display \"Hello, C#!\".",
+        "solutionCode": "using System;\n\nclass Program\n{\n    static void Main(string[] args)\n    {\n        Console.WriteLine(\"Hello, C#!\");\n    }\n}"
+      }
+    },
+    {
+      "titleRu": "Переменные и типы данных",
+      "titleEn": "Variables and Data Types",
+      "descriptionRu": "C# — строго типизированный язык. Основные типы: int, long, float, double, decimal, bool, char, string. Ключевое слово var позволяет использовать вывод типа по значению. object — базовый тип для всех объектов.",
+      "descriptionEn": "C# is a statically typed language. Core types include int, long, float, double, decimal, bool, char, and string. The var keyword allows type inference, and object is the base type for all objects.",
+      "codeExamples": [
+        {
+          "language": "csharp",
+          "code": "int a = 10;\ndouble b = 3.14;\nbool isActive = true;\nchar c = 'X';\nstring s = \"text\";\nvar inferred = 5;",
+          "commentLanguage": "ru",
+          "comment": "Объявление переменных разных типов и var."
+        }
+      ],
+      "quiz": [
+        {
+          "questionRu": "Какой тип используется для хранения булевых значений?",
+          "questionEn": "Which type is used to store Boolean values?",
+          "options": [
+            "bool",
+            "boolean",
+            "Boolean",
+            "Bit"
+          ],
+          "correctAnswerIndex": 0
+        }
+      ],
+      "task": {
+        "titleRu": "Объявление переменных",
+        "titleEn": "Declaring Variables",
+        "instructionRu": "Создайте переменные всех основных типов и выведите их значения.",
+        "instructionEn": "Create variables of all basic types and print their values.",
+        "hintRu": "Используйте Console.WriteLine для каждого.",
+        "hintEn": "Use Console.WriteLine for each variable.",
+        "expectedResultRu": "Консоль выводит значения всех переменных.",
+        "expectedResultEn": "The console prints the values of all variables.",
+        "solutionCode": "using System;\n\nclass Program\n{\n    static void Main()\n    {\n        int i = 1;\n        double d = 2.5;\n        bool b = false;\n        char ch = 'A';\n        string str = \"hello\";\n        Console.WriteLine(i);\n        Console.WriteLine(d);\n        Console.WriteLine(b);\n        Console.WriteLine(ch);\n        Console.WriteLine(str);\n    }\n}"
+      }
+    },
+    {
+      "titleRu": "Операторы и условия",
+      "titleEn": "Operators and Conditional Statements",
+      "descriptionRu": "C# поддерживает арифметические (+,-,*,/,%), сравнительные (==,!=,>,<,>=,<=) и логические (&&,||,!) операторы. Условные конструкции if/else и switch позволяют ветвить выполнение.",
+      "descriptionEn": "C# supports arithmetic (+,-,*,/,%), comparison (==,!=,>,<,>=,<=), and logical (&&,||,!) operators. Conditional statements if/else and switch allow branching execution.",
+      "codeExamples": [
+        {
+          "language": "csharp",
+          "code": "int x = 5;\nif (x % 2 == 0)\n    Console.WriteLine(\"Even\");\nelse\n    Console.WriteLine(\"Odd\");\n\nswitch (x)\n{\n    case 1:\n        Console.WriteLine(\"One\");\n        break;\n    default:\n        Console.WriteLine(\"Other\");\n        break;\n}",
+          "commentLanguage": "ru",
+          "comment": "Пример if/else и switch."
+        }
+      ],
+      "quiz": [
+        {
+          "questionRu": "Какой оператор проверяет неравенство?",
+          "questionEn": "Which operator checks for inequality?",
+          "options": [
+            "!=",
+            "==",
+            "<>",
+            "!=="
+          ],
+          "correctAnswerIndex": 0
+        }
+      ],
+      "task": {
+        "titleRu": "Проверка знака",
+        "titleEn": "Check Sign",
+        "instructionRu": "Напишите программу, определяющую, положительное число или нет.",
+        "instructionEn": "Write a program that determines if a number is positive or not.",
+        "hintRu": "Используйте if (n > 0).",
+        "hintEn": "Use if (n > 0).",
+        "expectedResultRu": "Выводит \"Positive\" для n>0, иначе \"Non-positive\".",
+        "expectedResultEn": "Prints \"Positive\" for n>0, otherwise \"Non-positive\".",
+        "solutionCode": "using System;\n\nclass Program\n{\n    static void Main()\n    {\n        int n = int.Parse(Console.ReadLine());\n        if (n > 0)\n            Console.WriteLine(\"Positive\");\n        else\n            Console.WriteLine(\"Non-positive\");\n    }\n}"
+      }
+    },
+    {
+      "titleRu": "Циклы",
+      "titleEn": "Loops",
+      "descriptionRu": "Циклы for, while, do...while и foreach позволяют выполнять повторяющиеся действия. break и continue управляют циклом внутри тела.",
+      "descriptionEn": "Loops for, while, do...while, and foreach allow repeating actions. break and continue control loop flow within the body.",
+      "codeExamples": [
+        {
+          "language": "csharp",
+          "code": "for (int i = 1; i <= 3; i++)\n    Console.WriteLine(i);\n\nint j = 0;\nwhile (j < 3)\n{\n    Console.WriteLine(j);\n    j++;\n}\n\ndo\n{\n    Console.WriteLine(\"do-while\");\n} while (false);\n\nforeach (var c in \"abc\")\n    Console.WriteLine(c);",
+          "commentLanguage": "ru",
+          "comment": "Пример всех типов циклов."
+        }
+      ],
+      "quiz": [
+        {
+          "questionRu": "Какой цикл выполняется хотя бы один раз?",
+          "questionEn": "Which loop executes at least once?",
+          "options": [
+            "do...while",
+            "while",
+            "for",
+            "foreach"
+          ],
+          "correctAnswerIndex": 0
+        }
+      ],
+      "task": {
+        "titleRu": "Сумма чисел",
+        "titleEn": "Sum Numbers",
+        "instructionRu": "Используя цикл for, найдите сумму чисел от 1 до 10.",
+        "instructionEn": "Using a for loop, compute the sum of numbers from 1 to 10.",
+        "hintRu": "Инициализируйте sum и добавляйте i.",
+        "hintEn": "Initialize sum and add i.",
+        "expectedResultRu": "55",
+        "expectedResultEn": "55",
+        "solutionCode": "using System;\n\nclass Program\n{\n    static void Main()\n    {\n        int sum = 0;\n        for (int i = 1; i <= 10; i++)\n            sum += i;\n        Console.WriteLine(sum);\n    }\n}"
+      }
+    },
+    {
+      "titleRu": "Функции и методы",
+      "titleEn": "Functions and Methods",
+      "descriptionRu": "Методы в C# объявляются внутри класса с возвращаемым типом или void. Поддерживаются статические и экземплярные методы, перегрузка и ref/out параметры.",
+      "descriptionEn": "Methods in C# are declared inside a class with a return type or void. Static and instance methods, overloading, and ref/out parameters are supported.",
+      "codeExamples": [
+        {
+          "language": "csharp",
+          "code": "static int Add(int x, int y)\n{\n    return x + y;\n}\n\nstatic void Main()\n{\n    Console.WriteLine(Add(2,3));\n}",
+          "commentLanguage": "ru",
+          "comment": "Пример статического метода Add и его вызова."
+        }
+      ],
+      "quiz": [
+        {
+          "questionRu": "Какой модификатор делает метод доступным без создания объекта?",
+          "questionEn": "Which modifier allows calling a method without creating an object?",
+          "options": [
+            "static",
+            "public",
+            "virtual",
+            "override"
+          ],
+          "correctAnswerIndex": 0
+        }
+      ],
+      "task": {
+        "titleRu": "Метод Square",
+        "titleEn": "Square Method",
+        "instructionRu": "Создайте метод, возвращающий квадрат числа.",
+        "instructionEn": "Create a method that returns the square of a number.",
+        "hintRu": "static int Square(int x) => x*x;",
+        "hintEn": "static int Square(int x) => x*x;",
+        "expectedResultRu": "Для 5 возвращает 25.",
+        "expectedResultEn": "Returns 25 for input 5.",
+        "solutionCode": "using System;\n\nclass Program\n{\n    static int Square(int x) => x * x;\n    static void Main() => Console.WriteLine(Square(5));\n}"
+      }
+    },
+    {
+      "titleRu": "Классы и объекты",
+      "titleEn": "Classes and Objects",
+      "descriptionRu": "Класс — это тип, содержащий поля, свойства и методы. Объект — экземпляр класса, создается через new. Конструктор инициализирует поля.",
+      "descriptionEn": "A class is a type containing fields, properties, and methods. An object is an instance of a class created with new. A constructor initializes fields.",
+      "codeExamples": [
+        {
+          "language": "csharp",
+          "code": "class Person\n{\n    public string Name;\n    public Person(string name)\n    {\n        Name = name;\n    }\n}\n\nstatic void Main()\n{\n    var p = new Person(\"Bob\");\n    Console.WriteLine(p.Name);\n}",
+          "commentLanguage": "ru",
+          "comment": "Класс Person с конструктором и создание объекта."
+        }
+      ],
+      "quiz": [
+        {
+          "questionRu": "Как создать объект класса Person?",
+          "questionEn": "How to create an instance of the Person class?",
+          "options": [
+            "new Person(\"name\")",
+            "Person p = Person();",
+            "Person p;",
+            "create Person()"
+          ],
+          "correctAnswerIndex": 0
+        }
+      ],
+      "task": {
+        "titleRu": "Класс Rectangle",
+        "titleEn": "Rectangle Class",
+        "instructionRu": "Создайте класс Rectangle с width и height и методом Area().",
+        "instructionEn": "Create a Rectangle class with width and height and an Area() method.",
+        "hintRu": "public int Area() => width*height;",
+        "hintEn": "public int Area() => width*height;",
+        "expectedResultRu": "Для width=3,height=4 Area() возвращает 12.",
+        "expectedResultEn": "For width=3,height=4 Area() returns 12.",
+        "solutionCode": "using System;\n\nclass Rectangle\n{\n    public int width, height;\n    public Rectangle(int w,int h){width=w;height=h;}\n    public int Area()=>width*height;\n}\n\nclass Program{static void Main(){Console.WriteLine(new Rectangle(3,4).Area());}}"
+      }
+    },
+    {
+      "titleRu": "Наследование и полиморфизм",
+      "titleEn": "Inheritance and Polymorphism",
+      "descriptionRu": "Наследование позволяет расширять класс-предок. virtual и override реализуют полиморфизм — вызов метода зависит от реального типа объекта.",
+      "descriptionEn": "Inheritance allows extending a base class. virtual and override implement polymorphism — method calls depend on the actual object type.",
+      "codeExamples": [
+        {
+          "language": "csharp",
+          "code": "class Animal\n{\n    public virtual void Speak() => Console.WriteLine(\"Animal speaks\");\n}\nclass Dog : Animal\n{\n    public override void Speak() => Console.WriteLine(\"Dog barks\");\n}\n\nstatic void Main()\n{\n    Animal a = new Dog();\n    a.Speak();\n}",
+          "commentLanguage": "ru",
+          "comment": "Полиморфизм: вызов Speak() вызывает реализацию Dog."
+        }
+      ],
+      "quiz": [
+        {
+          "questionRu": "Как пометить метод, чтобы его можно было переопределить?",
+          "questionEn": "How to mark a method as overridable?",
+          "options": [
+            "virtual",
+            "override",
+            "abstract",
+            "static"
+          ],
+          "correctAnswerIndex": 0
+        }
+      ],
+      "task": {
+        "titleRu": "Наследование: Cat",
+        "titleEn": "Inheritance: Cat",
+        "instructionRu": "Создайте класс Cat, наследующий Animal, и переопределите метод Speak().",
+        "instructionEn": "Create a Cat class inheriting Animal and override Speak().",
+        "hintRu": "class Cat:Animal{public override void Speak()=>...;}",
+        "hintEn": "class Cat:Animal{public override void Speak()=>...;}",
+        "expectedResultRu": "Cat speaks when вызывается Speak().",
+        "expectedResultEn": "Cat speaks when Speak() is called.",
+        "solutionCode": "using System;\n\nclass Animal{public virtual void Speak()=>Console.WriteLine(\"Animal\");}\nclass Cat:Animal{public override void Speak()=>Console.WriteLine(\"Cat meows\");}\nclass Program{static void Main(){new Cat().Speak();}}"
+      }
+    },
+    {
+      "titleRu": "Интерфейсы",
+      "titleEn": "Interfaces",
+      "descriptionRu": "Интерфейсы определяют контракт методов без реализации. Класс реализует интерфейс через \":\" и обязан реализовать все методы.",
+      "descriptionEn": "Interfaces define a contract of methods without implementation. A class implements an interface via \":\" and must provide implementations for all methods.",
+      "codeExamples": [
+        {
+          "language": "csharp",
+          "code": "interface IShape { double Area(); }\nclass Circle:IShape { public double Radius; public double Area()=>Math.PI*Radius*Radius; }",
+          "commentLanguage": "ru",
+          "comment": "Интерфейс IShape и его реализация в Circle."
+        }
+      ],
+      "quiz": [
+        {
+          "questionRu": "Как объявить реализацию интерфейса?",
+          "questionEn": "How to declare interface implementation?",
+          "options": [
+            "class C:IShape",
+            "class C implements IShape",
+            "class C extends IShape",
+            "class C interface IShape"
+          ],
+          "correctAnswerIndex": 0
+        }
+      ],
+      "task": {
+        "titleRu": "Интерфейс IPlayable",
+        "titleEn": "IPlayable Interface",
+        "instructionRu": "Создайте IPlayable с Play(), реализуйте в Song и вызовите Play().",
+        "instructionEn": "Create IPlayable with Play(), implement in Song and call Play().",
+        "hintRu": "interface IPlayable{void Play();}",
+        "hintEn": "interface IPlayable{void Play();}",
+        "expectedResultRu": "Выводится «Playing song».",
+        "expectedResultEn": "It prints \"Playing song\".",
+        "solutionCode": "using System;\ninterface IPlayable{void Play();}\nclass Song:IPlayable{public void Play()=>Console.WriteLine(\"Playing song\");}\nclass Program{static void Main()=>new Song().Play();}"
+      }
+    },
+    {
+      "titleRu": "Коллекции и массивы",
+      "titleEn": "Collections and Arrays",
+      "descriptionRu": "Массивы имеют фиксированный размер. List<T>, Dictionary<TKey,TValue> и другие коллекции из System.Collections.Generic динамичны и поддерживают LINQ.",
+      "descriptionEn": "Arrays have a fixed size. List<T>, Dictionary<TKey,TValue>, and other collections from System.Collections.Generic are dynamic and support LINQ.",
+      "codeExamples": [
+        {
+          "language": "csharp",
+          "code": "int[] arr={1,2,3};\nList<int> list=new List<int>(arr);\nDictionary<string,int> d=new Dictionary<string,int>{{\"a\",1}};",
+          "commentLanguage": "ru",
+          "comment": "Массив, List и Dictionary."
+        }
+      ],
+      "quiz": [
+        {
+          "questionRu": "Как создать List из массива arr?",
+          "questionEn": "How to create a List from array arr?",
+          "options": [
+            "new List<int>(arr)",
+            "List<int> list=arr.ToList()",
+            "List<int> list=arr",
+            "new List(arr)"
+          ],
+          "correctAnswerIndex": 0
+        }
+      ],
+      "task": {
+        "titleRu": "Конвертация массива",
+        "titleEn": "Array to List",
+        "instructionRu": "Преобразуйте массив чисел в List и выведите элементы.",
+        "instructionEn": "Convert an array of numbers to a List and print its elements.",
+        "hintRu": "Используйте new List<int>(array).",
+        "hintEn": "Use new List<int>(array).",
+        "expectedResultRu": "Элементы массива выводятся через Console.WriteLine.",
+        "expectedResultEn": "Array elements are printed via Console.WriteLine.",
+        "solutionCode": "using System;\nusing System.Collections.Generic;\n\nclass Program\n{\n    static void Main()\n    {\n        int[] arr={1,2,3};\n        var list=new List<int>(arr);\n        foreach(var i in list) Console.WriteLine(i);\n    }\n}"
+      }
+    },
+    {
+      "titleRu": "LINQ",
+      "titleEn": "LINQ",
+      "descriptionRu": "LINQ позволяет писать запросы к коллекциям с помощью SQL-подобного синтаксиса или методов расширений, таких как Where, Select и т.д.",
+      "descriptionEn": "LINQ allows querying collections using SQL-like syntax or extension methods such as Where, Select, etc.",
+      "codeExamples": [
+        {
+          "language": "csharp",
+          "code": "int[] nums={1,2,3,4};\nvar evens=nums.Where(n=>n%2==0);\nforeach(var e in evens) Console.WriteLine(e);",
+          "commentLanguage": "ru",
+          "comment": "Фильтрация четных чисел с помощью LINQ."
+        }
+      ],
+      "quiz": [
+        {
+          "questionRu": "Какой метод LINQ фильтрует последовательность?",
+          "questionEn": "Which LINQ method filters a sequence?",
+          "options": [
+            "Where",
+            "Select",
+            "OrderBy",
+            "GroupBy"
+          ],
+          "correctAnswerIndex": 0
+        }
+      ],
+      "task": {
+        "titleRu": "LINQ фильтрация",
+        "titleEn": "LINQ Filtering",
+        "instructionRu": "Используя LINQ, выберите числа больше 5 из списка и выведите.",
+        "instructionEn": "Using LINQ, select numbers greater than 5 from a list and print them.",
+        "hintRu": "list.Where(x=>x>5).",
+        "hintEn": "list.Where(x=>x>5).",
+        "expectedResultRu": "Вывод чисел >5.",
+        "expectedResultEn": "Prints numbers >5.",
+        "solutionCode": "using System;\nusing System.Collections.Generic;\nusing System.Linq;\n\nclass Program\n{\n    static void Main()\n    {\n        var list=new List<int>{1,6,3,8};\n        var res=list.Where(x=>x>5);\n        foreach(var x in res) Console.WriteLine(x);\n    }\n}"
+      }
+    },
+    {
+      "titleRu": "Исключения",
+      "titleEn": "Exceptions",
+      "descriptionRu": "Исключения обрабатываются конструкциями try/catch/finally. Для генерации используется throw.",
+      "descriptionEn": "Exceptions are handled with try/catch/finally constructs. throw is used to raise exceptions.",
+      "codeExamples": [
+        {
+          "language": "csharp",
+          "code": "try{int[] a={1};Console.WriteLine(a[1]);}\ncatch(IndexOutOfRangeException){Console.WriteLine(\"Error\");}",
+          "commentLanguage": "ru",
+          "comment": "Обработка выхода за границы массива."
+        }
+      ],
+      "quiz": [
+        {
+          "questionRu": "Как вызвать исключение вручную?",
+          "questionEn": "How to manually raise an exception?",
+          "options": [
+            "throw",
+            "raise",
+            "except",
+            "catch"
+          ],
+          "correctAnswerIndex": 0
+        }
+      ],
+      "task": {
+        "titleRu": "Деление на ноль",
+        "titleEn": "Division by Zero",
+        "instructionRu": "Обработайте возможное деление на ноль при вводе двух чисел.",
+        "instructionEn": "Handle possible division by zero when entering two numbers.",
+        "hintRu": "Используйте try/catch(DivideByZeroException).",
+        "hintEn": "Use try/catch(DivideByZeroException).",
+        "expectedResultRu": "При делении на ноль выводится сообщение об ошибке.",
+        "expectedResultEn": "On division by zero, an error message is printed.",
+        "solutionCode": "using System;\n\nclass Program\n{\n    static void Main()\n    {\n        try{\n            int a=int.Parse(Console.ReadLine());\n            int b=int.Parse(Console.ReadLine());\n            Console.WriteLine(a/b);\n        }catch(DivideByZeroException){\n            Console.WriteLine(\"Cannot divide by zero\");\n        }\n    }\n}"
+      }
+    },
+    {
+      "titleRu": "async/await",
+      "titleEn": "Async/Await",
+      "descriptionRu": "async/await позволяют выполнять асинхронные операции без блокировки основного потока. Методы возвращают Task или Task<T>.",
+      "descriptionEn": "async/await enable performing asynchronous operations without blocking the main thread. Methods return Task or Task<T>.",
+      "codeExamples": [
+        {
+          "language": "csharp",
+          "code": "async Task DelayPrint()\n{\n    await Task.Delay(1000);\n    Console.WriteLine(\"Done\");\n}",
+          "commentLanguage": "ru",
+          "comment": "Асинхронный метод с задержкой."
+        }
+      ],
+      "quiz": [
+        {
+          "questionRu": "Какой тип возвращает async метод без результата?",
+          "questionEn": "What return type does an async method with no result have?",
+          "options": [
+            "Task",
+            "void",
+            "Async",
+            "int"
+          ],
+          "correctAnswerIndex": 0
+        }
+      ],
+      "task": {
+        "titleRu": "Асинхронный вывод",
+        "titleEn": "Async Print",
+        "instructionRu": "Напишите async метод, который ждет 500 мс и выводит \"Hi\".",
+        "instructionEn": "Write an async method that waits 500ms and prints \"Hi\".",
+        "hintRu": "await Task.Delay(500);",
+        "hintEn": "await Task.Delay(500);",
+        "expectedResultRu": "Через 500 мс выводится \"Hi\".",
+        "expectedResultEn": "After 500ms, \"Hi\" is printed.",
+        "solutionCode": "using System;\nusing System.Threading.Tasks;\n\nclass Program\n{\n    static async Task SayHi()\n    {\n        await Task.Delay(500);\n        Console.WriteLine(\"Hi\");\n    }\n    static async Task Main()\n    {\n        await SayHi();\n    }\n}"
+      }
+    },
+    {
+      "titleRu": "Делегаты и события",
+      "titleEn": "Delegates and Events",
+      "descriptionRu": "Делегаты представляют методы как объекты. События основаны на делегатах и реализуют шаблон наблюдатель.",
+      "descriptionEn": "Delegates represent methods as objects. Events are based on delegates and implement the observer pattern.",
+      "codeExamples": [
+        {
+          "language": "csharp",
+          "code": "delegate void Notify();\nclass Process\n{\n    public event Notify OnComplete;\n    public void Run(){ OnComplete?.Invoke(); }\n}",
+          "commentLanguage": "ru",
+          "comment": "Пример делегата и события."
+        }
+      ],
+      "quiz": [
+        {
+          "questionRu": "Ключевое слово для объявления события?",
+          "questionEn": "Keyword to declare an event?",
+          "options": [
+            "event",
+            "delegate",
+            "eventual",
+            "notify"
+          ],
+          "correctAnswerIndex": 0
+        }
+      ],
+      "task": {
+        "titleRu": "Событие завершения",
+        "titleEn": "Completion Event",
+        "instructionRu": "Создайте событие, вызываемое после метода Execute().",
+        "instructionEn": "Create an event raised after Execute() method.",
+        "hintRu": "public event Action OnDone;",
+        "hintEn": "public event Action OnDone;",
+        "expectedResultRu": "После вызова Execute() подписчик получает уведомление.",
+        "expectedResultEn": "After Execute() is called, subscriber gets notified.",
+        "solutionCode": "using System;\n\nclass Processor\n{\n    public event Action OnDone;\n    public void Execute(){ OnDone?.Invoke(); }\n}\n\nclass Program\n{\n    static void Main()\n    {\n        var p = new Processor();\n        p.OnDone += () => Console.WriteLine(\"Done\");\n        p.Execute();\n    }\n}"
+      }
+    },
+    {
+      "titleRu": "Расширения и лямбды",
+      "titleEn": "Extensions and Lambdas",
+      "descriptionRu": "Методы расширения добавляют функциональность типам без наследования. Lambda-выражения — анонимные функции, часто используются в LINQ и делегатах.",
+      "descriptionEn": "Extension methods add functionality to types without inheritance. Lambda expressions are anonymous functions often used in LINQ and delegates.",
+      "codeExamples": [
+        {
+          "language": "csharp",
+          "code": "static class Ext{ public static bool IsEven(this int x)=>x%2==0; }\n\n// Лямбда:\nvar evens = new List<int>{1,2,3}.Where(n=>n%2==0);",
+          "commentLanguage": "ru",
+          "comment": "Метод расширения IsEven и лямбда для фильтрации."
+        }
+      ],
+      "quiz": [
+        {
+          "questionRu": "Как объявить метод расширения?",
+          "questionEn": "How to declare an extension method?",
+          "options": [
+            "public static void M(this Type t)",
+            "public void M(Type t)",
+            "static M(this t)",
+            "extension M(Type t)"
+          ],
+          "correctAnswerIndex": 0
+        }
+      ],
+      "task": {
+        "titleRu": "Extension IsPositive",
+        "titleEn": "IsPositive Extension",
+        "instructionRu": "Напишите метод расширения для int, проверяющий >0.",
+        "instructionEn": "Write an extension method for int that checks >0.",
+        "hintRu": "public static bool IsPositive(this int x)=>x>0;",
+        "hintEn": "public static bool IsPositive(this int x)=>x>0;",
+        "expectedResultRu": "5.IsPositive() возвращает true.",
+        "expectedResultEn": "5.IsPositive() returns true.",
+        "solutionCode": "static class Ext{ public static bool IsPositive(this int x)=>x>0; }\nclass Program{static void Main()=>Console.WriteLine(5.IsPositive());}"
+      }
+    },
+    {
+      "titleRu": "Nullable-типы",
+      "titleEn": "Nullable Types",
+      "descriptionRu": "Nullable-типы (int?) позволяют значению принимать null. Оператор ?? задает значение по умолчанию, ?. — безопасный вызов.",
+      "descriptionEn": "Nullable types (int?) allow a value to be null. The ?? operator provides a default value, and ?. is a safe navigation operator.",
+      "codeExamples": [
+        {
+          "language": "csharp",
+          "code": "int? x = null;\nConsole.WriteLine(x ?? 0);\nConsole.WriteLine(x?.ToString());",
+          "commentLanguage": "ru",
+          "comment": "Использование ?? и ?."
+        }
+      ],
+      "quiz": [
+        {
+          "questionRu": "Что возвращает x ?? 5, если x=null?",
+          "questionEn": "What does x ?? 5 return if x=null?",
+          "options": [
+            "5",
+            "null",
+            "0",
+            "Ошибка"
+          ],
+          "correctAnswerIndex": 0
+        }
+      ],
+      "task": {
+        "titleRu": "safeLength",
+        "titleEn": "safeLength",
+        "instructionRu": "Напишите метод, принимающий string? и возвращающий длину или 0, если null.",
+        "instructionEn": "Write a method that takes a string? and returns its length or 0 if null.",
+        "hintRu": "return s?.Length ?? 0;",
+        "hintEn": "return s?.Length ?? 0;",
+        "expectedResultRu": "safeLength(null)=0, safeLength(\"abc\")==3.",
+        "expectedResultEn": "safeLength(null)=0, safeLength(\"abc\")==3.",
+        "solutionCode": "static int SafeLength(string? s)=>s?.Length ?? 0;\n\nclass Program{static void Main()=>Console.WriteLine(SafeLength(null));}"
+      }
+    }
+  ]
+}

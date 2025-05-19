@@ -1,0 +1,392 @@
+{
+  "name.ru": "Курс по Kotlin",
+  "name.en": "Kotlin Programming Course",
+  "language": "Kotlin",
+  "icon_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/06/Kotlin_Icon.svg/1024px-Kotlin_Icon.svg.png",
+  "topics": [
+    {
+      "title.ru": "Основы синтаксиса",
+      "title.en": "Basic Syntax",
+      "blocks": [
+        {
+          "type": "description",
+          "ru": "Kotlin является современным языком программирования, работающим на виртуальной машине Java (JVM). Он был разработан компанией JetBrains и совместим с Java, но имеет более лаконичный синтаксис. Структура программы Kotlin может состоять из одного или нескольких файлов, каждая из которых может содержать функции верхнего уровня и классы. Начало выполнения программы обычно определяется функцией main(). В Kotlin можно объявлять переменные с помощью ключевых слов `val` (для неизменяемой переменной) и `var` (для изменяемой) и использовать типы данных без явного указания благодаря выводу типа.",
+          "en": "Kotlin is a modern programming language that runs on the Java Virtual Machine (JVM). It was developed by JetBrains and is fully interoperable with Java but features a more concise syntax. A Kotlin program can consist of one or more files, each of which may contain top-level functions and classes. Program execution typically starts from the `main()` function. In Kotlin, variables can be declared using the keywords `val` (immutable) and `var` (mutable), and the language supports type inference so types often do not need to be explicitly declared."
+        },
+        {
+          "type": "code",
+          "text": "fun main() {\n    println(\"Hello, World!\")\n}"
+        },
+        {
+          "type": "quiz",
+          "question": "Which keyword is used in Kotlin to declare an immutable variable?",
+          "options": [
+            "var",
+            "val",
+            "final",
+            "const"
+          ],
+          "CorrectAnswer": 1
+        },
+        {
+          "type": "practical",
+          "ru": "Напишите простую программу на Kotlin, которая выводит строку \"Привет, Kotlin!\" на экран. Инструкция: Создайте функцию `main` и используйте функцию `println`.\nПодсказка: Строковые литералы в Kotlin заключаются в двойные кавычки.",
+          "en": "Write a simple Kotlin program that prints \"Hello, Kotlin!\" to the console. Instructions: Define a `main` function and use the `println` function.\nHint: String literals in Kotlin are enclosed in double quotes.",
+          "answer": "fun main() {\n    println(\"Hello, Kotlin!\")\n}"
+        }
+      ]
+    },
+    {
+      "title.ru": "Типы данных",
+      "title.en": "Data Types",
+      "blocks": [
+        {
+          "type": "description",
+          "ru": "Kotlin поддерживает несколько встроенных типов данных, включая числовые типы (`Int`, `Long`, `Short`, `Byte`, `Double`, `Float`), `Boolean`, `Char`, `String` и массивы. Все основные типы данных являются объектами и не имеют примитивных аналогов на уровне JVM. Язык поддерживает вывод типов, поэтому чаще всего можно не указывать тип явно. Ключевое слово `Any` является родительским для всех не-nullable типов в Kotlin, а `Nothing` используется для обозначения функции, которая никогда не возвращает значение. Кроме того, есть тип `Unit`, который указывает на отсутствие возвращаемого значения.",
+          "en": "Kotlin supports several built-in data types, including numeric types (`Int`, `Long`, `Short`, `Byte`, `Double`, `Float`), `Boolean`, `Char`, `String`, and arrays. All basic types in Kotlin are objects and do not have primitive counterparts at the JVM level. The language also features type inference, so the type often does not need to be explicitly declared. The keyword `Any` is the supertype of all non-nullable types in Kotlin, and `Nothing` is used to represent a function that never returns a value. There is also the `Unit` type, which indicates no meaningful return value.",
+        },
+        {
+          "type": "code",
+          "text": "fun main() {\n    val name: String = \"Alice\"\n    val age = 30 // type inferred as Int\n    val height: Double = 1.75\n    val isStudent: Boolean = true\n    println(\"Name: $name, Age: $age, Height: $height, Student: $isStudent\")\n}"
+        },
+        {
+          "type": "quiz",
+          "question": "Which type is the supertype of all non-nullable Kotlin types?",
+          "options": [
+            "Any",
+            "Object",
+            "Unit",
+            "Null"
+          ],
+          "CorrectAnswer": 0
+        },
+        {
+          "type": "practical",
+          "ru": "Напишите программу на Kotlin, которая рассчитывает и выводит сумму трёх заданных чисел. Инструкция: Объявите три переменные, присвойте им числовые значения, вычислите сумму и выведите результат с помощью `println`.\nПодсказка: Вы можете использовать оператор `+` для сложения.",
+          "en": "Write a Kotlin program that calculates and prints the sum of three given numbers. Instructions: Declare three variables, assign them numeric values, calculate their sum, and print the result using `println`.\nHint: You can use the `+` operator for addition.",
+          "answer": "fun main() {\n    val a = 10\n    val b = 20\n    val c = 5\n    val sum = a + b + c\n    println(sum) // Output: 35\n}"
+        }
+      ]
+    },
+    {
+      "title.ru": "Управляющие конструкции",
+      "title.en": "Control Structures",
+      "blocks": [
+        {
+          "type": "description",
+          "ru": "В Kotlin имеются стандартные управляющие конструкции: условные выражения `if`, `else` и `when`, а также циклы `for`, `while` и `do-while`. Выражение `if` может возвращать значение, а `when` в Kotlin заменяет оператор `switch` из других языков и может быть использован как выражение или инструкция. Цикл `for` упрощён и поддерживает перебор по диапазонам, коллекциям и массивам. Ключевые слова `break` и `continue` работают аналогично другим языкам, позволяя прерывать или продолжать цикл.",
+          "en": "Kotlin provides standard control structures: conditional expressions `if`, `else`, and `when`, as well as loops `for`, `while`, and `do-while`. The `if` expression can return a value, and `when` replaces the traditional `switch` statement from other languages, being usable as an expression or statement. The `for` loop in Kotlin is simplified and supports iteration over ranges, collections, and arrays. The keywords `break` and `continue` function similarly to other languages, allowing you to exit or continue loops.",
+        },
+        {
+          "type": "code",
+          "text": "fun main() {\n    val number = 5\n    if (number % 2 == 0) {\n        println(\"Even\")\n    } else {\n        println(\"Odd\")\n    }\n\n    when (number) {\n        1 -> println(\"One\")\n        2, 3 -> println(\"Two or Three\")\n        in 4..6 -> println(\"Between 4 and 6\")\n        else -> println(\"Other\")\n    }\n\n    for (i in 1..3) {\n        println(i)\n    }\n}"
+        },
+        {
+          "type": "quiz",
+          "question": "What is the purpose of the `when` expression in Kotlin?",
+          "options": [
+            "To loop over a range",
+            "To replace the if-else chain for multiple conditions",
+            "To handle exceptions",
+            "To define a function"
+          ],
+          "CorrectAnswer": 1
+        },
+        {
+          "type": "practical",
+          "ru": "Напишите программу на Kotlin, которая печатает все чётные числа от 1 до 10 с помощью цикла `for`. Инструкция: Используйте `for` и диапазон, а затем проверяйте остаток от деления каждого числа на 2.\nПодсказка: Остаток от деления используется оператором ` % `.",
+          "en": "Write a Kotlin program that prints all even numbers from 1 to 10 using a `for` loop. Instructions: Use a `for` loop with a range, and then check the remainder of each number when divided by 2.\nHint: The remainder operator is `%`.",
+          "answer": "fun main() {\n    for (i in 1..10) {\n        if (i % 2 == 0) {\n            println(i)\n        }\n    }\n}"
+        }
+      ]
+    },
+    {
+      "title.ru": "Функции",
+      "title.en": "Functions",
+      "blocks": [
+        {
+          "type": "description",
+          "ru": "Функции в Kotlin определяются с помощью ключевого слова `fun`, за которым следует имя функции, список параметров и тип возвращаемого значения. Параметры имеют тип и могут иметь значения по умолчанию. Kotlin поддерживает функции с телом в виде выражения (с использованием `=`) и с блоком кода. Возвращаемый тип функции может быть опущен, если функция не возвращает осмысленного значения (в этом случае она возвращает `Unit`). Kotlin также поддерживает именованные аргументы и аргументы по умолчанию, что упрощает вызов функций с большим количеством параметров.",
+          "en": "Functions in Kotlin are defined using the `fun` keyword, followed by the function name, a list of parameters, and the return type. Parameters have types and can have default values. Kotlin supports both expression-body functions (using `=`) and block-body functions. The return type can be omitted if the function does not return a meaningful value (in this case it returns `Unit`). Kotlin also supports named arguments and default arguments, making it easier to call functions with many parameters."
+        },
+        {
+          "type": "code",
+          "text": "fun greet(name: String = \"Guest\"): String {\n    return \"Hello, $name!\"\n}\n\nfun main() {\n    println(greet(\"Alice\"))  // Hello, Alice!\n    println(greet())         // Hello, Guest!\n}"
+        },
+        {
+          "type": "quiz",
+          "question": "What is the return type of a function in Kotlin that does not explicitly return a value?",
+          "options": [
+            "Null",
+            "Nothing",
+            "Unit",
+            "Void"
+          ],
+          "CorrectAnswer": 2
+        },
+        {
+          "type": "practical",
+          "ru": "Напишите функцию `max` на Kotlin, которая принимает два числа (Int) и возвращает большее из них. Инструкция: Определите функцию с двумя параметрами и используйте условный оператор `if` для сравнения.\nПодсказка: Используйте конструкцию `if (a > b) a else b` внутри функции.",
+          "en": "Write a Kotlin function `max` that takes two numbers (Int) and returns the greater one. Instructions: Define a function with two parameters and use an `if` statement to compare them.\nHint: Use `if (a > b)` inside the function.",
+          "answer": "fun max(a: Int, b: Int): Int {\n    return if (a > b) a else b\n}\n\nfun main() {\n    println(max(10, 5)) // 10\n    println(max(3, 7))  // 7\n}"
+        }
+      ]
+    },
+    {
+      "title.ru": "Классы и объекты",
+      "title.en": "Classes and Objects",
+      "blocks": [
+        {
+          "type": "description",
+          "ru": "В Kotlin классы создаются с помощью ключевого слова `class`. Конструктор класса может быть определён в заголовке (primary constructor) или внутри тела класса (secondary constructor). Классы по умолчанию закрыты (final), поэтому для наследования их нужно отмечать ключевым словом `open`. Уровень доступа `public` является стандартным. Kotlin поддерживает также `data class`, которая автоматически генерирует полезные методы (`equals`, `hashCode`, `toString` и т.д.) для класса, содержащего только данные. Ключевое слово `object` используется для создания синглтонов (singleton).",
+          "en": "In Kotlin, classes are defined using the `class` keyword. A class constructor can be defined in the class header (primary constructor) or inside the class body (secondary constructor). By default, classes in Kotlin are closed (final), so to allow inheritance, a class must be marked with the `open` keyword. The default visibility is `public`. Kotlin also supports `data class`, which automatically generates useful methods (`equals`, `hashCode`, `toString`, etc.) for classes that primarily hold data. The `object` keyword is used to create singletons."
+        },
+        {
+          "type": "code",
+          "text": "data class Person(val name: String, var age: Int)\n\nopen class Animal(val name: String) {\n    open fun sound() = println(\"Generic animal sound\")\n}\n\nclass Dog(name: String): Animal(name) {\n    override fun sound() = println(\"Woof Woof!\")\n}\n\nfun main() {\n    val person = Person(\"John\", 25)\n    println(person) // Person(name=John, age=25)\n\n    val dog = Dog(\"Rex\")\n    dog.sound() // Woof Woof!\n}"
+        },
+        {
+          "type": "quiz",
+          "question": "What keyword in Kotlin is used to allow a class to be subclassed?",
+          "options": [
+            "final",
+            "open",
+            "abstract",
+            "override"
+          ],
+          "CorrectAnswer": 1
+        },
+        {
+          "type": "practical",
+          "ru": "Создайте `data class` на Kotlin с именем `Book`, которая содержит свойства `title` (String) и `author` (String). Затем создайте объект этой книги и выведите его на экран.\nПодсказка: Используйте `data class Book(val title: String, val author: String)` и функцию `println` для вывода.",
+          "en": "Create a `data class` in Kotlin named `Book`, which contains properties `title` (String) and `author` (String). Then create an instance of this class and print it to the console.\nHint: Use `data class Book(val title: String, val author: String)` and `println` to display it.",
+          "answer": "data class Book(val title: String, val author: String)\n\nfun main() {\n    val book = Book(\"1984\", \"George Orwell\")\n    println(book) // Book(title=1984, author=George Orwell)\n}"
+        }
+      ]
+    },
+    {
+      "title.ru": "Интерфейсы",
+      "title.en": "Interfaces",
+      "blocks": [
+        {
+          "type": "description",
+          "ru": "Интерфейс в Kotlin определяется с помощью ключевого слова `interface`. Он может содержать абстрактные методы (без реализации) и методы с реализацией по умолчанию. Класс может реализовывать один или несколько интерфейсов. В отличие от абстрактных классов, интерфейсы не могут хранить состояние (нет полей), хотя могут содержать свойства без поля хранилища. Для реализации интерфейса в классе используется ключевое слово `:`, аналогично наследованию.",
+          "en": "In Kotlin, an interface is defined using the `interface` keyword. An interface can contain abstract methods (without implementation) and methods with default implementation. A class can implement one or more interfaces. Unlike abstract classes, interfaces cannot hold state (there are no fields), although they can contain properties without backing fields. The keyword `:` is used to implement an interface in a class, similar to inheritance."
+        },
+        {
+          "type": "code",
+          "text": "interface Flyable {\n    fun fly()\n}\n\nclass Bird: Flyable {\n    override fun fly() {\n        println(\"Bird is flying\")\n    }\n}\n\nclass Plane: Flyable {\n    override fun fly() {\n        println(\"Plane is flying\")\n    }\n}\n\nfun main() {\n    val bird: Flyable = Bird()\n    val plane: Flyable = Plane()\n    bird.fly()  // Bird is flying\n    plane.fly() // Plane is flying\n}"
+        },
+        {
+          "type": "quiz",
+          "question": "Can a Kotlin interface contain method implementations?",
+          "options": [
+            "No, interfaces can only declare methods",
+            "Yes, with default implementations",
+            "Only static methods",
+            "Only properties"
+          ],
+          "CorrectAnswer": 1
+        },
+        {
+          "type": "practical",
+          "ru": "Определите интерфейс `Drawable` с методом `draw()`. Затем создайте два класса (например, `Circle` и `Square`), которые реализуют этот интерфейс и выводят свои названия в реализации `draw()`. Проверьте работоспособность, создав экземпляры и вызвав `draw()`.",
+          "en": "Define an interface `Drawable` with a method `draw()`. Then create two classes (e.g., `Circle` and `Square`) that implement this interface and print their names in the `draw()` implementation. Test by creating instances and calling `draw()`.",
+          "answer": "interface Drawable {\n    fun draw()\n}\n\nclass Circle: Drawable {\n    override fun draw() {\n        println(\"Drawing a circle\")\n    }\n}\n\nclass Square: Drawable {\n    override fun draw() {\n        println(\"Drawing a square\")\n    }\n}\n\nfun main() {\n    val shape1: Drawable = Circle()\n    val shape2: Drawable = Square()\n    shape1.draw() // Drawing a circle\n    shape2.draw() // Drawing a square\n}"
+        }
+      ]
+    },
+    {
+      "title.ru": "Расширения",
+      "title.en": "Extensions",
+      "blocks": [
+        {
+          "type": "description",
+          "ru": "Расширения (extension functions/properties) в Kotlin позволяют добавлять новые методы к уже существующим классам без наследования или модификации их исходного кода. Расширение определяется с помощью префикса типа (например, `fun String.customPrint() { /*...*/ }`). Важно понимать, что расширения не изменяют фактический класс; они статически разрешаются и удобны для упрощения работы с API. Также поддерживаются расширенные свойства, но они не могут хранить состояние.",
+          "en": "Extensions in Kotlin allow you to add new functions or properties to existing classes without inheriting from them or modifying their source code. An extension is defined using a receiver type (for example, `fun String.customPrint() { /*...*/ }`). It is important to understand that extensions do not actually modify the class; they are resolved statically and are useful for simplifying API usage. Kotlin also supports extension properties, but they cannot hold state."
+        },
+        {
+          "type": "code",
+          "text": "// Extension function for String\ntailrec fun String.isPalindrome(): Boolean {\n    val cleaned = this.replace(\" \", \"\").toLowerCase()\n    return cleaned == cleaned.reversed()\n}\n\nfun main() {\n    println(\"level\".isPalindrome()) // true\n    println(\"hello\".isPalindrome()) // false\n}"
+        },
+        {
+          "type": "quiz",
+          "question": "Do Kotlin extension functions actually modify the original class?",
+          "options": [
+            "Yes, they add methods to the class bytecode",
+            "No, they are static and resolved without altering the class",
+            "Only for classes in the same module",
+            "Yes, but only at runtime"
+          ],
+          "CorrectAnswer": 1
+        },
+        {
+          "type": "practical",
+          "ru": "Напишите расширение-функцию для класса `List<Int>`, которая возвращает сумму всех элементов списка. Инструкция: Объявите `fun List<Int>.sumElements(): Int` и используйте цикл или `fold` для суммирования элементов. Затем протестируйте функцию.",
+          "en": "Write an extension function for `List<Int>` that returns the sum of all elements in the list. Instructions: Declare `fun List<Int>.sumElements(): Int` and use a loop or `fold` to sum the elements. Then test the function.",
+          "answer": "fun List<Int>.sumElements(): Int {\n    var total = 0\n    for (num in this) {\n        total += num\n    }\n    return total\n}\n\nfun main() {\n    val numbers = listOf(1, 2, 3, 4)\n    println(numbers.sumElements()) // 10\n}"
+        }
+      ]
+    },
+    {
+      "title.ru": "Коллекции",
+      "title.en": "Collections",
+      "blocks": [
+        {
+          "type": "description",
+          "ru": "Kotlin предоставляет стандартные коллекции: списки (`List`), множества (`Set`) и отображения (`Map`). Каждая из них имеет неизменяемую (read-only) и изменяемую (`MutableList`, `MutableSet`, `MutableMap`) версии. Коллекции поддерживают богатый набор функций высшего порядка для обработки элементов (например, `map`, `filter`, `reduce`, `forEach`). Диапазоны (`1..10`) также можно рассматривать как коллекции, поддерживающие итерацию. Благодаря лаконичному синтаксису и обширной стандартной библиотеке, работа с коллекциями в Kotlin становится очень удобной.",
+          "en": "Kotlin provides standard collections: lists (`List`), sets (`Set`), and maps (`Map`). Each has immutable (read-only) and mutable (`MutableList`, `MutableSet`, `MutableMap`) versions. Collections support a rich set of higher-order functions for processing elements (for example, `map`, `filter`, `reduce`, `forEach`). Ranges (`1..10`) can also be treated like collections that support iteration. Thanks to concise syntax and a comprehensive standard library, working with collections in Kotlin becomes very convenient."
+        },
+        {
+          "type": "code",
+          "text": "fun main() {\n    val numbers = listOf(1, 2, 3, 4, 5)\n    val evenNumbers = numbers.filter { it % 2 == 0 }\n    val squared = numbers.map { it * it }\n    println(evenNumbers) // [2, 4]\n    println(squared)     // [1, 4, 9, 16, 25]\n\n    val mutableList = mutableListOf(\"a\", \"b\")\n    mutableList.add(\"c\")\n    println(mutableList) // [a, b, c]\n}"
+        },
+        {
+          "type": "quiz",
+          "question": "What is the difference between List and MutableList in Kotlin?",
+          "options": [
+            "List is an interface, MutableList is a class",
+            "List is read-only, MutableList supports modification",
+            "There is no difference",
+            "MutableList allows nullable values only"
+          ],
+          "CorrectAnswer": 1
+        },
+        {
+          "type": "practical",
+          "ru": "Создайте список целых чисел и используйте функции `map` и `filter`, чтобы получить новый список, содержащий квадраты чётных чис исходного списка. Инструкция: Объявите `listOf` с числами, примените `filter` для выбора чётных и `map` для возведения в квадрат.",
+          "en": "Create a list of integers and use `map` and `filter` functions to obtain a new list containing the squares of the even numbers from the original list. Instructions: Declare a `listOf` with numbers, apply `filter` to select even numbers, and then `map` to square them.",
+          "answer": "fun main() {\n    val numbers = listOf(1, 2, 3, 4, 5)\n    val result = numbers.filter { it % 2 == 0 }.map { it * it }\n    println(result) // [4, 16]\n}"
+        }
+      ]
+    },
+    {
+      "title.ru": "Лямбда-функции",
+      "title.en": "Lambda Functions",
+      "blocks": [
+        {
+          "type": "description",
+          "ru": "Лямбда-выражения в Kotlin представляют собой анонимные функции, которые можно передавать как значения. Они имеют синтаксис `{ параметры -> тело }`. Лямбды часто используются как аргументы функций высшего порядка (например, в методах коллекций). Если параметр один, его можно опустить и использовать `it` как неявный идентификатор. Также поддерживается возврат лямбд из функций и использование замыканий (lambda может захватывать переменные из внешнего контекста).",
+          "en": "Lambda expressions in Kotlin are anonymous functions that can be passed as values. They have the syntax `{ parameters -> body }`. Lambdas are often used as arguments to higher-order functions (for example, in collection methods). If there is only one parameter, it can be omitted and replaced with `it` as the implicit name. Kotlin also supports returning lambdas from functions and using closures (the lambda can capture variables from its surrounding scope)."
+        },
+        {
+          "type": "code",
+          "text": "fun main() {\n    val numbers = listOf(1, 2, 3, 4, 5)\n    // Using a lambda to filter\n    val evenNumbers = numbers.filter { it % 2 == 0 }\n    println(evenNumbers) // [2, 4]\n\n    // Assigning a lambda to a variable\n    val greet: (String) -> String = { name -> \"Hello, $name!\" }\n    println(greet(\"Kotlin\")) // Hello, Kotlin!\n}"
+        },
+        {
+          "type": "quiz",
+          "question": "In a Kotlin lambda with a single parameter, what is the implicit name for that parameter?",
+          "options": [
+            "it",
+            "this",
+            "self",
+            "item"
+          ],
+          "CorrectAnswer": 0
+        },
+        {
+          "type": "practical",
+          "ru": "Напишите программу, которая использует лямбда-выражение для сортировки списка строк по длине. Инструкция: Создайте список слов и вызовите `sortedBy { it.length }`.",
+          "en": "Write a program that uses a lambda expression to sort a list of strings by their length. Instructions: Create a list of words and call `sortedBy { it.length }`.",
+          "answer": "fun main() {\n    val words = listOf(\"apple\", \"pear\", \"banana\", \"kiwi\")\n    val sortedWords = words.sortedBy { it.length }\n    println(sortedWords) // [kiwi, pear, apple, banana]\n}"
+        }
+      ]
+    },
+    {
+      "title.ru": "Null-безопасность",
+      "title.en": "Null Safety",
+      "blocks": [
+        {
+          "type": "description",
+          "ru": "Kotlin включает поддержку null-безопасности на уровне языка, чтобы избегать `NullPointerException`. По умолчанию переменные не могут принимать null. Чтобы разрешить null, тип объявляется с `?` (например, `String?`). Для обращения к свойствам nullable-переменной используется оператор безопасного вызова `?.`, который возвращает null, если объект отсутствует. Оператор Элвиса `?:` позволяет указать значение по умолчанию, если выражение слева равно null. Существует также оператор `!!`, который принудительно утверждает, что значение не равно null (и бросит исключение, если это не так).",
+          "en": "Kotlin includes null-safety at the language level to help avoid `NullPointerException`. By default, variables cannot hold null. To allow null, the type is declared with `?` (for example, `String?`). To access properties of a nullable variable, the safe-call operator `?.` is used, which returns null if the object is missing. The Elvis operator `?:` allows specifying a default value if the expression on the left is null. There is also the `!!` operator, which forcefully asserts that a variable is not null (and will throw an exception if it is)."
+        },
+        {
+          "type": "code",
+          "text": "fun main() {\n    val maybeString: String? = null\n    // Safe call: returns null instead of throwing\n    println(maybeString?.length) // null\n\n    // Elvis operator: use 0 if null\n    val len = maybeString?.length ?: 0\n    println(len) // 0\n\n    // Not-null assertion (will throw NPE)\n    // println(maybeString!!.length)\n}"
+        },
+        {
+          "type": "quiz",
+          "question": "What does the `?:` operator do in Kotlin?",
+          "options": [
+            "Elvis operator providing a default value when null",
+            "Safe call on nullable types",
+            "Non-null assertion",
+            "Type casting"
+          ],
+          "CorrectAnswer": 0
+        },
+        {
+          "type": "practical",
+          "ru": "Напишите функцию, которая принимает nullable строку и возвращает её длину. Если строка равна null, функция должна возвращать 0. Инструкция: Объявите функцию с типом параметра `String?` и используйте оператор Элвиса `?:`.",
+          "en": "Write a function that takes a nullable string and returns its length. If the string is null, the function should return 0. Instructions: Declare the function with a parameter of type `String?` and use the Elvis operator `?:`.",
+          "answer": "fun safeLength(str: String?): Int {\n    return str?.length ?: 0\n}\n\nfun main() {\n    println(safeLength(\"Hello\")) // 5\n    println(safeLength(null))      // 0\n}"
+        }
+      ]
+    },
+    {
+      "title.ru": "Корутины и асинхронность",
+      "title.en": "Coroutines and Asynchronous",
+      "blocks": [
+        {
+          "type": "description",
+          "ru": "Корутины в Kotlin представляют собой лёгкую альтернативу потокам для написания асинхронного, неблокирующего кода. Они позволяют упрощённо запускать параллельные задачи. Для работы с корутинами используется библиотека `kotlinx.coroutines`. Корутина создаётся с помощью таких строителей, как `launch` или `async` внутри `runBlocking` или `CoroutineScope`. Корутины могут приостановливаться с помощью ключевого слова `delay` или других `suspend`-функций, что не блокирует основной поток.",
+          "en": "Coroutines in Kotlin are a lightweight alternative to threads for writing asynchronous, non-blocking code. They allow for straightforward launching of parallel tasks. The `kotlinx.coroutines` library is used to work with coroutines. A coroutine can be launched with builders such as `launch` or `async` inside a `runBlocking` or a `CoroutineScope`. Coroutines can suspend using the `delay` function or other `suspend` functions, which does not block the main thread."
+        },
+        {
+          "type": "code",
+          "text": "import kotlinx.coroutines.*\n\nfun main() = runBlocking {\n    launch {\n        delay(100L)\n        println(\"World!\")\n    }\n    println(\"Hello,\")\n    // runBlocking waits until all coroutines complete\n}"
+        },
+        {
+          "type": "quiz",
+          "question": "Which function from kotlinx.coroutines is typically used to create a coroutine scope in a main function?",
+          "options": [
+            "runBlocking",
+            "async",
+            "launch",
+            "delay"
+          ],
+          "CorrectAnswer": 0
+        },
+        {
+          "type": "practical",
+          "ru": "Напишите программу на Kotlin, которая запускает корутину, задерживается на 500 мс, а затем выводит сообщение \"Kotlin Coroutines\". Инструкция: Используйте `runBlocking` и `launch` с `delay(500)`.",
+          "en": "Write a Kotlin program that launches a coroutine, delays for 500 ms, and then prints the message \"Kotlin Coroutines\". Instructions: Use `runBlocking` and `launch` with `delay(500)`.",
+          "answer": "import kotlinx.coroutines.*\n\nfun main() = runBlocking {\n    launch {\n        delay(500L)\n        println(\"Kotlin Coroutines\")\n    }\n}"
+        }
+      ]
+    },
+    {
+      "title.ru": "Kotlin для Android",
+      "title.en": "Kotlin for Android",
+      "blocks": [
+        {
+          "type": "description",
+          "ru": "Kotlin официально поддерживается в Android-разработке и часто используется вместо Java благодаря лаконичности и безопасности. Многие Android API оптимизированы для Kotlin (Android KTX), и Android Studio полностью поддерживает Kotlin. В Android-приложениях используются компоненты, такие как `Activity`, `Fragment` и `View`, которые можно писать на Kotlin. Корутины часто используются для управления фоновыми задачами (например, сетевыми запросами) на мобильных устройствах. Примером кода может быть создание простого `Activity` с переопределением метода `onCreate`.",
+          "en": "Kotlin is officially supported in Android development and is often used instead of Java due to its conciseness and safety features. Many Android APIs are optimized for Kotlin (Android KTX), and Android Studio has full Kotlin support. In Android applications, components such as `Activity`, `Fragment`, and `View` can be written in Kotlin. Coroutines are commonly used for handling background tasks (e.g., network requests) on mobile devices. An example code snippet could be creating a simple `Activity` with an overridden `onCreate` method."
+        },
+        {
+          "type": "code",
+          "text": "import android.os.Bundle\nimport androidx.appcompat.app.AppCompatActivity\n\nclass MainActivity : AppCompatActivity() {\n    override fun onCreate(savedInstanceState: Bundle?) {\n        super.onCreate(savedInstanceState)\n        // Set the layout from XML\n        setContentView(R.layout.activity_main)\n    }\n}"
+        },
+        {
+          "type": "quiz",
+          "question": "What is Android KTX?",
+          "options": [
+            "A testing framework",
+            "Extensions for Android APIs to support Kotlin",
+            "The Android build system",
+            "A UI design tool"
+          ],
+          "CorrectAnswer": 1
+        },
+        {
+          "type": "practical",
+          "ru": "Опишите задачу: Создайте простую Android Activity на Kotlin, которая устанавливает макет `activity_main`.  \nИнструкция: Используйте `AppCompatActivity` и переопределите метод `onCreate`, вызывая `setContentView(R.layout.activity_main)`.",
+          "en": "Task: Create a simple Android Activity in Kotlin that sets the layout `activity_main`.  \nInstructions: Use `AppCompatActivity` and override the `onCreate` method, calling `setContentView(R.layout.activity_main)`.",
+          "answer": "import android.os.Bundle\nimport androidx.appcompat.app.AppCompatActivity\n\nclass MainActivity : AppCompatActivity() {\n    override fun onCreate(savedInstanceState: Bundle?) {\n        super.onCreate(savedInstanceState)\n        setContentView(R.layout.activity_main)\n    }\n}"
+        }
+      ]
+    }
+  ]
+}

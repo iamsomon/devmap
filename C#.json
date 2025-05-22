@@ -271,7 +271,7 @@
         "instructionEn": "Create a Cat class inheriting Animal and override Speak().",
         "hintRu": "class Cat:Animal{public override void Speak()=>...;}",
         "hintEn": "class Cat:Animal{public override void Speak()=>...;}",
-        "expectedResultRu": "Cat speaks when вызывается Speak().",
+        "expectedResultRu": "Cat говорит при вызове Speak().",
         "expectedResultEn": "Cat speaks when Speak() is called.",
         "solutionCode": "using System;\n\nclass Animal{public virtual void Speak()=>Console.WriteLine(\"Animal\");}\nclass Cat:Animal{public override void Speak()=>Console.WriteLine(\"Cat meows\");}\nclass Program{static void Main(){new Cat().Speak();}}"
       }
@@ -550,9 +550,9 @@
       "codeExamples": [
         {
           "language": "csharp",
-          "code": "int? x = null;\nConsole.WriteLine(x ?? 0);\nConsole.WriteLine(x?.ToString());",
+          "code": "int? x = null;\nConsole.WriteLine(x ?? 0);\nConsole.WriteLine(x?.ToString());",  
           "commentLanguage": "ru",
-          "comment": "Использование ?? и ?."
+          "comment": "Использование операторов ?? и ?."
         }
       ],
       "quiz": [

@@ -4,7 +4,7 @@
     "en": "Complete Swift Course"
   },
   "language": "Swift",
-  "iconUrl": "hhttps://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/swift/swift-original.svg",
+  "iconUrl": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/swift/swift-original.svg",
   "description": {
     "ru": "Данный курс детально знакомит с языком Swift — современным, безопасным и высокопроизводительным языком программирования, созданным Apple для разработки под iOS, macOS, watchOS и tvOS. Мы пройдём путь от базового синтаксиса и простейших программ до продвинутых тем, включая обобщения, управление памятью, асинхронность и Swift Concurrency. Каждая тема содержит развернутые объяснения, примеры кода, викторины и практические задания, что позволит закрепить теорию и уверенно применять Swift на практике.",
     "en": "This course offers an in-depth journey through Swift — Apple’s modern, safe, and high-performance programming language for iOS, macOS, watchOS, and tvOS development. We will start with basic syntax and simple programs, then move to advanced topics such as generics, memory management, concurrency, and Swift Concurrency. Each topic provides comprehensive explanations, code samples, quizzes, and hands-on tasks to ensure you master the theory and confidently apply Swift in real projects."

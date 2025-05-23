@@ -4,7 +4,7 @@
     "en": "Kotlin Programming Course"
   },
   "language": "Kotlin",
-  "iconUrl": "https://cdn.jsdelivr.net/npm/simple-icons@3.13.0/icons/kotlin.svg",
+  "iconUrl": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/kotlin/kotlin-original.svg",
   "description": {
     "ru": "Этот курс по Kotlin охватывает основы языка и продвинутые возможности — синтаксис, типы данных, функции, ООП, коллекции, лямбды, null-безопасность, корутины и применение в Android.",
     "en": "This Kotlin course covers the language from basics to advanced features — syntax, data types, functions, OOP, collections, lambdas, null safety, coroutines and Android usage."

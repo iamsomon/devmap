@@ -1,0 +1,410 @@
+{
+  "courseTitle": {
+    "ru": "Полный курс по Swift",
+    "en": "Complete Swift Course"
+  },
+  "language": "Swift",
+  "iconUrl": "hhttps://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/swift/swift-original.svg",
+  "description": {
+    "ru": "Данный курс детально знакомит с языком Swift — современным, безопасным и высокопроизводительным языком программирования, созданным Apple для разработки под iOS, macOS, watchOS и tvOS. Мы пройдём путь от базового синтаксиса и простейших программ до продвинутых тем, включая обобщения, управление памятью, асинхронность и Swift Concurrency. Каждая тема содержит развернутые объяснения, примеры кода, викторины и практические задания, что позволит закрепить теорию и уверенно применять Swift на практике.",
+    "en": "This course offers an in-depth journey through Swift — Apple’s modern, safe, and high-performance programming language for iOS, macOS, watchOS, and tvOS development. We will start with basic syntax and simple programs, then move to advanced topics such as generics, memory management, concurrency, and Swift Concurrency. Each topic provides comprehensive explanations, code samples, quizzes, and hands-on tasks to ensure you master the theory and confidently apply Swift in real projects."
+  },
+  "topics": [
+    {
+      "titleRu": "Синтаксис и структура программы",
+      "titleEn": "Syntax and Program Structure",
+      "descriptionRu": "Swift-программа состоит из файла(ов) с расширением .swift. Код выполняется сверху вниз, а точкой входа является свободный код на верхнем уровне или функция main при использовании атрибута @main. Импорт модулей осуществляется через ключевое слово import. Фигурные скобки определяют области видимости, точки с запятой не требуются, но допустимы. Комментарии однострочные начинаются с //, многострочные заключаются между /* и */.",
+      "descriptionEn": "A Swift program is composed of .swift files. Execution starts from top-level code or from a main structure marked with @main. Modules are imported using the import keyword. Curly braces define scope; semicolons are optional. Single-line comments start with //, and multi-line comments are enclosed in /* */.",
+      "codeExamples": [
+        {
+          "language": "swift",
+          "code": "import Foundation\n\nprint(\"Hello, Swift!\")",
+          "commentLanguage": "ru",
+          "comment": "Простейшая программа выводит строку в консоль."
+        }
+      ],
+      "quiz": [
+        {
+          "questionRu": "Нужно ли в конце каждой строки Swift ставить точку с запятой?",
+          "questionEn": "Do you have to put a semicolon at the end of every Swift line?",
+          "options": ["Да", "Нет", "Только в функциях", "Только в классах"],
+          "correctAnswerIndex": 1
+        }
+      ],
+      "task": {
+        "titleRu": "Привет, Swift!",
+        "titleEn": "Hello, Swift!",
+        "instructionRu": "Создайте программу, которая импортирует Foundation и выводит строку «Привет, Swift!»",
+        "instructionEn": "Create a program that imports Foundation and prints \"Hello, Swift!\"",
+        "hintRu": "Используйте функцию print(_:).",
+        "hintEn": "Use the print(_:) function.",
+        "expectedResultRu": "В консоли появится «Привет, Swift!»",
+        "expectedResultEn": "\"Привет, Swift!\" appears in the console",
+        "solutionCode": "import Foundation\n\nprint(\"Привет, Swift!\")"
+      }
+    },
+    {
+      "titleRu": "Переменные и константы",
+      "titleEn": "Variables and Constants",
+      "descriptionRu": "Swift различает изменяемые переменные (var) и неизменяемые константы (let). Типы выводятся автоматически, но их можно указывать явно. Swift предлагает богатую систему типов: Int, Double, Bool, String и т.д. Неизменяемость let поощряет безопасный код, снижая количество ошибок.",
+      "descriptionEn": "Swift distinguishes mutable variables (var) from immutable constants (let). Types are inferred automatically, but you can annotate them explicitly. Swift offers a rich type system: Int, Double, Bool, String, etc. Immutability via let encourages safer code by reducing bugs.",
+      "codeExamples": [
+        {
+          "language": "swift",
+          "code": "let π = 3.14159\nvar radius: Double = 5.0\nlet area = π * radius * radius\nprint(area)",
+          "commentLanguage": "en",
+          "comment": "Constant π and variable radius calculate a circle’s area."
+        }
+      ],
+      "quiz": [
+        {
+          "questionRu": "Каким ключевым словом объявляется неизменяемая константа?",
+          "questionEn": "Which keyword declares an immutable constant?",
+          "options": ["var", "val", "let", "const"],
+          "correctAnswerIndex": 2
+        }
+      ],
+      "task": {
+        "titleRu": "Конвертер Цельсий–Фаренгейт",
+        "titleEn": "Celsius–Fahrenheit Converter",
+        "instructionRu": "Объявите переменную celsius и константу factor = 9.0/5.0. Вычислите fahrenheit = celsius * factor + 32 и выведите результат.",
+        "instructionEn": "Declare a variable celsius and a constant factor = 9.0/5.0. Compute fahrenheit = celsius * factor + 32 and print the result.",
+        "hintRu": "Используйте var для celsius, let для factor.",
+        "hintEn": "Use var for celsius, let for factor.",
+        "expectedResultRu": "Для celsius = 0 выводится 32.",
+        "expectedResultEn": "For celsius = 0, output is 32.",
+        "solutionCode": "var celsius = 0.0\nlet factor = 9.0/5.0\nlet fahrenheit = celsius * factor + 32\nprint(fahrenheit)"
+      }
+    },
+    {
+      "titleRu": "Управляющие конструкции",
+      "titleEn": "Control Flow",
+      "descriptionRu": "Swift поддерживает if-else, switch, while, repeat-while и for-in циклы. switch мощный: обязательно должен быть исчерпывающим и поддерживает выражения-кортежи, диапазоны и where-условия. Оператор guard позволяет ранний выход, повышая читаемость.",
+      "descriptionEn": "Swift provides if-else, switch, while, repeat-while, and for-in loops. switch is powerful: it must be exhaustive and supports tuples, ranges, and where clauses. The guard keyword enables early exits, improving readability.",
+      "codeExamples": [
+        {
+          "language": "swift",
+          "code": "let score = 87\nswitch score {\ncase 90...:\n    print(\"A\")\ncase 80..<90:\n    print(\"B\")\ndefault:\n    print(\"C or below\")\n}",
+          "commentLanguage": "ru",
+          "comment": "switch с диапазонами оценок."
+        }
+      ],
+      "quiz": [
+        {
+          "questionRu": "Какая конструкция обеспечивает ранний выход при неверном условии?",
+          "questionEn": "Which construct provides an early exit when a condition fails?",
+          "options": ["if", "guard", "switch", "repeat"],
+          "correctAnswerIndex": 1
+        }
+      ],
+      "task": {
+        "titleRu": "Сумма 1…10",
+        "titleEn": "Sum 1…10",
+        "instructionRu": "Используя цикл for-in, вычислите сумму чисел от 1 до 10 и выведите её.",
+        "instructionEn": "Using a for-in loop, compute the sum of numbers from 1 to 10 and print it.",
+        "hintRu": "Инициализируйте переменную sum = 0 и добавляйте i.",
+        "hintEn": "Initialize sum = 0 and add i.",
+        "expectedResultRu": "Получится 55.",
+        "expectedResultEn": "The result is 55.",
+        "solutionCode": "var sum = 0\nfor i in 1...10 { sum += i }\nprint(sum)"
+      }
+    },
+    {
+      "titleRu": "Функции",
+      "titleEn": "Functions",
+      "descriptionRu": "Функции объявляются с func, поддерживают несколько параметров, значения по умолчанию, имена аргументов и возвращаемые кортежи. Swift позволяет вложенные и переменные функции (closures). Тип функции можно присвоить переменной.",
+      "descriptionEn": "Functions are declared with func, support multiple parameters, default values, argument labels, and tuple returns. Swift allows nested and first-class functions (closures). A function type can be stored in a variable.",
+      "codeExamples": [
+        {
+          "language": "swift",
+          "code": "func greet(_ name: String = \"World\") -> String {\n    \"Hello, \\(name)!\"\n}\nprint(greet(\"Swift\"))",
+          "commentLanguage": "en",
+          "comment": "Function with a default parameter and string interpolation."
+        }
+      ],
+      "quiz": [
+        {
+          "questionRu": "Чем завершается объявление функции в Swift?",
+          "questionEn": "What keyword begins a function declaration in Swift?",
+          "options": ["function", "def", "func", "fn"],
+          "correctAnswerIndex": 2
+        }
+      ],
+      "task": {
+        "titleRu": "Факториал",
+        "titleEn": "Factorial",
+        "instructionRu": "Напишите рекурсивную функцию factorial(_:), возвращающую n! для Int.",
+        "instructionEn": "Write a recursive function factorial(_:) that returns n! for an Int.",
+        "hintRu": "factorial(0) = 1; иначе n * factorial(n-1).",
+        "hintEn": "factorial(0) = 1; otherwise n * factorial(n-1).",
+        "expectedResultRu": "factorial(5) == 120.",
+        "expectedResultEn": "factorial(5) == 120.",
+        "solutionCode": "func factorial(_ n: Int) -> Int {\n    n == 0 ? 1 : n * factorial(n - 1)\n}\nprint(factorial(5))"
+      }
+    },
+    {
+      "titleRu": "Опциональные значения",
+      "titleEn": "Optionals",
+      "descriptionRu": "Опционал (Type?) либо содержит значение, либо nil. Для безопасного извлечения используются optional binding (if let/guard let) или оператор объединения nil-сoalesce (??). Optional chaining (?.) позволяет вызывать методы и свойства, не раскрывая опционал, возвращая nil при неудаче.",
+      "descriptionEn": "An optional (Type?) either holds a value or nil. Safe unwrapping uses optional binding (if let/guard let) or the nil-coalescing operator (??). Optional chaining (?.) lets you call methods and properties without unwrapping; it returns nil on failure.",
+      "codeExamples": [
+        {
+          "language": "swift",
+          "code": "var maybeInt: Int? = 42\nif let value = maybeInt {\n    print(\"Value is \\(value)\")\n}",
+          "commentLanguage": "ru",
+          "comment": "Безопасное извлечение optional binding."
+        }
+      ],
+      "quiz": [
+        {
+          "questionRu": "Какой символ обозначает опциональный тип?",
+          "questionEn": "Which symbol denotes an optional type?",
+          "options": ["!", "?", "*", ":"],
+          "correctAnswerIndex": 1
+        }
+      ],
+      "task": {
+        "titleRu": "Среднее значение",
+        "titleEn": "Average Value",
+        "instructionRu": "Создайте функцию average(of:), принимающую массив Int? и возвращающую Double? — среднее ненилевых значений или nil, если все элементы nil.",
+        "instructionEn": "Create a function average(of:) that accepts an array of Int? and returns a Double? — the average of non-nil values or nil if all are nil.",
+        "hintRu": "Используйте compactMap для удаления nil.",
+        "hintEn": "Use compactMap to remove nils.",
+        "expectedResultRu": "average([1,nil,3]) == 2.0.",
+        "expectedResultEn": "average([1,nil,3]) == 2.0.",
+        "solutionCode": "func average(of numbers: [Int?]) -> Double? {\n    let filtered = numbers.compactMap { $0 }\n    return filtered.isEmpty ? nil : Double(filtered.reduce(0,+)) / Double(filtered.count)\n}\nprint(average(of: [1, nil, 3])!)"
+      }
+    },
+    {
+      "titleRu": "Коллекции",
+      "titleEn": "Collections",
+      "descriptionRu": "Swift предоставляет Array, Dictionary и Set. Массивы упорядочены, словари хранят пары ключ-значение, множества содержат уникальные элементы. Все коллекции — структуры, копируются по значению (Copy-on-Write). Методы higher-order (map, filter, reduce) упрощают работу с данными.",
+      "descriptionEn": "Swift offers Array, Dictionary, and Set. Arrays are ordered, dictionaries store key-value pairs, and sets hold unique elements. Collections are value types (Copy-on-Write). Higher-order methods (map, filter, reduce) streamline data manipulation.",
+      "codeExamples": [
+        {
+          "language": "swift",
+          "code": "let numbers = [1,2,3]\nlet squares = numbers.map { $0 * $0 }\nprint(squares)",
+          "commentLanguage": "en",
+          "comment": "Mapping array to its squares."
+        }
+      ],
+      "quiz": [
+        {
+          "questionRu": "Какой метод удаляет все элементы массива?",
+          "questionEn": "Which method removes all elements from an array?",
+          "options": ["clear()", "removeAll()", "empty()", "delete()"],
+          "correctAnswerIndex": 1
+        }
+      ],
+      "task": {
+        "titleRu": "Словарь студентов",
+        "titleEn": "Student Dictionary",
+        "instructionRu": "Создайте словарь, где ключ — имя студента, значение — средний балл. Добавьте три записи и выведите их.",
+        "instructionEn": "Create a dictionary where the key is a student’s name and the value is their GPA. Add three entries and print them.",
+        "hintRu": "Используйте [String:Double].",
+        "hintEn": "Use [String:Double].",
+        "expectedResultRu": "Выводятся три пары имя-балл.",
+        "expectedResultEn": "Three name-GPA pairs are printed.",
+        "solutionCode": "var gpas: [String: Double] = [\"Anna\": 4.0, \"Ben\": 3.7]\ngpas[\"Cara\"] = 3.9\nfor (name, gpa) in gpas {\n    print(\"\\(name): \\(gpa)\")\n}"
+      }
+    },
+    {
+      "titleRu": "Структуры и классы",
+      "titleEn": "Structs and Classes",
+      "descriptionRu": "Структуры (struct) — типы-значения, копируются при присвоении. Классы (class) — ссылочные типы, используют автоматическое управление памятью ARC. Struct получают неявный инициализатор, могут иметь методы, сабскрипты и реализовать протоколы. Классы поддерживают наследование и деинициализаторы.",
+      "descriptionEn": "Structs are value types copied on assignment. Classes are reference types managed by ARC. Structs get an implicit initializer and can have methods, subscripts, and adopt protocols. Classes support inheritance and deinitializers.",
+      "codeExamples": [
+        {
+          "language": "swift",
+          "code": "struct Point {\n    var x, y: Double\n    func length() -> Double {\n        (x*x + y*y).squareRoot()\n    }\n}\nlet p = Point(x: 3, y: 4)\nprint(p.length())",
+          "commentLanguage": "ru",
+          "comment": "Структура Point с методом длины вектора."
+        }
+      ],
+      "quiz": [
+        {
+          "questionRu": "Какой тип копируется по значению?",
+          "questionEn": "Which type is copied by value?",
+          "options": ["class", "struct", "enum", "protocol"],
+          "correctAnswerIndex": 1
+        }
+      ],
+      "task": {
+        "titleRu": "Класс BankAccount",
+        "titleEn": "BankAccount Class",
+        "instructionRu": "Создайте класс BankAccount с полем balance и методами deposit(amount:) и withdraw(amount:).",
+        "instructionEn": "Create a class BankAccount with a balance field and methods deposit(amount:) and withdraw(amount:).",
+        "hintRu": "balance типа Double, методы изменяют значение.",
+        "hintEn": "balance is Double; methods mutate it.",
+        "expectedResultRu": "После deposit(100) баланс растёт на 100.",
+        "expectedResultEn": "After deposit(100) the balance increases by 100.",
+        "solutionCode": "class BankAccount {\n    private(set) var balance: Double = 0\n    func deposit(amount: Double) { balance += amount }\n    func withdraw(amount: Double) { balance -= amount }\n}\nlet acc = BankAccount()\nacc.deposit(amount: 100)\nprint(acc.balance)"
+      }
+    },
+    {
+      "titleRu": "Протоколы и расширения",
+      "titleEn": "Protocols and Extensions",
+      "descriptionRu": "Протоколы описывают требуемые свойства и методы. Любой тип может реализовать протокол. Расширения (extension) добавляют функциональность существующим типам, включая собственные и системные, без наследования. Протокол-ориентированное программирование — ключевая философия Swift.",
+      "descriptionEn": "Protocols declare required properties and methods. Any type can conform to a protocol. Extensions add functionality to existing types, including built-in ones, without subclassing. Protocol-oriented programming is a core Swift philosophy.",
+      "codeExamples": [
+        {
+          "language": "swift",
+          "code": "protocol Describable { var description: String { get } }\nextension Int: Describable { var description: String { \"Int: \\(self)\" } }\nprint(42.description)",
+          "commentLanguage": "en",
+          "comment": "Extending Int to conform to a custom protocol."
+        }
+      ],
+      "quiz": [
+        {
+          "questionRu": "Какое ключевое слово добавляет методы к типу без наследования?",
+          "questionEn": "Which keyword adds methods to a type without inheritance?",
+          "options": ["extend", "impl", "extension", "augment"],
+          "correctAnswerIndex": 2
+        }
+      ],
+      "task": {
+        "titleRu": "Протокол Drivable",
+        "titleEn": "Drivable Protocol",
+        "instructionRu": "Определите протокол Drivable с методом drive(). Реализуйте его в структурах Car и Bike и вызовите drive().",
+        "instructionEn": "Define a Drivable protocol with a drive() method. Implement it in Car and Bike structs and call drive().",
+        "hintRu": "struct Car: Drivable { func drive() { ... } }",
+        "hintEn": "struct Car: Drivable { func drive() { ... } }",
+        "expectedResultRu": "Выводятся строки, обозначающие движение автомобиля и велосипеда.",
+        "expectedResultEn": "Lines indicating car and bike driving are printed.",
+        "solutionCode": "protocol Drivable { func drive() }\nstruct Car: Drivable { func drive() { print(\"Car driving\") } }\nstruct Bike: Drivable { func drive() { print(\"Bike riding\") } }\nCar().drive()\nBike().drive()"
+      }
+    },
+    {
+      "titleRu": "Обобщения (Generics)",
+      "titleEn": "Generics",
+      "descriptionRu": "Generics позволяют писать универсальный, типобезопасный код. Параметры типа указываются в угловых скобках <T>. Ограничения where накладывают требования на протоколы. Стандартные коллекции Swift — дженерики.",
+      "descriptionEn": "Generics let you write flexible, type-safe code. Type parameters appear in angle brackets <T>. where clauses impose protocol constraints. Swift’s standard collections are generic.",
+      "codeExamples": [
+        {
+          "language": "swift",
+          "code": "func swapTwoValues<T>(_ a: inout T, _ b: inout T) {\n    let temp = a; a = b; b = temp\n}",
+          "commentLanguage": "ru",
+          "comment": "Обобщённая функция обмена значений."
+        }
+      ],
+      "quiz": [
+        {
+          "questionRu": "Как обозначается параметр типа?",
+          "questionEn": "How is a type parameter denoted?",
+          "options": ["()", "<T>", "{}", "[]"],
+          "correctAnswerIndex": 1
+        }
+      ],
+      "task": {
+        "titleRu": "Стек",
+        "titleEn": "Stack",
+        "instructionRu": "Создайте обобщённую структуру Stack<T> с методами push(_:), pop() и top.",
+        "instructionEn": "Create a generic Stack<T> struct with push(_:), pop(), and top methods.",
+        "hintRu": "Используйте массив для хранения элементов.",
+        "hintEn": "Use an array to store elements.",
+        "expectedResultRu": "Stack<Int>().push(1) затем top == 1.",
+        "expectedResultEn": "Stack<Int>().push(1) then top == 1.",
+        "solutionCode": "struct Stack<T> {\n    private var items: [T] = []\n    mutating func push(_ item: T) { items.append(item) }\n    mutating func pop() -> T? { items.popLast() }\n    var top: T? { items.last }\n}\nvar s = Stack<Int>()\ns.push(1)\nprint(s.top!)"
+      }
+    },
+    {
+      "titleRu": "Замыкания (Closures)",
+      "titleEn": "Closures",
+      "descriptionRu": "Замыкания — блоки кода, которые можно передавать и вызывать позже. Синтаксис сокращается благодаря выводу типов и неявным именам параметров $0, $1. Замыкания улавливают переменные из окружающего контекста. Для избежания циклов сильных ссылок используют списки захвата [weak self].",
+      "descriptionEn": "Closures are blocks of code you can pass around and execute later. Syntax shortens via type inference and implicit parameter names $0, $1. Closures capture variables from their surrounding context. Capture lists like [weak self] prevent strong reference cycles.",
+      "codeExamples": [
+        {
+          "language": "swift",
+          "code": "let sorted = [3,1,2].sorted { $0 < $1 }\nprint(sorted)",
+          "commentLanguage": "en",
+          "comment": "Closure passed to sorted for ascending order."
+        }
+      ],
+      "quiz": [
+        {
+          "questionRu": "Как обозначается неявный первый параметр в замыкании?",
+          "questionEn": "How do you reference the first implicit parameter in a closure?",
+          "options": ["$0", "$1", "$first", "arg0"],
+          "correctAnswerIndex": 0
+        }
+      ],
+      "task": {
+        "titleRu": "Фильтр чётных",
+        "titleEn": "Filter Evens",
+        "instructionRu": "Используйте метод filter и замыкание, чтобы из массива [1,2,3,4] получить только чётные числа.",
+        "instructionEn": "Use the filter method and a closure to get only even numbers from [1,2,3,4].",
+        "hintRu": "$0 % 2 == 0",
+        "hintEn": "$0 % 2 == 0",
+        "expectedResultRu": "[2,4]",
+        "expectedResultEn": "[2,4]",
+        "solutionCode": "let evens = [1,2,3,4].filter { $0 % 2 == 0 }\nprint(evens)"
+      }
+    },
+    {
+      "titleRu": "Обработка ошибок",
+      "titleEn": "Error Handling",
+      "descriptionRu": "Ошибки в Swift — значения, поддерживающие протокол Error. Функции, которые могут бросать, помечаются throws. Бросок выполняется throw. Обработка производится через do-try-catch. Для превращения ошибки в опционал применяют try?.",
+      "descriptionEn": "Errors in Swift are values conforming to the Error protocol. Functions that can throw are marked with throws and raise errors with throw. Handling uses do-try-catch. Use try? to convert an error to an optional.",
+      "codeExamples": [
+        {
+          "language": "swift",
+          "code": "enum FileError: Error { case notFound }\nfunc read() throws { throw FileError.notFound }\ndo {\n    try read()\n} catch {\n    print(error)\n}",
+          "commentLanguage": "ru",
+          "comment": "Пример броска и перехвата ошибки."
+        }
+      ],
+      "quiz": [
+        {
+          "questionRu": "Как пометить функцию, что она может бросать ошибку?",
+          "questionEn": "How do you mark a function that it can throw an error?",
+          "options": ["throwable", "throws", "error", "try"],
+          "correctAnswerIndex": 1
+        }
+      ],
+      "task": {
+        "titleRu": "Деление на ноль",
+        "titleEn": "Division by Zero",
+        "instructionRu": "Создайте функцию divide(_:by:), которая бросает ошибку DivisionError.divByZero при делении на ноль.",
+        "instructionEn": "Create a function divide(_:by:) that throws DivisionError.divByZero when dividing by zero.",
+        "hintRu": "enum DivisionError: Error { case divByZero }",
+        "hintEn": "enum DivisionError: Error { case divByZero }",
+        "expectedResultRu": "divide(4,0) бросает ошибку.",
+        "expectedResultEn": "divide(4,0) throws an error.",
+        "solutionCode": "enum DivisionError: Error { case divByZero }\nfunc divide(_ a: Double, by b: Double) throws -> Double {\n    guard b != 0 else { throw DivisionError.divByZero }\n    return a / b\n}"
+      }
+    },
+    {
+      "titleRu": "Swift Concurrency",
+      "titleEn": "Swift Concurrency",
+      "descriptionRu": "Начиная с Swift 5.5 язык поддерживает async/await и акторы. Асинхронные функции обозначаются async и вызываются через await. Task выполняет параллельные корутины, а actor гарантирует потокобезопасность доступа к своему состоянию.",
+      "descriptionEn": "Starting Swift 5.5, the language supports async/await and actors. Asynchronous functions are marked async and called with await. Task runs parallel coroutines, and actor guarantees thread-safe access to its state.",
+      "codeExamples": [
+        {
+          "language": "swift",
+          "code": "func fetch() async -> String { \"Data\" }\nTask {\n    let result = await fetch()\n    print(result)\n}",
+          "commentLanguage": "en",
+          "comment": "Async function executed inside a Task."
+        }
+      ],
+      "quiz": [
+        {
+          "questionRu": "Какой тип обеспечивает потокобезопасность состояния?",
+          "questionEn": "Which type ensures thread-safe state?",
+          "options": ["class", "struct", "actor", "enum"],
+          "correctAnswerIndex": 2
+        }
+      ],
+      "task": {
+        "titleRu": "Асинхронная задержка",
+        "titleEn": "Async Delay",
+        "instructionRu": "Напишите async функцию waitPrint(seconds:), которая ждёт указанное число секунд и выводит сообщение.",
+        "instructionEn": "Write an async function waitPrint(seconds:) that waits a given number of seconds and prints a message.",
+        "hintRu": "Используйте Task.sleep и await.",
+        "hintEn": "Use Task.sleep and await.",
+        "expectedResultRu": "После задержки выводится строка.",
+        "expectedResultEn": "String is printed after the delay.",
+        "solutionCode": "import Foundation\nfunc waitPrint(seconds: UInt64) async {\n    try? await Task.sleep(nanoseconds: seconds * 1_000_000_000)\n    print(\"Waited \\(seconds) seconds\")\n}\nTask { await waitPrint(seconds: 1) }"
+      }
+    }
+  ]
+}

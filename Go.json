@@ -1,0 +1,386 @@
+{
+  "courseTitle": {
+    "ru": "Полный курс по Go",
+    "en": "Complete Go Course"
+  },
+  "language": "Go",
+  "iconUrl": "https://golang.org/lib/godoc/images/go-logo-blue.svg",
+  "tags": [
+    "systems-programming",
+    "web-development",
+    "concurrency",
+    "networking",
+    "cli",
+    "microservices",
+    "devops"
+  ],
+  "description": {
+    "ru": "Этот курс подробно знакомит с языком Go (Golang) — простым, эффективным и компилируемым языком, идеально подходящим для системного программирования, сетевых сервисов и микросервисов. Мы изучим базовый синтаксис, типы и управление потоком, функции и методы, указатели, структуры и интерфейсы, работу с коллекциями (срезы и карты), обработку ошибок, пакеты и модули, а также конкурентное программирование с горутинами и каналами. Каждая тема включает развернутые объяснения, примеры кода, викторины и практические задания.",
+    "en": "This course provides a comprehensive introduction to Go (Golang) — a simple, efficient, compiled language ideal for systems programming, network services, and microservices. We will cover basic syntax, types and control flow, functions and methods, pointers, structs and interfaces, collections (slices and maps), error handling, packages and modules, as well as concurrent programming with goroutines and channels. Each topic includes detailed explanations, code examples, quizzes, and hands-on tasks."
+  },
+  "topics": [
+    {
+      "titleRu": "Синтаксис и структура программы",
+      "titleEn": "Syntax and Program Structure",
+      "descriptionRu": "Go-программа всегда начинается с объявления пакета package (обычно package main), затем подключаются библиотеки через import. Файлы собираются и компилируются командой go build или запускаются go run. Точка входа — функция func main().",
+      "descriptionEn": "A Go program starts with a package declaration (usually package main), followed by imports. Files are built with go build or run with go run. The entry point is func main().",
+      "codeExamples": [
+        {
+          "language": "go",
+          "code": "package main\n\nimport \"fmt\"\n\nfunc main() {\n    fmt.Println(\"Hello, Go!\")\n}",
+          "commentLanguage": "en",
+          "comment": "A minimal Go program printing to console."
+        }
+      ],
+      "quiz": [
+        {
+          "questionRu": "Как называется файл, в котором должна быть функция main?",
+          "questionEn": "What package must contain func main?",
+          "options": ["main", "fmt", "pkg", "init"],
+          "correctAnswerIndex": 0
+        }
+      ],
+      "task": {
+        "titleRu": "Привет, Go",
+        "titleEn": "Hello, Go",
+        "instructionRu": "Создайте файл main.go с пакетом main и функцией main(), выводящей «Привет, Go!»",
+        "instructionEn": "Create main.go with package main and func main() printing \"Hello, Go!\"",
+        "hintRu": "Используйте fmt.Println внутри main.",
+        "hintEn": "Use fmt.Println inside main.",
+        "expectedResultRu": "В консоли: Привет, Go!",
+        "expectedResultEn": "Console prints: Hello, Go!",
+        "solutionCode": "package main\n\nimport \"fmt\"\n\nfunc main() {\n    fmt.Println(\"Привет, Go!\")\n}"
+      }
+    },
+    {
+      "titleRu": "Переменные и типы",
+      "titleEn": "Variables and Types",
+      "descriptionRu": "Go — строго типизированный язык. Объявление переменной: var x int = 5 или короткое :=. Базовые типы: int, float64, bool, string, byte, rune. Нет неинициализированных переменных — всегда есть zero value.",
+      "descriptionEn": "Go is a strongly typed language. Declare variables with var x int = 5 or shorthand :=. Basic types: int, float64, bool, string, byte, rune. No uninitialized variables — every variable has a zero value.",
+      "codeExamples": [
+        {
+          "language": "go",
+          "code": "var a int = 10\nb := 3.14\nvar s string\nfmt.Println(a, b, s)",
+          "commentLanguage": "ru",
+          "comment": "Пример var и :=, zero value для string"
+        }
+      ],
+      "quiz": [
+        {
+          "questionRu": "Какая у строки zero value?",
+          "questionEn": "What is the zero value of a string?",
+          "options": ["\"\"", "nil", "0", "\"nil\""],
+          "correctAnswerIndex": 0
+        }
+      ],
+      "task": {
+        "titleRu": "Конвертер Цельсий–Фаренгейт",
+        "titleEn": "Celsius–Fahrenheit Converter",
+        "instructionRu": "Объявите переменную celsius и вычислите fahrenheit := celsius*9/5 + 32, затем выведите.",
+        "instructionEn": "Declare a celsius variable and compute fahrenheit := celsius*9/5 + 32, then print.",
+        "hintRu": "b := celsius*9/5 + 32",
+        "hintEn": "f := celsius*9/5 + 32",
+        "expectedResultRu": "При celsius=0 выводится 32.",
+        "expectedResultEn": "For celsius=0 prints 32.",
+        "solutionCode": "package main\n\nimport \"fmt\"\n\nfunc main() {\n    celsius := 0.0\n    fahrenheit := celsius*9/5 + 32\n    fmt.Println(fahrenheit)\n}"
+      }
+    },
+    {
+      "titleRu": "Управление потоком",
+      "titleEn": "Control Flow",
+      "descriptionRu": "Go поддерживает if, for и switch. В Go нет while — for выполняет любую петлю. switch автоматически break после case. Можно использовать fallthrough.",
+      "descriptionEn": "Go supports if, for and switch. There is no while — for covers all loops. switch breaks automatically after a case. fallthrough can be used.",
+      "codeExamples": [
+        {
+          "language": "go",
+          "code": "for i := 0; i < 3; i++ {\n    fmt.Println(i)\n}\n\nif x%2 == 0 {\n    fmt.Println(\"Even\")\n}\n\nswitch x {\ncase 1:\n    fmt.Println(\"One\")\ndefault:\n    fmt.Println(\"Other\")\n}",
+          "commentLanguage": "en",
+          "comment": "Examples of for, if and switch."
+        }
+      ],
+      "quiz": [
+        {
+          "questionRu": "Как в Go сделать бесконечный цикл?",
+          "questionEn": "How to write an infinite loop in Go?",
+          "options": ["for {}", "while true {}", "loop {}", "for (;;) {}"],
+          "correctAnswerIndex": 0
+        }
+      ],
+      "task": {
+        "titleRu": "Сумма цикла",
+        "titleEn": "Loop Sum",
+        "instructionRu": "Найдите сумму чисел от 1 до 10 с помощью for.",
+        "instructionEn": "Compute the sum of numbers from 1 to 10 using for.",
+        "hintRu": "sum := 0; for i := 1; ...",
+        "hintEn": "sum := 0; for i := 1; ...",
+        "expectedResultRu": "55",
+        "expectedResultEn": "55",
+        "solutionCode": "package main\n\nimport \"fmt\"\n\nfunc main() {\n    sum := 0\n    for i := 1; i <= 10; i++ {\n        sum += i\n    }\n    fmt.Println(sum)\n}"
+      }
+    },
+    {
+      "titleRu": "Функции и методы",
+      "titleEn": "Functions and Methods",
+      "descriptionRu": "Объявление функции func add(x, y int) int. Go поддерживает множественные возвращаемые значения и именованные результаты. Методы объявляются для типов: func (t T) Method().",
+      "descriptionEn": "Declare functions as func add(x, y int) int. Go supports multiple return values and named results. Methods are declared on types: func (t T) Method().",
+      "codeExamples": [
+        {
+          "language": "go",
+          "code": "func add(x, y int) int {\n    return x + y\n}\n\nfunc main() {\n    fmt.Println(add(2,3))\n}",
+          "commentLanguage": "ru",
+          "comment": "Пример функции с двумя параметрами."
+        }
+      ],
+      "quiz": [
+        {
+          "questionRu": "Сколько значений может вернуть функция Go?",
+          "questionEn": "How many values can a Go function return?",
+          "options": ["Несколько", "Только одно", "Два", "Три"],
+          "correctAnswerIndex": 0
+        }
+      ],
+      "task": {
+        "titleRu": "Деление с остатком",
+        "titleEn": "Divide with Remainder",
+        "instructionRu": "Напишите функцию div(x, y int) (int, int), возвращающую результат деления и остаток.",
+        "instructionEn": "Write func div(x, y int) (int, int) returning quotient and remainder.",
+        "hintRu": "return x/y, x%y",
+        "hintEn": "return x/y, x%y",
+        "expectedResultRu": "div(7,3) == (2,1)",
+        "expectedResultEn": "div(7,3) == (2,1)",
+        "solutionCode": "package main\n\nimport \"fmt\"\n\nfunc div(x, y int) (int, int) {\n    return x / y, x % y\n}\n\nfunc main() {\n    q, r := div(7, 3)\n    fmt.Println(q, r)\n}"
+      }
+    },
+    {
+      "titleRu": "Указатели",
+      "titleEn": "Pointers",
+      "descriptionRu": "Go поддерживает указатели, но не арифметику указателей. Объявление & и разыменование *. Полезны для передачи больших структур по ссылке.",
+      "descriptionEn": "Go supports pointers but no pointer arithmetic. Use & to get address and * to dereference. Useful for passing large structs by reference.",
+      "codeExamples": [
+        {
+          "language": "go",
+          "code": "func inc(x *int) {\n    *x++\n}\n\nfunc main() {\n    n := 1\n    inc(&n)\n    fmt.Println(n)\n}",
+          "commentLanguage": "en",
+          "comment": "Incrementing via pointer."
+        }
+      ],
+      "quiz": [
+        {
+          "questionRu": "Как получить указатель на переменную x?",
+          "questionEn": "How get pointer to variable x?",
+          "options": ["&x", "*x", "ptr x", "x&"],
+          "correctAnswerIndex": 0
+        }
+      ],
+      "task": {
+        "titleRu": "Обмен значениями",
+        "titleEn": "Swap Values",
+        "instructionRu": "Реализуйте функцию swap(a, b *int), меняющую значения местами.",
+        "instructionEn": "Implement func swap(a, b *int) swapping their values.",
+        "hintRu": "tmp := *a; *a = *b; *b = tmp",
+        "hintEn": "tmp := *a; *a = *b; *b = tmp",
+        "expectedResultRu": "swap swaps correctly.",
+        "expectedResultEn": "swap swaps correctly.",
+        "solutionCode": "func swap(a, b *int) {\n    tmp := *a\n    *a = *b\n    *b = tmp\n}\n\nfunc main() {\n    x, y := 1, 2\n    swap(&x, &y)\n    fmt.Println(x, y)\n}"
+      }
+    },
+    {
+      "titleRu": "Структуры и интерфейсы",
+      "titleEn": "Structs and Interfaces",
+      "descriptionRu": "Struct — определение composite-типа: type Point struct { X, Y int }. Интерфейс описывает методы: type Stringer interface { String() string }. Любой тип, реализующий метод, удовлетворяет интерфейсу.",
+      "descriptionEn": "Struct defines a composite type: type Point struct { X, Y int }. Interface declares methods: type Stringer interface { String() string }. Any type implementing the method satisfies the interface.",
+      "codeExamples": [
+        {
+          "language": "go",
+          "code": "type Point struct { X, Y int }\n\nfunc (p Point) String() string {\n    return fmt.Sprintf(\"(%d,%d)\", p.X, p.Y)\n}\n\nfunc main() {\n    p := Point{1,2}\n    fmt.Println(p)\n}",
+          "commentLanguage": "ru",
+          "comment": "Struct с методом String для fmt.Stringer."
+        }
+      ],
+      "quiz": [
+        {
+          "questionRu": "Что делает fmt.Println(p), если p реализует Stringer?",
+          "questionEn": "What does fmt.Println(p) do if p implements Stringer?",
+          "options": ["Вызывает p.String()", "Выводит адрес", "Ошибка компиляции", "Выводит struct literal"],
+          "correctAnswerIndex": 0
+        }
+      ],
+      "task": {
+        "titleRu": "Фигура и интерфейс",
+        "titleEn": "Shape Interface",
+        "instructionRu": "Определите интерфейс Shape с методом Area() float64 и структуру Circle, реализующую его.",
+        "instructionEn": "Define interface Shape with Area() float64 and a Circle struct implementing it.",
+        "hintRu": "type Shape interface; func (c Circle) Area() float64",
+        "hintEn": "type Shape interface; func (c Circle) Area() float64",
+        "expectedResultRu": "Circle{R:1}.Area()==π",
+        "expectedResultEn": "Circle{R:1}.Area()==π",
+        "solutionCode": "type Shape interface { Area() float64 }\n\ntype Circle struct { R float64 }\n\nfunc (c Circle) Area() float64 {\n    return math.Pi * c.R * c.R\n}\n\nfunc main() {\n    var s Shape = Circle{R: 1}\n    fmt.Println(s.Area())\n}"
+      }
+    },
+    {
+      "titleRu": "Срезы и карты",
+      "titleEn": "Slices and Maps",
+      "descriptionRu": "Slice — динамический массив: []T. Map — ассоциативный массив: map[K]V. Операции: append, len, make для инициализации. Доступ по ключу для map, удаление delete(m, key).",
+      "descriptionEn": "Slice is a dynamic array: []T. Map is an associative array: map[K]V. Operations: append, len, make to initialize. Access by key for map, delete(m, key) to remove.",
+      "codeExamples": [
+        {
+          "language": "go",
+          "code": "nums := []int{1,2,3}\nnums = append(nums,4)\n\ndict := map[string]int{\"a\":1}\ndict[\"b\"] = 2\ndelete(dict, \"a\")",
+          "commentLanguage": "en",
+          "comment": "Examples of slice append and map operations."
+        }
+      ],
+      "quiz": [
+        {
+          "questionRu": "Как удалить ключ из map?",
+          "questionEn": "How delete a key from a map?",
+          "options": ["delete(m, k)", "m.remove(k)", "m.delete(k)", "delete k from m"],
+          "correctAnswerIndex": 0
+        }
+      ],
+      "task": {
+        "titleRu": "Фильтрация среза",
+        "titleEn": "Filter Slice",
+        "instructionRu": "Напишите функцию filterEven(nums []int) []int, возвращающую только чётные.",
+        "instructionEn": "Write filterEven(nums []int) []int returning only evens.",
+        "hintRu": "for _, v := range nums",
+        "hintEn": "for _, v := range nums",
+        "expectedResultRu": "filterEven([]int{1,2,3,4}) == []int{2,4}",
+        "expectedResultEn": "filterEven([]int{1,2,3,4}) == []int{2,4}",
+        "solutionCode": "func filterEven(nums []int) []int {\n    var res []int\n    for _, v := range nums {\n        if v%2 == 0 {\n            res = append(res, v)\n        }\n    }\n    return res\n}"
+      }
+    },
+    {
+      "titleRu": "Обработка ошибок",
+      "titleEn": "Error Handling",
+      "descriptionRu": "В Go ошибки — значения типа error. Обычно возвращают (T, error). Проверка if err != nil. Паника panic() и отложенное восстановление defer/recover.",
+      "descriptionEn": "In Go errors are values of type error. Functions return (T, error). Handle via if err != nil. Panic with panic() and recover in defer.",
+      "codeExamples": [
+        {
+          "language": "go",
+          "code": "func readFile(name string) ([]byte, error) {\n    data, err := os.ReadFile(name)\n    if err != nil {\n        return nil, err\n    }\n    return data, nil\n}",
+          "commentLanguage": "ru",
+          "comment": "Пример обработки ошибки при чтении файла."
+        }
+      ],
+      "quiz": [
+        {
+          "questionRu": "Что возвращает функция, если произошла ошибка?",
+          "questionEn": "What does a function return when error occurs?",
+          "options": ["err != nil", "panic", "nil, err", "error log"],
+          "correctAnswerIndex": 2
+        }
+      ],
+      "task": {
+        "titleRu": "Безопасное открытие",
+        "titleEn": "Safe Open",
+        "instructionRu": "Напишите функцию safeOpen(name string) (*os.File, error), открывающую файл или возвращающую ошибку.",
+        "instructionEn": "Write safeOpen(name string) (*os.File, error) opening a file or returning an error.",
+        "hintRu": "os.Open",
+        "hintEn": "os.Open",
+        "expectedResultRu": "(*File, nil) или (nil, error)",
+        "expectedResultEn": "(*File, nil) or (nil, error)",
+        "solutionCode": "func safeOpen(name string) (*os.File, error) {\n    f, err := os.Open(name)\n    if err != nil {\n        return nil, err\n    }\n    return f, nil\n}"
+      }
+    },
+    {
+      "titleRu": "Горутины и каналы",
+      "titleEn": "Goroutines and Channels",
+      "descriptionRu": "Go предоставляет лёгкие потоки — горутины: go func(). Каналы chan T позволяют безопасно передавать данные между горутинами. Операции <- для отправки и получения. select для мультиплексирования.",
+      "descriptionEn": "Go offers lightweight threads — goroutines via go func(). Channels chan T safely pass data between goroutines. Use <- to send and receive. select multiplexes channels.",
+      "codeExamples": [
+        {
+          "language": "go",
+          "code": "ch := make(chan int)\ngo func() { ch <- 1 }()\nfmt.Println(<-ch)",
+          "commentLanguage": "en",
+          "comment": "Sending and receiving on a channel."
+        }
+      ],
+      "quiz": [
+        {
+          "questionRu": "Что создаёт буферизированный канал?",
+          "questionEn": "How create a buffered channel?",
+          "options": ["make(chan int, 1)", "chan int{1}", "buffered chan int", "new(chan int)"],
+          "correctAnswerIndex": 0
+        }
+      ],
+      "task": {
+        "titleRu": "Параллельная сумма",
+        "titleEn": "Parallel Sum",
+        "instructionRu": "Разбейте срез nums на две части, запустите две горутины для подсчёта суммы и объедините через канал.",
+        "instructionEn": "Split slice nums into two parts, launch two goroutines to sum each and combine via channel.",
+        "hintRu": "go sum(part, ch)",
+        "hintEn": "go sum(part, ch)",
+        "expectedResultRu": "Сумма всего среза.",
+        "expectedResultEn": "Sum of entire slice.",
+        "solutionCode": "func sum(nums []int, ch chan int) {\n    s := 0\n    for _, v := range nums {\n        s += v\n    }\n    ch <- s\n}\n\nfunc main() {\n    nums := []int{1,2,3,4}\n    ch := make(chan int)\n    go sum(nums[:2], ch)\n    go sum(nums[2:], ch)\n    s1, s2 := <-ch, <-ch\n    fmt.Println(s1 + s2)\n}"
+      }
+    },
+    {
+      "titleRu": "Пакеты и модули",
+      "titleEn": "Packages and Modules",
+      "descriptionRu": "Go-модули управляются через go.mod. Команда go mod init создаёт модуль, go get добавляет зависимости, go mod tidy очищает. Путь пакета совпадает с именем модуля и папками.",
+      "descriptionEn": "Go modules are managed via go.mod. go mod init initializes a module, go get adds dependencies, go mod tidy cleans up. Package path matches module name and folder structure.",
+      "codeExamples": [
+        {
+          "language": "shell",
+          "code": "go mod init example.com/myapp\ngo get github.com/pkg/errors",
+          "commentLanguage": "ru",
+          "comment": "Инициализация модуля и добавление зависимости."
+        }
+      ],
+      "quiz": [
+        {
+          "questionRu": "Какая команда создаёт файл go.mod?",
+          "questionEn": "Which command creates go.mod?",
+          "options": ["go mod init", "go init", "go build", "go mod create"],
+          "correctAnswerIndex": 0
+        }
+      ],
+      "task": {
+        "titleRu": "Своя утилита",
+        "titleEn": "Custom Utility",
+        "instructionRu": "Создайте модуль и напишите пакет utils с функцией Hello(), возвращающей строку.",
+        "instructionEn": "Initialize a module and write a utils package with Hello() returning a string.",
+        "hintRu": "package utils; func Hello() string",
+        "hintEn": "package utils; func Hello() string",
+        "expectedResultRu": "utils.Hello() возвращает ожидаемую строку.",
+        "expectedResultEn": "utils.Hello() returns expected string.",
+        "solutionCode": "package utils\n\n// Hello returns a greeting\nfunc Hello() string {\n    return \"Hello from utils\"\n}"
+      }
+    },
+    {
+      "titleRu": "Дженерики",
+      "titleEn": "Generics",
+      "descriptionRu": "Начиная с Go 1.18 язык поддерживает обобщения. Синтаксис: func Map[T any](s []T, fn func(T) T) []T. any — универсальный constraint. Параметры типа в квадратных скобках.",
+      "descriptionEn": "Since Go 1.18, Go supports generics. Syntax: func Map[T any](s []T, fn func(T) T) []T. any is the universal constraint. Type parameters use square brackets.",
+      "codeExamples": [
+        {
+          "language": "go",
+          "code": "func Map[T any](s []T, fn func(T) T) []T {\n    r := make([]T, len(s))\n    for i, v := range s {\n        r[i] = fn(v)\n    }\n    return r\n}",
+          "commentLanguage": "en",
+          "comment": "Generic Map function over slice."
+        }
+      ],
+      "quiz": [
+        {
+          "questionRu": "Как обозначить тип-параметр T?",
+          "questionEn": "How denote type parameter T?",
+          "options": ["[T any]", "<T>", "(T)", "{T any}"],
+          "correctAnswerIndex": 0
+        }
+      ],
+      "task": {
+        "titleRu": "Фильтр обобщённый",
+        "titleEn": "Generic Filter",
+        "instructionRu": "Напишите функцию Filter[T any](s []T, fn func(T) bool) []T, возвращающую элементы, для которых fn == true.",
+        "instructionEn": "Write func Filter[T any](s []T, fn func(T) bool) []T returning elements where fn == true.",
+        "hintRu": "for _, v := range s; if fn(v) append",
+        "hintEn": "for _, v := range s; if fn(v) append",
+        "expectedResultRu": "Filter([]int{1,2,3,4}, func(n int) bool {return n%2==0}) == [2,4]",
+        "expectedResultEn": "Filter([]int{1,2,3,4}, func(n int) bool {return n%2==0}) == [2,4]",
+        "solutionCode": "func Filter[T any](s []T, fn func(T) bool) []T {\n    var r []T\n    for _, v := range s {\n        if fn(v) {\n            r = append(r, v)\n        }\n    }\n    return r\n}"
+      }
+    }
+  ]
+}

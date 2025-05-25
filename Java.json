@@ -1,0 +1,403 @@
+{
+  "courseTitle": {
+    "ru": "Полный курс по Java",
+    "en": "Complete Java Course"
+  },
+  "language": "Java",
+  "iconUrl": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/java/java-original.svg",
+  "tags": [
+    "web-development",
+    "android-development",
+    "enterprise",
+    "desktop-apps",
+    "backend",
+    "cloud",
+    "oop"
+  ],
+  "description": {
+    "ru": "Этот курс подробно знакомит с платформой Java и языком программирования: от основ синтаксиса и ООП до современных возможностей Java 17+. Мы изучим переменные и типы, управление потоком, классы и объекты, интерфейсы, коллекции, исключения, дженерики, лямбда-выражения и Stream API, модули Java Platform Module System, многопоточность, сетевое и файловое I/O. Каждый раздел содержит развернутые описания, примеры кода, викторины и практические задания.",
+    "en": "This course provides an in-depth introduction to the Java platform and language: from basic syntax and OOP to modern features in Java 17+. Topics include variables and types, control flow, classes and objects, interfaces, collections, exceptions, generics, lambda expressions and the Stream API, the Java Platform Module System, multithreading, and file/network I/O. Each section offers comprehensive explanations, code examples, quizzes, and hands-on tasks."
+  },
+  "topics": [
+    {
+      "titleRu": "Синтаксис и структура программы",
+      "titleEn": "Syntax and Program Structure",
+      "descriptionRu": "Java-приложение состоит из классов и пакетов. Точка входа — метод public static void main(String[] args). Файлы хранятся в папках, соответствующих пакету. import подключает классы. Комментарии: // и /* */.",
+      "descriptionEn": "A Java application consists of classes and packages. The entry point is public static void main(String[] args). Files reside in directories matching the package. import brings in classes. Comments use // and /* */.",
+      "codeExamples": [
+        {
+          "language": "java",
+          "code": "package com.example;\n\npublic class Main {\n    public static void main(String[] args) {\n        System.out.println(\"Hello, Java!\");\n    }\n}",
+          "commentLanguage": "en",
+          "comment": "A basic Java program with package and main method."
+        }
+      ],
+      "quiz": [
+        {
+          "questionRu": "Какой метод является точкой входа?",
+          "questionEn": "Which method is the entry point?",
+          "options": [
+            "public static void main(String[] args)",
+            "void start()",
+            "public static int main()",
+            "public void main(String[] args)"
+          ],
+          "correctAnswerIndex": 0
+        }
+      ],
+      "task": {
+        "titleRu": "HelloJava",
+        "titleEn": "HelloJava",
+        "instructionRu": "Создайте класс Main в пакете com.example и выведите «Hello, Java!»",
+        "instructionEn": "Create class Main in package com.example and print \"Hello, Java!\"",
+        "hintRu": "Используйте System.out.println",
+        "hintEn": "Use System.out.println",
+        "expectedResultRu": "В консоли: Hello, Java!",
+        "expectedResultEn": "Console prints: Hello, Java!",
+        "solutionCode": "package com.example;\n\npublic class Main {\n    public static void main(String[] args) {\n        System.out.println(\"Hello, Java!\");\n    }\n}"
+      }
+    },
+    {
+      "titleRu": "Переменные и типы",
+      "titleEn": "Variables and Types",
+      "descriptionRu": "Java — строго типизированный язык. Примитивные типы: byte, short, int, long, float, double, char, boolean. Ссылочные: String, классы и интерфейсы. Приведение типов и автоупаковка (autoboxing) примитивов в объекты.",
+      "descriptionEn": "Java is a strongly typed language. Primitive types: byte, short, int, long, float, double, char, boolean. Reference types: String, classes, and interfaces. Type casting and autoboxing of primitives into objects.",
+      "codeExamples": [
+        {
+          "language": "java",
+          "code": "int a = 10;\ndouble b = 3.14;\nchar c = 'X';\nboolean flag = true;\nString s = \"text\";",
+          "commentLanguage": "ru",
+          "comment": "Объявление примитивов и строки."
+        }
+      ],
+      "quiz": [
+        {
+          "questionRu": "Какой тип хранит логическое значение?",
+          "questionEn": "Which type stores a boolean value?",
+          "options": [
+            "boolean",
+            "bool",
+            "Boolean",
+            "bit"
+          ],
+          "correctAnswerIndex": 0
+        }
+      ],
+      "task": {
+        "titleRu": "Типы данных",
+        "titleEn": "Data Types",
+        "instructionRu": "Объявите переменные всех примитивных типов и выведите их значения.",
+        "instructionEn": "Declare variables of all primitive types and print their values.",
+        "hintRu": "System.out.println для каждого.",
+        "hintEn": "Use System.out.println for each.",
+        "expectedResultRu": "Консоль выводит значения переменных.",
+        "expectedResultEn": "Console prints the variable values.",
+        "solutionCode": "public class Types {\n    public static void main(String[] args) {\n        byte b = 1;\n        short sh = 2;\n        int i = 3;\n        long l = 4L;\n        float f = 5.0f;\n        double d = 6.0;\n        char c = 'A';\n        boolean bool = false;\n        System.out.println(b);\n        System.out.println(sh);\n        System.out.println(i);\n        System.out.println(l);\n        System.out.println(f);\n        System.out.println(d);\n        System.out.println(c);\n        System.out.println(bool);\n    }\n}"
+      }
+    },
+    {
+      "titleRu": "Управление потоком",
+      "titleEn": "Control Flow",
+      "descriptionRu": "Java поддерживает if-else, switch, while, do-while и for. switch с Java 14+ допускает выражения и лямбда-arrows. break и continue управляют циклами.",
+      "descriptionEn": "Java supports if-else, switch, while, do-while, and for. switch in Java 14+ allows expressions and arrow syntax. break and continue control loop flow.",
+      "codeExamples": [
+        {
+          "language": "java",
+          "code": "int x = 5;\nif (x % 2 == 0) System.out.println(\"Even\");\nelse System.out.println(\"Odd\");\n\nfor (int i = 0; i < 3; i++) {\n    System.out.println(i);\n}",
+          "commentLanguage": "en",
+          "comment": "if-else and for loop examples."
+        }
+      ],
+      "quiz": [
+        {
+          "questionRu": "Какой оператор завершает текущий цикл?",
+          "questionEn": "Which statement terminates the current loop?",
+          "options": [
+            "break",
+            "continue",
+            "exit",
+            "return"
+          ],
+          "correctAnswerIndex": 0
+        }
+      ],
+      "task": {
+        "titleRu": "Сумма цикла",
+        "titleEn": "Loop Sum",
+        "instructionRu": "Вычислите сумму чисел от 1 до 10 с помощью for.",
+        "instructionEn": "Compute the sum of numbers from 1 to 10 using for.",
+        "hintRu": "int sum=0; for(...) sum+=i;",
+        "hintEn": "int sum=0; for(...) sum+=i;",
+        "expectedResultRu": "55",
+        "expectedResultEn": "55",
+        "solutionCode": "public class LoopSum {\n    public static void main(String[] args) {\n        int sum = 0;\n        for (int i = 1; i <= 10; i++) {\n            sum += i;\n        }\n        System.out.println(sum);\n    }\n}"
+      }
+    },
+    {
+      "titleRu": "Классы и объекты",
+      "titleEn": "Classes and Objects",
+      "descriptionRu": "Java — объектно-ориентированный язык. Класс содержит поля, конструкторы и методы. Объекты создаются через new. this ссылается на текущий объект. Статические члены объявляются ключевым словом static.",
+      "descriptionEn": "Java is object-oriented. A class contains fields, constructors, and methods. Objects are created via new. this refers to the current instance. Static members use the static keyword.",
+      "codeExamples": [
+        {
+          "language": "java",
+          "code": "public class Person {\n    private String name;\n    public Person(String name) { this.name = name; }\n    public String getName() { return name; }\n}\n\n// Usage:\nPerson p = new Person(\"Alice\");\nSystem.out.println(p.getName());",
+          "commentLanguage": "ru",
+          "comment": "Класс Person с полем и методом."
+        }
+      ],
+      "quiz": [
+        {
+          "questionRu": "Как создать объект класса?",
+          "questionEn": "How do you create a class instance?",
+          "options": [
+            "new ClassName()",
+            "ClassName()",
+            "create ClassName",
+            "ClassName.new()"
+          ],
+          "correctAnswerIndex": 0
+        }
+      ],
+      "task": {
+        "titleRu": "Класс Rectangle",
+        "titleEn": "Rectangle Class",
+        "instructionRu": "Создайте класс Rectangle с width, height и методом getArea().",
+        "instructionEn": "Create a Rectangle class with width, height, and getArea().",
+        "hintRu": "public int getArea() { return width*height; }",
+        "hintEn": "public int getArea() { return width*height; }",
+        "expectedResultRu": "Для 3×4 возвращает 12.",
+        "expectedResultEn": "Returns 12 for 3×4.",
+        "solutionCode": "public class Rectangle {\n    private int width, height;\n    public Rectangle(int width, int height) {\n        this.width = width;\n        this.height = height;\n    }\n    public int getArea() {\n        return width * height;\n    }\n}\n// Usage:\nRectangle r = new Rectangle(3, 4);\nSystem.out.println(r.getArea());"
+      }
+    },
+    {
+      "titleRu": "Наследование и полиморфизм",
+      "titleEn": "Inheritance and Polymorphism",
+      "descriptionRu": "Наследование через extends. Абстрактные классы и методы, интерфейсы. Полиморфизм достигается через переопределение (override) методов наследников. super вызывает метод предка.",
+      "descriptionEn": "Inheritance uses extends. Abstract classes and methods, interfaces. Polymorphism achieved via method overriding. super calls the parent implementation.",
+      "codeExamples": [
+        {
+          "language": "java",
+          "code": "public class Animal {\n    public void speak() { System.out.println(\"Animal speaks\"); }\n}\npublic class Dog extends Animal {\n    @Override public void speak() { System.out.println(\"Dog barks\"); }\n}\n// Usage:\nAnimal a = new Dog();\na.speak();",
+          "commentLanguage": "en",
+          "comment": "Inheritance and method overriding."
+        }
+      ],
+      "quiz": [
+        {
+          "questionRu": "Какой аннотацией помечается переопределённый метод?",
+          "questionEn": "Which annotation marks an overridden method?",
+          "options": [
+            "@Override",
+            "@Inherited",
+            "@Polymorph",
+            "@Extend"
+          ],
+          "correctAnswerIndex": 0
+        }
+      ],
+      "task": {
+        "titleRu": "Класс Cat",
+        "titleEn": "Cat Class",
+        "instructionRu": "Создайте класс Cat, наследующий Animal, и переопределите speak().",
+        "instructionEn": "Create Cat class extending Animal and override speak().",
+        "hintRu": "class Cat extends Animal",
+        "hintEn": "class Cat extends Animal",
+        "expectedResultRu": "Cat meows",
+        "expectedResultEn": "Cat meows",
+        "solutionCode": "public class Cat extends Animal {\n    @Override public void speak() {\n        System.out.println(\"Cat meows\");\n    }\n}\n// Usage:\nnew Cat().speak();"
+      }
+    },
+    {
+      "titleRu": "Интерфейсы",
+      "titleEn": "Interfaces",
+      "descriptionRu": "Интерфейс описывает контракт методов без реализации (до Java 8). С Java 8 – default и static методы. Класс реализует интерфейс через implements и обязан предоставить все методы.",
+      "descriptionEn": "An interface defines a method contract without implementation (pre-Java 8). Since Java 8, it supports default and static methods. A class implements an interface via implements and must provide all methods.",
+      "codeExamples": [
+        {
+          "language": "java",
+          "code": "public interface Drivable {\n    void drive();\n}\npublic class Car implements Drivable {\n    public void drive() { System.out.println(\"Car driving\"); }\n}",
+          "commentLanguage": "ru",
+          "comment": "Интерфейс Drivable и его реализация."
+        }
+      ],
+      "quiz": [
+        {
+          "questionRu": "Как объявить реализацию интерфейса?",
+          "questionEn": "How do you implement an interface?",
+          "options": [
+            "class C implements I",
+            "class C extends I",
+            "class C uses I",
+            "interface C implements I"
+          ],
+          "correctAnswerIndex": 0
+        }
+      ],
+      "task": {
+        "titleRu": "Интерфейс Playable",
+        "titleEn": "Playable Interface",
+        "instructionRu": "Создайте интерфейс Playable с play(), реализуйте в Song и вызовите play().",
+        "instructionEn": "Create Playable interface with play(), implement in Song and call play().",
+        "hintRu": "public class Song implements Playable",
+        "hintEn": "public class Song implements Playable",
+        "expectedResultRu": "Playing song",
+        "expectedResultEn": "Playing song",
+        "solutionCode": "public interface Playable { void play(); }\npublic class Song implements Playable {\n    public void play() { System.out.println(\"Playing song\"); }\n}\n// Usage:\nnew Song().play();"
+      }
+    },
+    {
+      "titleRu": "Коллекции и дженерики",
+      "titleEn": "Collections and Generics",
+      "descriptionRu": "Java Collections Framework: List, Set, Map и их реализации. Дженерики обеспечивают типобезопасность. Итераторы и enhanced for. С Java 8 – Stream API для функциональной обработки.",
+      "descriptionEn": "Java Collections Framework: List, Set, Map and their implementations. Generics provide type safety. Iterators and enhanced for. Since Java 8, the Stream API allows functional-style processing.",
+      "codeExamples": [
+        {
+          "language": "java",
+          "code": "List<String> list = new ArrayList<>();\nlist.add(\"a\");\nfor (String s : list) System.out.println(s);\nMap<String,Integer> map = Map.of(\"a\",1);",
+          "commentLanguage": "en",
+          "comment": "Using List and Map with generics."
+        }
+      ],
+      "quiz": [
+        {
+          "questionRu": "Как создать неизменяемый Map с Java 9?",
+          "questionEn": "How create an immutable Map in Java 9+?",
+          "options": [
+            "Map.of(k,v)",
+            "new Map<>()",
+            "Collections.fixedMap()",
+            "Map.create()"
+          ],
+          "correctAnswerIndex": 0
+        }
+      ],
+      "task": {
+        "titleRu": "Коллекция и фильтр",
+        "titleEn": "Collection and Filter",
+        "instructionRu": "Из List<Integer> отфильтруйте чётные числа с помощью Stream API.",
+        "instructionEn": "From a List<Integer>, filter even numbers using the Stream API.",
+        "hintRu": "list.stream().filter(n->n%2==0).collect(Collectors.toList())",
+        "hintEn": "list.stream().filter(n->n%2==0).collect(Collectors.toList())",
+        "expectedResultRu": "[2,4] из [1,2,3,4].",
+        "expectedResultEn": "[2,4] from [1,2,3,4].",
+        "solutionCode": "List<Integer> list = List.of(1,2,3,4);\nList<Integer> evens = list.stream()\n    .filter(n -> n % 2 == 0)\n    .collect(Collectors.toList());\nSystem.out.println(evens);"
+      }
+    },
+    {
+      "titleRu": "Исключения",
+      "titleEn": "Exceptions",
+      "descriptionRu": "Исключения — Checked и Unchecked. try-catch-finally для обработки, throws в сигнатуре метода. try-with-resources автоматически закрывает AutoCloseable.",
+      "descriptionEn": "Exceptions are Checked and Unchecked. Use try-catch-finally for handling, throws in method signature. try-with-resources automatically closes AutoCloseable.",
+      "codeExamples": [
+        {
+          "language": "java",
+          "code": "try (FileReader r = new FileReader(\"f.txt\")) {\n    int c;\n    while ((c = r.read()) != -1) System.out.print((char)c);\n} catch (IOException e) {\n    e.printStackTrace();\n}",
+          "commentLanguage": "ru",
+          "comment": "Пример try-with-resources."
+        }
+      ],
+      "quiz": [
+        {
+          "questionRu": "Что автоматически закрывает ресурсы?",
+          "questionEn": "What automatically closes resources?",
+          "options": [
+            "try-with-resources",
+            "finally",
+            "auto-close",
+            "cleanup block"
+          ],
+          "correctAnswerIndex": 0
+        }
+      ],
+      "task": {
+        "titleRu": "Чтение файла",
+        "titleEn": "File Reading",
+        "instructionRu": "Напишите метод readFirstLine(), возвращающий первую строку файла или null при ошибке.",
+        "instructionEn": "Write readFirstLine() returning the first line of a file or null on error.",
+        "hintRu": "try-with-resources + BufferedReader.readLine()",
+        "hintEn": "try-with-resources + BufferedReader.readLine()",
+        "expectedResultRu": "Строка или null.",
+        "expectedResultEn": "Line or null.",
+        "solutionCode": "public String readFirstLine(Path path) {\n    try (BufferedReader r = Files.newBufferedReader(path)) {\n        return r.readLine();\n    } catch (IOException e) {\n        return null;\n    }\n}"
+      }
+    },
+    {
+      "titleRu": "Многопоточность",
+      "titleEn": "Concurrency",
+      "descriptionRu": "Java поддерживает потоки Thread и ExecutorService. Синхронизация через synchronized, volatile, Lock. С Java 8 – CompletableFuture для асинхронных задач.",
+      "descriptionEn": "Java supports Thread and ExecutorService. Synchronization via synchronized, volatile, Lock. Since Java 8, CompletableFuture for async tasks.",
+      "codeExamples": [
+        {
+          "language": "java",
+          "code": "ExecutorService ex = Executors.newFixedThreadPool(2);\nex.submit(() -> System.out.println(\"Task1\"));\nex.shutdown();",
+          "commentLanguage": "en",
+          "comment": "Using ExecutorService for concurrent tasks."
+        }
+      ],
+      "quiz": [
+        {
+          "questionRu": "Как создать пул из 4 потоков?",
+          "questionEn": "How create a pool of 4 threads?",
+          "options": [
+            "Executors.newFixedThreadPool(4)",
+            "new ThreadPool(4)",
+            "ThreadPool.create(4)",
+            "Executors.pool(4)"
+          ],
+          "correctAnswerIndex": 0
+        }
+      ],
+      "task": {
+        "titleRu": "Параллельный подсчёт",
+        "titleEn": "Parallel Counting",
+        "instructionRu": "С помощью CompletableFuture выполните две задачи параллельно и объедините результаты.",
+        "instructionEn": "Use CompletableFuture to run two tasks in parallel and combine results.",
+        "hintRu": "CompletableFuture.supplyAsync",
+        "hintEn": "CompletableFuture.supplyAsync",
+        "expectedResultRu": "Сумма результатов.",
+        "expectedResultEn": "Sum of results.",
+        "solutionCode": "CompletableFuture<Integer> f1 = CompletableFuture.supplyAsync(() -> 2);\nCompletableFuture<Integer> f2 = CompletableFuture.supplyAsync(() -> 3);\nint sum = f1.thenCombine(f2, Integer::sum).join();\nSystem.out.println(sum);"
+      }
+    },
+    {
+      "titleRu": "Модульность (JPMS)",
+      "titleEn": "Modules (JPMS)",
+      "descriptionRu": "Java 9 ввёл систему модулей: module-info.java определяет модули, их экспорты и зависимости. Это позволяет строить надёжные образы приложений.",
+      "descriptionEn": "Java 9 introduced the module system: module-info.java declares modules, their exports and dependencies. It enables reliable application images.",
+      "codeExamples": [
+        {
+          "language": "java",
+          "code": "module com.example.app {\n    requires java.base;\n    exports com.example.api;\n}",
+          "commentLanguage": "en",
+          "comment": "Simple module declaration."
+        }
+      ],
+      "quiz": [
+        {
+          "questionRu": "Где описывается модуль?",
+          "questionEn": "Where is a module declared?",
+          "options": [
+            "module-info.java",
+            "pom.xml",
+            "build.gradle",
+            "module.xml"
+          ],
+          "correctAnswerIndex": 0
+        }
+      ],
+      "task": {
+        "titleRu": "Создание модуля",
+        "titleEn": "Create Module",
+        "instructionRu": "Создайте модуль com.example.lib, экспортирующий пакет com.example.lib.api.",
+        "instructionEn": "Create module com.example.lib exporting package com.example.lib.api.",
+        "hintRu": "module com.example.lib { exports ...; }",
+        "hintEn": "module com.example.lib { exports ...; }",
+        "expectedResultRu": "module-info.java корректен.",
+        "expectedResultEn": "module-info.java is correct.",
+        "solutionCode": "module com.example.lib {\n    exports com.example.lib.api;\n}"
+      }
+    }
+  ]
+}

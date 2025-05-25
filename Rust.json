@@ -1,0 +1,352 @@
+{
+  "courseTitle": {
+    "ru": "Полный курс по Rust",
+    "en": "Complete Rust Course"
+  },
+  "language": "Rust",
+  "iconUrl": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/rust/rust-original.svg",
+  "tags": [
+    "systems-programming",
+    "embedded",
+    "high-performance",
+    "web-backend",
+    "desktop-apps",
+    "cross-platform"
+  ],
+  "description": {
+    "ru": "Этот курс познакомит вас с Rust — современным системным языком программирования, обеспечивающим безопасность памяти без сборщика мусора. Мы пройдём все этапы: от базового синтаксиса, переменных и функций до владения и заимствования, типов-коллекций, ошибок, обобщений, трейт-ориентированного программирования и асинхронности. В каждом разделе есть подробные объяснения, примеры, викторины и практические задачи.",
+    "en": "This course introduces Rust — a modern systems programming language that ensures memory safety without a garbage collector. We cover everything from basic syntax, variables, and functions to ownership and borrowing, collections, error handling, generics, trait-oriented design, and async. Each section provides detailed explanations, code examples, quizzes, and hands-on tasks."
+  },
+  "topics": [
+    {
+      "titleRu": "Синтаксис и структура программы",
+      "titleEn": "Syntax and Program Structure",
+      "descriptionRu": "Rust-программа состоит из файла main.rs или lib.rs и точкой входа является функция main(). Модули и пакеты организуются через Cargo.toml. Основные конструкции: fn, let, mut, println!.",
+      "descriptionEn": "A Rust program lives in main.rs or lib.rs; entry point is main(). Modules and packages are managed via Cargo.toml. Key constructs: fn, let, mut, println!.",
+      "codeExamples": [
+        {
+          "language": "rust",
+          "code": "fn main() {\n    println!(\"Hello, Rust!\");\n}",
+          "commentLanguage": "ru",
+          "comment": "Простейшая программа на Rust."
+        }
+      ],
+      "quiz": [
+        {
+          "questionRu": "Как называется файл с точкой входа программы?",
+          "questionEn": "What file holds the entry point of a Rust program?",
+          "options": ["main.rs", "lib.rs", "mod.rs", "src.rs"],
+          "correctAnswerIndex": 0
+        }
+      ],
+      "task": {
+        "titleRu": "Привет, Rust!",
+        "titleEn": "Hello, Rust!",
+        "instructionRu": "Создайте проект Cargo и напишите в main() вывод «Привет, Rust!»",
+        "instructionEn": "Create a Cargo project and in main() print \"Hello, Rust!\"",
+        "hintRu": "cargo new myapp, println!()",
+        "hintEn": "cargo new myapp, println!()",
+        "expectedResultRu": "В консоли: Привет, Rust!",
+        "expectedResultEn": "Console outputs: Hello, Rust!",
+        "solutionCode": "fn main() {\n    println!(\"Привет, Rust!\");\n}"
+      }
+    },
+    {
+      "titleRu": "Переменные и типы",
+      "titleEn": "Variables and Types",
+      "descriptionRu": "В Rust по умолчанию переменные неизменяемые (let). Для изменяемости используется let mut. Типы: scalar (i32, u32, f64, bool, char), compound (tuples, arrays). Вывод типа — type inference.",
+      "descriptionEn": "In Rust variables are immutable by default (let). For mutability, use let mut. Types: scalar (i32, u32, f64, bool, char), compound (tuples, arrays). Type inference is available.",
+      "codeExamples": [
+        {
+          "language": "rust",
+          "code": "let x: i32 = 5;\nlet mut y = 10;\ny += 2;\nlet pair: (i32, bool) = (x, true);\nlet arr = [1, 2, 3, 4, 5];",
+          "commentLanguage": "en",
+          "comment": "Immutable and mutable, tuple and array."
+        }
+      ],
+      "quiz": [
+        {
+          "questionRu": "Как объявить изменяемую переменную?",
+          "questionEn": "How do you declare a mutable variable?",
+          "options": ["let x", "let mut x", "var x", "mut x"],
+          "correctAnswerIndex": 1
+        }
+      ],
+      "task": {
+        "titleRu": "Типы и арифметика",
+        "titleEn": "Types and Arithmetic",
+        "instructionRu": "Объявите два числа разных типов и вычислите их сумму и произведение.",
+        "instructionEn": "Declare two numbers of different types and compute their sum and product.",
+        "hintRu": "let a: i32, let b: f64; используйте as",
+        "hintEn": "let a: i32, let b: f64; use as",
+        "expectedResultRu": "Верно преобразуются и выводятся оба результата.",
+        "expectedResultEn": "Correctly cast and print both results.",
+        "solutionCode": "fn main() {\n    let a: i32 = 3;\n    let b: f64 = 4.5;\n    let sum = a as f64 + b;\n    let prod = (a as f64) * b;\n    println!(\"sum={}, prod={}\", sum, prod);\n}"
+      }
+    },
+    {
+      "titleRu": "Управление владением и заимствованием",
+      "titleEn": "Ownership and Borrowing",
+      "descriptionRu": "Ключевая особенность Rust — система владения: каждая переменная владеет ресурсом, при выходе из области ресурс освобождается. Заимствование (&) позволяет ссылаться без передачи владения, mutable borrow (&mut) разрешает изменение при единственном активном заимствовании.",
+      "descriptionEn": "Rust’s core feature is ownership: each variable owns a resource, dropped at end of scope. Borrowing (&) allows references without ownership transfer; mutable borrow (&mut) allows modification with only one active borrow.",
+      "codeExamples": [
+        {
+          "language": "rust",
+          "code": "let s = String::from(\"hello\");\nlet r = &s; // borrow\nprintln!(\"{}\", r);\nlet mut m = String::from(\"hi\");\nlet mr = &mut m;\nmr.push('!');",
+          "commentLanguage": "ru",
+          "comment": "Пример immutable и mutable заимствования."
+        }
+      ],
+      "quiz": [
+        {
+          "questionRu": "Сколько одновременно mutable borrow можно иметь?",
+          "questionEn": "How many mutable borrows can you have at once?",
+          "options": ["1", "2", "до 10", "бесконечно"],
+          "correctAnswerIndex": 0
+        }
+      ],
+      "task": {
+        "titleRu": "Функция расчёта длины",
+        "titleEn": "Length Function",
+        "instructionRu": "Напишите функцию длины строки, принимающую &String и возвращающую usize.",
+        "instructionEn": "Write a string length function that takes &String and returns usize.",
+        "hintRu": "s.len()",
+        "hintEn": "s.len()",
+        "expectedResultRu": "length(\"rust\") == 4.",
+        "expectedResultEn": "length(\"rust\") == 4.",
+        "solutionCode": "fn length(s: &String) -> usize { s.len() }\nfn main() {\n    let s = String::from(\"rust\");\n    println!(\"{}\", length(&s));\n}"
+      }
+    },
+    {
+      "titleRu": "Контроль потока",
+      "titleEn": "Control Flow",
+      "descriptionRu": "Rust поддерживает if, loop, while и for. match — мощная конструкция сопоставления с образцом, обязательная к исчерпыванию, поддерживает деструктуризацию, диапазоны и guard-условия.",
+      "descriptionEn": "Rust supports if, loop, while, and for. match is a powerful pattern-matching construct, must be exhaustive, supports destructuring, ranges and guard clauses.",
+      "codeExamples": [
+        {
+          "language": "rust",
+          "code": "let n = 7;\nmatch n {\n    1..=5 => println!(\"1 to 5\"),\n    _ => println!(\"other\"),\n}",
+          "commentLanguage": "en",
+          "comment": "match with range and wildcard."
+        }
+      ],
+      "quiz": [
+        {
+          "questionRu": "Что обязательно для match?",
+          "questionEn": "What is required for match?",
+          "options": ["exhaustive arms", "return value", "semicolon", "default arm"],
+          "correctAnswerIndex": 0
+        }
+      ],
+      "task": {
+        "titleRu": "Факториал через loop",
+        "titleEn": "Factorial via loop",
+        "instructionRu": "Вычислите n! с помощью loop и break.",
+        "instructionEn": "Compute n! using loop and break.",
+        "hintRu": "используйте счетчик и result *= i",
+        "hintEn": "use a counter and result *= i",
+        "expectedResultRu": "factorial(5) == 120.",
+        "expectedResultEn": "factorial(5) == 120.",
+        "solutionCode": "fn factorial(n: u32) -> u32 {\n    let mut result = 1;\n    let mut i = 1;\n    loop {\n        result *= i;\n        i += 1;\n        if i > n { break; }\n    }\n    result\n}\nfn main() { println!(\"{}\", factorial(5)); }"
+      }
+    },
+    {
+      "titleRu": "Структуры и перечисления",
+      "titleEn": "Structs and Enums",
+      "descriptionRu": "Структуры (struct) — именованные поля, методы через impl. Перечисления (enum) могут хранить данные в вариантах. Match используется для обработки enum.",
+      "descriptionEn": "Structs have named fields; methods are defined in impl blocks. Enums can carry data in variants. match is used to handle enums.",
+      "codeExamples": [
+        {
+          "language": "rust",
+          "code": "struct Point { x: i32, y: i32 }\nimpl Point { fn dist(&self) -> f64 { ((self.x*self.x + self.y*self.y) as f64).sqrt() } }\nenum Shape { Circle(f64), Rect { w: f64, h: f64 } }",
+          "commentLanguage": "ru",
+          "comment": "Пример struct и enum."
+        }
+      ],
+      "quiz": [
+        {
+          "questionRu": "Как вызвать метод структуры?",
+          "questionEn": "How do you call a struct’s method?",
+          "options": ["p.dist()", "dist(p)", "p->dist()", "Point::dist(p)"],
+          "correctAnswerIndex": 0
+        }
+      ],
+      "task": {
+        "titleRu": "Area Shape",
+        "titleEn": "Shape Area",
+        "instructionRu": "Добавьте метод area() для enum Shape, рассчитывающий площадь.",
+        "instructionEn": "Add an area() method to the Shape enum that computes area.",
+        "hintRu": "используйте match self",
+        "hintEn": "use match self",
+        "expectedResultRu": "Shape::Circle(2.0).area() == π*4.",
+        "expectedResultEn": "Shape::Circle(2.0).area() == π*4.",
+        "solutionCode": "impl Shape {\n    fn area(&self) -> f64 {\n        match *self {\n            Shape::Circle(r) => std::f64::consts::PI * r * r,\n            Shape::Rect { w, h } => w * h,\n        }\n    }\n}"
+      }
+    },
+    {
+      "titleRu": "Коллекции и итераторы",
+      "titleEn": "Collections and Iterators",
+      "descriptionRu": "В Rust есть Vec, String, HashMap и др. Итераторы реализуют Iterator, поддерживают методы map, filter, collect.",
+      "descriptionEn": "Rust provides Vec, String, HashMap, etc. Iterators implement Iterator trait, support map, filter, collect methods.",
+      "codeExamples": [
+        {
+          "language": "rust",
+          "code": "let v = vec![1,2,3];\nlet evens: Vec<_> = v.iter().filter(|&&x| x%2==0).collect();",
+          "commentLanguage": "ru",
+          "comment": "Фильтрация чётных через итератор."
+        }
+      ],
+      "quiz": [
+        {
+          "questionRu": "Как собрать итератор обратно в коллекцию?",
+          "questionEn": "How do you collect an iterator back into a collection?",
+          "options": ["collect()", "into()", "build()", "to_vec()"],
+          "correctAnswerIndex": 0
+        }
+      ],
+      "task": {
+        "titleRu": "Квадраты",
+        "titleEn": "Squares",
+        "instructionRu": "Преобразуйте Vec<i32> в Vec<i32> его квадратов.",
+        "instructionEn": "Transform a Vec<i32> into a Vec<i32> of its squares.",
+        "hintRu": "map(|x| x*x)",
+        "hintEn": "map(|x| x*x)",
+        "expectedResultRu": "[1,4,9] из [1,2,3].",
+        "expectedResultEn": "[1,4,9] from [1,2,3].",
+        "solutionCode": "let nums = vec![1,2,3];\nlet sq: Vec<_> = nums.iter().map(|&x| x*x).collect();"
+      }
+    },
+    {
+      "titleRu": "Обработка ошибок",
+      "titleEn": "Error Handling",
+      "descriptionRu": "Rust использует типы Result<T,E> и panic!. Операции, которые могут неудаваться, возвращают Result, обрабатываются match или ?-оператором.",
+      "descriptionEn": "Rust uses Result<T,E> and panic!. Fallible operations return Result, handled via match or the ? operator.",
+      "codeExamples": [
+        {
+          "language": "rust",
+          "code": "use std::fs::File;\nfn open() -> Result<File, std::io::Error> { File::open(\"foo.txt\") }\nfn main() -> Result<(), Box<dyn std::error::Error>> { let f = open()?; Ok(()) }",
+          "commentLanguage": "ru",
+          "comment": "Пример использования Result и ?."
+        }
+      ],
+      "quiz": [
+        {
+          "questionRu": "Что возвратит функция с ? при ошибке?",
+          "questionEn": "What does using ? return on error?",
+          "options": ["Err(e)", "None", "panic!", "Ok(())"],
+          "correctAnswerIndex": 0
+        }
+      ],
+      "task": {
+        "titleRu": "Чтение файла",
+        "titleEn": "File Read",
+        "instructionRu": "Напишите функцию read_username(), возвращающую Result<String, io::Error> с содержимым файла username.txt.",
+        "instructionEn": "Write read_username() that returns Result<String, io::Error> with contents of username.txt.",
+        "hintRu": "std::fs::read_to_string",
+        "hintEn": "std::fs::read_to_string",
+        "expectedResultRu": "Ok(String) или Err.",
+        "expectedResultEn": "Ok(String) or Err.",
+        "solutionCode": "use std::fs;\nfn read_username() -> Result<String, std::io::Error> {\n    fs::read_to_string(\"username.txt\")\n}"
+      }
+    },
+    {
+      "titleRu": "Обобщения и трейты",
+      "titleEn": "Generics and Traits",
+      "descriptionRu": "Обобщения позволяют параметризовать типы. Трейты описывают набор методов. Можно ограничивать параметры типа через trait bounds.",
+      "descriptionEn": "Generics let you parameterize types. Traits describe method sets. You can constrain type parameters via trait bounds.",
+      "codeExamples": [
+        {
+          "language": "rust",
+          "code": "fn largest<T: PartialOrd>(list: &[T]) -> &T { let mut max = &list[0]; for item in list { if item > max { max = item; } } max }",
+          "commentLanguage": "ru",
+          "comment": "Функция largest с ограничением PartialOrd."
+        }
+      ],
+      "quiz": [
+        {
+          "questionRu": "Как задать ограничение типа T?",
+          "questionEn": "How do you constrain type T?",
+          "options": ["T:Trait", "T<Trait>", "T?Trait", "Trait<T>"],
+          "correctAnswerIndex": 0
+        }
+      ],
+      "task": {
+        "titleRu": "Контейнер",
+        "titleEn": "Container",
+        "instructionRu": "Создайте обобщённую структуру Container<T> с полем value и методом get(&self).",
+        "instructionEn": "Create a generic struct Container<T> with a field value and method get(&self).",
+        "hintRu": "struct Container<T> { value: T }",
+        "hintEn": "struct Container<T> { value: T }",
+        "expectedResultRu": "Container::new(5).get() == &5",
+        "expectedResultEn": "Container::new(5).get() == &5",
+        "solutionCode": "struct Container<T> { value: T }\nimpl<T> Container<T> { fn new(v: T) -> Self { Self { value: v } } fn get(&self) -> &T { &self.value } }"
+      }
+    },
+    {
+      "titleRu": "Асинхронность (async/await)",
+      "titleEn": "Async/Await",
+      "descriptionRu": "Через Tokio или async-std Rust поддерживает async fn и await. Фьючи запускаются через .await, runtime обеспечивает планирование.",
+      "descriptionEn": "With Tokio or async-std Rust supports async fn and await. Futures are driven by .await; a runtime schedules tasks.",
+      "codeExamples": [
+        {
+          "language": "rust",
+          "code": "use tokio::time::{sleep, Duration};\n#[tokio::main]\nasync fn main() {\n    sleep(Duration::from_secs(1)).await;\n    println!(\"Done\");\n}",
+          "commentLanguage": "en",
+          "comment": "Async example with Tokio."
+        }
+      ],
+      "quiz": [
+        {
+          "questionRu": "Что возвращает async fn?",
+          "questionEn": "What does async fn return?",
+          "options": ["Future", "Result", "Option", "()"],
+          "correctAnswerIndex": 0
+        }
+      ],
+      "task": {
+        "titleRu": "Асинхронная задержка",
+        "titleEn": "Async Delay",
+        "instructionRu": "Напишите async fn wait(n), ждущую n секунд и печатающую сообщение.",
+        "instructionEn": "Write async fn wait(n) that waits n seconds and prints a message.",
+        "hintRu": "tokio::time::sleep and .await",
+        "hintEn": "tokio::time::sleep and .await",
+        "expectedResultRu": "Через n секунд сообщение.",
+        "expectedResultEn": "Message after n seconds.",
+        "solutionCode": "use tokio::time::{sleep, Duration};\nasync fn wait(n: u64) { sleep(Duration::from_secs(n)).await; println!(\"Waited {}s\", n); }"
+      }
+    },
+    {
+      "titleRu": "Модули и пакеты (Cargo)",
+      "titleEn": "Modules and Packages (Cargo)",
+      "descriptionRu": "Cargo — система сборки и менеджер пакетов. dependencies в Cargo.toml. Модули объявляются через mod, файлы и папки отображают структуру. pub делает элементы публичными.",
+      "descriptionEn": "Cargo is the build system and package manager. dependencies in Cargo.toml. Modules declared with mod; files and folders reflect structure. pub makes items public.",
+      "codeExamples": [
+        {
+          "language": "rust",
+          "code": "// src/lib.rs\nmod utils; pub use utils::greet;\n\n// src/utils.rs\npub fn greet(name: &str) { println!(\"Hello, {}\", name); }",
+          "commentLanguage": "ru",
+          "comment": "Пример модуля и публичного экспорта."
+        }
+      ],
+      "quiz": [
+        {
+          "questionRu": "Где объявляются зависимости проекта?",
+          "questionEn": "Where are a project’s dependencies declared?",
+          "options": ["main.rs", "Cargo.toml", "lib.rs", ".cargo/config"],
+          "correctAnswerIndex": 1
+        }
+      ],
+      "task": {
+        "titleRu": "Своя утилита",
+        "titleEn": "Custom Utility",
+        "instructionRu": "Создайте Cargo-библиотеку с модулем math и функцией add(a,b).",
+        "instructionEn": "Create a Cargo library with a math module and add(a,b) function.",
+        "hintRu": "cargo new --lib",
+        "hintEn": "cargo new --lib",
+        "expectedResultRu": "Использование math::add работает.",
+        "expectedResultEn": "Using math::add works.",
+        "solutionCode": "// Cargo.toml [lib]\nname = \"mylib\"\n\n// src/lib.rs\npub mod math;\n\n// src/math.rs\npub fn add(a: i32, b: i32) -> i32 { a + b }"
+      }
+    }
+  ]
+}

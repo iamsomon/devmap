@@ -1,0 +1,320 @@
+{
+  "courseTitle": {
+    "ru": "Полный курс по Dart",
+    "en": "Complete Dart Course"
+  },
+  "language": "Dart",
+  "iconUrl": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/dart/dart-original.svg",
+  "tags": [
+    "web-development",
+    "mobile-development",
+    "flutter",
+    "server-side",
+    "command-line",
+    "null-safety",
+    "async"
+  ],
+  "description": {
+    "ru": "Этот курс охватывает язык программирования Dart — его синтаксис, особенности системы типов с поддержкой null safety, объектно-ориентированную модель, функциональные возможности и асинхронную модель на основе Future и Stream. Мы рассмотрим разработку и запуск скриптов, серверных приложений, а также использование Dart в рамках Flutter. Для каждой темы предусмотрены детальные объяснения, примеры кода, викторины и практические задания.",
+    "en": "This course covers the Dart programming language — its syntax, null-safe type system, object-oriented model, functional features, and asynchronous model based on Future and Stream. We explore writing scripts, server-side apps, and using Dart with Flutter. Each topic includes detailed explanations, code examples, quizzes, and hands-on tasks."
+  },
+  "topics": [
+    {
+      "titleRu": "Синтаксис и структура программы",
+      "titleEn": "Syntax and Program Structure",
+      "descriptionRu": "Dart-программа состоит из файлов .dart. Точка входа — функция main(), возвращающая void или Future<void>. Импорт модулей осуществляется через import, пути пакетов — package:. Функции и объявления могут быть на верхнем уровне. Комментарии: // и /* */.",
+      "descriptionEn": "A Dart program consists of .dart files. Entry point is main(), returning void or Future<void>. Modules are imported via import, using package: URIs for packages. Functions and declarations can live at top level. Comments use // and /* */.",
+      "codeExamples": [
+        {
+          "language": "dart",
+          "code": "void main() {\n  print('Hello, Dart!');\n}",
+          "commentLanguage": "en",
+          "comment": "A minimal Dart application printing to console."
+        }
+      ],
+      "quiz": [
+        {
+          "questionRu": "Какой функции является точкой входа в Dart-программе?",
+          "questionEn": "Which function is the entry point in a Dart program?",
+          "options": ["start()", "main()", "run()", "init()"],
+          "correctAnswerIndex": 1
+        }
+      ],
+      "task": {
+        "titleRu": "Привет, Dart!",
+        "titleEn": "Hello, Dart!",
+        "instructionRu": "Создайте файл main.dart и выведите «Привет, Dart!» в консоль.",
+        "instructionEn": "Create main.dart and print \"Hello, Dart!\" to the console.",
+        "hintRu": "Используйте функцию print() внутри main().",
+        "hintEn": "Use print() inside main().",
+        "expectedResultRu": "В консоли появится \"Привет, Dart!\"",
+        "expectedResultEn": "\"Hello, Dart!\" appears in console",
+        "solutionCode": "void main() {\n  print('Привет, Dart!');\n}"
+      }
+    },
+    {
+      "titleRu": "Переменные и типы",
+      "titleEn": "Variables and Types",
+      "descriptionRu": "Dart поддерживает как статическую, так и динамическую типизацию. Ключевое слово var выводит тип, dynamic отключает проверку. С версии 2.12 — система null safety, типы по умолчанию non-nullable, nullable обозначаются ?, например String? name.",
+      "descriptionEn": "Dart supports static and dynamic typing. var infers type, dynamic disables checking. Since 2.12, Dart has null safety: types are non-nullable by default; nullable types use ?, e.g. String? name.",
+      "codeExamples": [
+        {
+          "language": "dart",
+          "code": "int a = 5;\nvar b = 3.14;\nString? s;\nb = b + a;",
+          "commentLanguage": "ru",
+          "comment": "Примитивы, var и nullable String?."
+        }
+      ],
+      "quiz": [
+        {
+          "questionRu": "Как обозначить nullable тип String?",
+          "questionEn": "How denote a nullable String type?",
+          "options": ["String", "String!", "String?", "Nullable<String>"],
+          "correctAnswerIndex": 2
+        }
+      ],
+      "task": {
+        "titleRu": "Типы данных",
+        "titleEn": "Data Types",
+        "instructionRu": "Объявите переменные всех основных типов (int, double, bool, String и их nullable версии) и выведите их значения.",
+        "instructionEn": "Declare variables of core types (int, double, bool, String and their nullable versions) and print their values.",
+        "hintRu": "var x; int? y;",
+        "hintEn": "var x; int? y;",
+        "expectedResultRu": "Консоль выводит значения и null.",
+        "expectedResultEn": "Console prints values and null.",
+        "solutionCode": "void main() {\n  int i = 1;\n  double d = 2.5;\n  bool b = true;\n  String s = 'text';\n  String? n;\n  print(i);\n  print(d);\n  print(b);\n  print(s);\n  print(n);\n}"
+      }
+    },
+    {
+      "titleRu": "Управление потоком",
+      "titleEn": "Control Flow",
+      "descriptionRu": "Dart поддерживает if-else, switch, for, for-in, while, do-while. switch не требует break, но варианты не должны пересекаться. Инструкция continue пропускает итерацию.",
+      "descriptionEn": "Dart supports if-else, switch, for, for-in, while, do-while. switch does not require break but cases must not overlap. continue skips an iteration.",
+      "codeExamples": [
+        {
+          "language": "dart",
+          "code": "for (var i = 0; i < 3; i++) {\n  print(i);\n}\n\nif (i % 2 == 0) print('even'); else print('odd');",
+          "commentLanguage": "en",
+          "comment": "for-loop and if-else example."
+        }
+      ],
+      "quiz": [
+        {
+          "questionRu": "Нужно ли ставить break в каждом case switch?",
+          "questionEn": "Do you need a break in each switch case?",
+          "options": ["Да", "Нет", "Только в default", "Только в Dart 1.x"],
+          "correctAnswerIndex": 1
+        }
+      ],
+      "task": {
+        "titleRu": "Сумма чисел",
+        "titleEn": "Sum Numbers",
+        "instructionRu": "С помощью for-in вычислите сумму чисел от 1 до 10.",
+        "instructionEn": "Use for-in to compute the sum of numbers from 1 to 10.",
+        "hintRu": "var sum = 0;",
+        "hintEn": "var sum = 0;",
+        "expectedResultRu": "55",
+        "expectedResultEn": "55",
+        "solutionCode": "void main() {\n  var sum = 0;\n  for (var i in List.generate(10, (i) => i + 1)) {\n    sum += i;\n  }\n  print(sum);\n}"
+      }
+    },
+    {
+      "titleRu": "Функции и стрелочные выражения",
+      "titleEn": "Functions and Arrow Syntax",
+      "descriptionRu": "Функции объявляются с return-type имя(параметры) { }. Стрелочная форма => используется для однострочных тел. Параметры могут быть именованными или позиционными (опциональными с []).",
+      "descriptionEn": "Functions declared with return-type name(params) { }. Arrow syntax => used for single-expression bodies. Parameters can be named or positional (optional in []).",
+      "codeExamples": [
+        {
+          "language": "dart",
+          "code": "int add(int a, int b) => a + b;\nvoid greet({String name = 'User'}) {\n  print('Hello, $name');\n}",
+          "commentLanguage": "ru",
+          "comment": "Стрелочная функция и именованный параметр."
+        }
+      ],
+      "quiz": [
+        {
+          "questionRu": "Как объявить необязательный позиционный параметр?",
+          "questionEn": "How declare an optional positional parameter?",
+          "options": ["[int x]", "{int x}", "(int? x)", "<int x>"],
+          "correctAnswerIndex": 0
+        }
+      ],
+      "task": {
+        "titleRu": "Факториал",
+        "titleEn": "Factorial",
+        "instructionRu": "Реализуйте рекурсивную функцию factorial(n) => n!.",
+        "instructionEn": "Implement recursive function factorial(n) => n!.",
+        "hintRu": "n <= 1 ? 1 : n * factorial(n-1)",
+        "hintEn": "n <= 1 ? 1 : n * factorial(n-1)",
+        "expectedResultRu": "factorial(5) == 120",
+        "expectedResultEn": "factorial(5) == 120",
+        "solutionCode": "int factorial(int n) => n <= 1 ? 1 : n * factorial(n - 1);\nvoid main() => print(factorial(5));"
+      }
+    },
+    {
+      "titleRu": "Классы и объекты",
+      "titleEn": "Classes and Objects",
+      "descriptionRu": "Dart — объектно-ориентированный, все — объекты. Классы с конструкторами, полями, методами. Тип nullable объявляют как Class?. Конструктор с короткой инициализацией this.x.",
+      "descriptionEn": "Dart is object-oriented; everything is an object. Classes with constructors, fields, methods. Nullable types use Class?. Constructors support shorthand this.x initialization.",
+      "codeExamples": [
+        {
+          "language": "dart",
+          "code": "class Person {\n  String name;\n  int age;\n  Person(this.name, this.age);\n  void greet() => print('Hi, I am $name');\n}\nvoid main() {\n  var p = Person('Alice', 30);\n  p.greet();\n}",
+          "commentLanguage": "en",
+          "comment": "Class with shorthand constructor and method."
+        }
+      ],
+      "quiz": [
+        {
+          "questionRu": "Как объявить поле nullable?",
+          "questionEn": "How declare a nullable field?",
+          "options": ["String name?", "String? name", "String name!", "?String name"],
+          "correctAnswerIndex": 1
+        }
+      ],
+      "task": {
+        "titleRu": "Класс Rectangle",
+        "titleEn": "Rectangle Class",
+        "instructionRu": "Создайте класс Rectangle с width, height и методом area().",
+        "instructionEn": "Create class Rectangle with width, height, and area().",
+        "hintRu": "double area() => width * height;",
+        "hintEn": "double area() => width * height;",
+        "expectedResultRu": "Rectangle(3,4).area() == 12.0",
+        "expectedResultEn": "Rectangle(3,4).area() == 12.0",
+        "solutionCode": "class Rectangle {\n  double width, height;\n  Rectangle(this.width, this.height);\n  double area() => width * height;\n}\nvoid main() => print(Rectangle(3, 4).area());"
+      }
+    },
+    {
+      "titleRu": "Коллекции и итераторы",
+      "titleEn": "Collections and Iterators",
+      "descriptionRu": "Dart предоставляет List, Map, Set. Итерация через for-in, методы higher-order: map, where, reduce, fold. Расширения коллекций помогают при преобразовании.",
+      "descriptionEn": "Dart provides List, Map, Set. Iterate with for-in, and higher-order methods: map, where, reduce, fold. Collection extensions aid transformations.",
+      "codeExamples": [
+        {
+          "language": "dart",
+          "code": "var nums = [1,2,3,4];\nvar evens = nums.where((n) => n % 2 == 0).toList();\nprint(evens);",
+          "commentLanguage": "ru",
+          "comment": "Фильтрация списка."
+        }
+      ],
+      "quiz": [
+        {
+          "questionRu": "Как получить список квадратов чисел?",
+          "questionEn": "How get list of squares of numbers?",
+          "options": ["map((n)=>n*n)", "where((n)=>n*n)", "reduce()", "expand()"],
+          "correctAnswerIndex": 0
+        }
+      ],
+      "task": {
+        "titleRu": "Квадраты",
+        "titleEn": "Squares",
+        "instructionRu": "Преобразуйте List<int> в List<int> его квадратов.",
+        "instructionEn": "Transform List<int> into List<int> of its squares.",
+        "hintRu": "nums.map((n)=>n*n).toList()",
+        "hintEn": "nums.map((n)=>n*n).toList()",
+        "expectedResultRu": "[1,4,9] из [1,2,3]",
+        "expectedResultEn": "[1,4,9] from [1,2,3]",
+        "solutionCode": "void main() {\n  var nums = [1,2,3];\n  var sq = nums.map((n) => n*n).toList();\n  print(sq);\n}"
+      }
+    },
+    {
+      "titleRu": "Обработка ошибок",
+      "titleEn": "Error Handling",
+      "descriptionRu": "В Dart есть исключения и try-catch-finally. Для превращения ошибки в Future используйте Future.error. throw бросает экземпляр Error или Exception.",
+      "descriptionEn": "Dart supports exceptions and try-catch-finally. To turn an error into a Future, use Future.error. throw raises an Error or Exception instance.",
+      "codeExamples": [
+        {
+          "language": "dart",
+          "code": "void mayFail() {\n  throw FormatException('Bad format');\n}\n\nvoid main() {\n  try {\n    mayFail();\n  } catch (e) {\n    print(e);\n  }\n}",
+          "commentLanguage": "en",
+          "comment": "Throwing and catching an exception."
+        }
+      ],
+      "quiz": [
+        {
+          "questionRu": "Как бросить исключение FormatException?",
+          "questionEn": "How throw a FormatException?",
+          "options": ["throw FormatException()", "raise FormatException()", "error FormatException()", "FormatException()"],
+          "correctAnswerIndex": 0
+        }
+      ],
+      "task": {
+        "titleRu": "Деление с проверкой",
+        "titleEn": "Safe Division",
+        "instructionRu": "Напишите функцию safeDiv(a, b), возвращающую a/b или бросающую IntegerDivisionByZeroException.",
+        "instructionEn": "Write safeDiv(a, b) returning a/b or throwing IntegerDivisionByZeroException.",
+        "hintRu": "if (b==0) throw ...;",
+        "hintEn": "if (b==0) throw ...;",
+        "expectedResultRu": "safeDiv(4,2)==2, safeDiv(1,0) бросает.",
+        "expectedResultEn": "safeDiv(4,2)==2, safeDiv(1,0) throws.",
+        "solutionCode": "double safeDiv(double a, double b) {\n  if (b == 0) throw IntegerDivisionByZeroException();\n  return a / b;\n}\nvoid main() {\n  print(safeDiv(4, 2));\n}"
+      }
+    },
+    {
+      "titleRu": "Асинхронность (Future и Stream)",
+      "titleEn": "Asynchrony (Future & Stream)",
+      "descriptionRu": "Dart-асинхронность основана на Future и async/await; Stream для последовательных событий. await приостанавливает выполнение до завершения Future. Stream.listen подписывается на события.",
+      "descriptionEn": "Dart’s asynchrony is based on Future and async/await; Stream for event sequences. await pauses execution until a Future completes. Stream.listen subscribes to events.",
+      "codeExamples": [
+        {
+          "language": "dart",
+          "code": "Future<String> fetch() async {\n  await Future.delayed(Duration(seconds:1));\n  return 'Data';\n}\nvoid main() async {\n  var d = await fetch();\n  print(d);\n}",
+          "commentLanguage": "ru",
+          "comment": "Async function returning Future."
+        }
+      ],
+      "quiz": [
+        {
+          "questionRu": "Какой тип возвращает async-функция?",
+          "questionEn": "What type does an async function return?",
+          "options": ["Future<T>", "Stream<T>", "T", "void"],
+          "correctAnswerIndex": 0
+        }
+      ],
+      "task": {
+        "titleRu": "Асинхронная задержка",
+        "titleEn": "Async Delay",
+        "instructionRu": "Напишите async-функцию wait(n), ждущую n секунд, затем выводящую сообщение.",
+        "instructionEn": "Write async function wait(n) that waits n seconds then prints a message.",
+        "hintRu": "await Future.delayed(...)",
+        "hintEn": "await Future.delayed(...)",
+        "expectedResultRu": "Через n секунд сообщение.",
+        "expectedResultEn": "Message after n seconds.",
+        "solutionCode": "Future<void> wait(int n) async {\n  await Future.delayed(Duration(seconds: n));\n  print('Waited \$n seconds');\n}\nvoid main() async {\n  await wait(1);\n}"
+      }
+    },
+    {
+      "titleRu": "Пакеты и pub",
+      "titleEn": "Packages and pub",
+      "descriptionRu": "Dart-пакеты публикуются и управляются через pub.dev и файл pubspec.yaml. Зависимости указываются в dependencies и dev_dependencies. pub get загружает пакеты.",
+      "descriptionEn": "Dart packages are published and managed via pub.dev and pubspec.yaml. Dependencies go in dependencies and dev_dependencies. pub get fetches packages.",
+      "codeExamples": [
+        {
+          "language": "yaml",
+          "code": "dependencies:\n  http: ^0.13.0\n\ndev_dependencies:\n  test: ^1.16.0",
+          "commentLanguage": "en",
+          "comment": "Example pubspec.yaml dependencies."
+        }
+      ],
+      "quiz": [
+        {
+          "questionRu": "Какая команда загружает зависимости?",
+          "questionEn": "Which command fetches dependencies?",
+          "options": ["pub get", "dart build", "pub install", "dart fetch"],
+          "correctAnswerIndex": 0
+        }
+      ],
+      "task": {
+        "titleRu": "HTTP-запрос",
+        "titleEn": "HTTP Request",
+        "instructionRu": "Добавьте пакет http и сделайте простой GET-запрос к любому URL.",
+        "instructionEn": "Add http package and make a simple GET request to any URL.",
+        "hintRu": "import 'package:http/http.dart' as http;",
+        "hintEn": "import 'package:http/http.dart' as http;",
+        "expectedResultRu": "Выводится статус-код ответа.",
+        "expectedResultEn": "Prints the response status code.",
+        "solutionCode": "import 'package:http/http.dart' as http;\n\nvoid main() async {\n  var res = await http.get(Uri.parse('https://dart.dev'));\n  print(res.statusCode);\n}"
+      }
+    }
+  ]
+}

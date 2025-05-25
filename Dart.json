@@ -280,7 +280,7 @@
         "hintEn": "await Future.delayed(...)",
         "expectedResultRu": "Через n секунд сообщение.",
         "expectedResultEn": "Message after n seconds.",
-        "solutionCode": "Future<void> wait(int n) async {\n  await Future.delayed(Duration(seconds: n));\n  print('Waited \$n seconds');\n}\nvoid main() async {\n  await wait(1);\n}"
+        "solutionCode": "Future<void> wait(int n) async {\n  await Future.delayed(Duration(seconds: n));\n  print('Waited \\$n seconds');\n}\nvoid main() async {\n  await wait(1);\n}"
       }
     },
     {

@@ -217,7 +217,7 @@
       "codeExamples": [
         {
           "language": "php",
-          "code": "<?php\nnamespace App;\n\nclass User {\n    private string $name;\n    public function __construct(string $name) {\n        \\$this->name = $name;\n    }\n    public function getName(): string {\n        return \\$this->name;\n    }\n}\n?>",
+          "code": "<?php\nnamespace App;\n\nclass User {\n    private string $name;\n    public function __construct(string $name) {\n        $this->name = $name;\n    }\n    public function getName(): string {\n        return $this->name;\n    }\n}\n?>",
           "commentLanguage": "ru",
           "comment": "Класс User в пространстве имён App."
         }
@@ -244,7 +244,7 @@
         "hintEn": "public function area(): float",
         "expectedResultRu": "Rectangle(3,4)->area()==12",
         "expectedResultEn": "Rectangle(3,4)->area()==12",
-        "solutionCode": "<?php\nclass Rectangle {\n    private float \\$w, \\$h;\n    public function __construct(float \\$w, float \\$h) {\n        \\$this->w = \\$w;\n        \\$this->h = \\$h;\n    }\n    public function area(): float {\n        return \\$this->w * \\$this->h;\n    }\n}\n\\$r = new Rectangle(3, 4);\necho \\$r->area();\n?>"
+        "solutionCode": "<?php\nclass Rectangle {\n    private float $w, $h;\n    public function __construct(float $w, float $h) {\n        $this->w = $w;\n        $this->h = $h;\n    }\n    public function area(): float {\n        return $this->w * $this->h;\n    }\n}\n$r = new Rectangle(3, 4);\necho $r->area();\n?>"
       }
     },
     {
@@ -255,7 +255,7 @@
       "codeExamples": [
         {
           "language": "php",
-          "code": "<?php\ntry {\n    \\$pdo = new PDO('mysql:host=localhost;dbname=testdb', 'user', 'pass');\n    \\$stmt = \\$pdo->prepare('SELECT * FROM users WHERE id = :id');\n    \\$stmt->execute(['id'=>1]);\n    \\$user = \\$stmt->fetch();\n} catch (PDOException \\$e) {\n    echo \\$e->getMessage();\n}\n?>",
+          "code": "<?php\ntry {\n    $pdo = new PDO('mysql:host=localhost;dbname=testdb', 'user', 'pass');\n    $stmt = $pdo->prepare('SELECT * FROM users WHERE id = :id');\n    $stmt->execute(['id'=>1]);\n    $user = $stmt->fetch();\n} catch (PDOException $e) {\n    echo $e->getMessage();\n}\n?>",
           "commentLanguage": "en",
           "comment": "Example of PDO connection and prepared statement."
         }
@@ -282,18 +282,18 @@
         "hintEn": "prepare, execute, fetch",
         "expectedResultRu": "Все операции выполняются без ошибок.",
         "expectedResultEn": "All operations execute without errors.",
-        "solutionCode": "<?php\nfunction createUser(PDO \\$pdo, string \\$name) {\n    \\$stmt = \\$pdo->prepare('INSERT INTO users(name) VALUES(:name)');\n    \\$stmt->execute(['name'=>\\$name]);\n}\nfunction getUser(PDO \\$pdo, int \\$id) {\n    \\$stmt = \\$pdo->prepare('SELECT * FROM users WHERE id=:id');\n    \\$stmt->execute(['id'=>\\$id]);\n    return \\$stmt->fetch();\n}\nfunction updateUser(PDO \\$pdo, int \\$id, string \\$name) {\n    \\$stmt = \\$pdo->prepare('UPDATE users SET name=:name WHERE id=:id');\n    \\$stmt->execute(['name'=>\\$name,'id'=>\\$id]);\n}\nfunction deleteUser(PDO \\$pdo, int \\$id) {\n    \\$stmt = \\$pdo->prepare('DELETE FROM users WHERE id=:id');\n    \\$stmt->execute(['id'=>\\$id]);\n}\n?>"
+        "solutionCode": "<?php\nfunction createUser(PDO $pdo, string $name) {\n    $stmt = $pdo->prepare('INSERT INTO users(name) VALUES(:name)');\n    $stmt->execute(['name'=>$name]);\n}\nfunction getUser(PDO $pdo, int $id) {\n    $stmt = $pdo->prepare('SELECT * FROM users WHERE id=:id');\n    $stmt->execute(['id'=>$id]);\n    return $stmt->fetch();\n}\nfunction updateUser(PDO $pdo, int $id, string $name) {\n    $stmt = $pdo->prepare('UPDATE users SET name=:name WHERE id=:id');\n    $stmt->execute(['name'=>$name,'id'=>$id]);\n}\nfunction deleteUser(PDO $pdo, int $id) {\n    $stmt = $pdo->prepare('DELETE FROM users WHERE id=:id');\n    $stmt->execute(['id'=>$id]);\n}\n?>"
       }
     },
     {
       "titleRu": "Сессии и куки",
       "titleEn": "Sessions and Cookies",
-      "descriptionRu": "Работа с суперглобальными \\$_SESSION и \\$_COOKIE, установка параметров сессии session_start(), session_destroy(), setcookie().",
-      "descriptionEn": "Handling \\$_SESSION and \\$_COOKIE superglobals, session_start(), session_destroy(), setcookie().",
+      "descriptionRu": "Работа с суперглобальными $_SESSION и $_COOKIE, установка параметров сессии session_start(), session_destroy(), setcookie().",
+      "descriptionEn": "Handling $_SESSION and $_COOKIE superglobals, session_start(), session_destroy(), setcookie().",
       "codeExamples": [
         {
           "language": "php",
-          "code": "<?php\nsession_start();\n\\$_SESSION['user']='Alice';\nsetcookie('lang','ru', time()+3600);\n?>",
+          "code": "<?php\nsession_start();\n$_SESSION['user']='Alice';\nsetcookie('lang','ru', time()+3600);\n?>",
           "commentLanguage": "ru",
           "comment": "Пример установки сессии и куки."
         }
@@ -316,11 +316,11 @@
         "titleEn": "Session Authentication",
         "instructionRu": "После проверки логина сохраните user_id в сессии и перенаправьте на dashboard.php.",
         "instructionEn": "After login validation, store user_id in session and redirect to dashboard.php.",
-        "hintRu": "\\$_SESSION['user_id']=…; header('Location: dashboard.php');",
-        "hintEn": "\\$_SESSION['user_id']=…; header('Location: dashboard.php');",
+        "hintRu": "$_SESSION['user_id']=…; header('Location: dashboard.php');",
+        "hintEn": "$_SESSION['user_id']=…; header('Location: dashboard.php');",
         "expectedResultRu": "После успешного входа происходит редирект.",
         "expectedResultEn": "Redirect occurs after successful login.",
-        "solutionCode": "<?php\nsession_start();\n// after verifying credentials:\n\\$_SESSION['user_id'] = \\$userId;\nheader('Location: dashboard.php');\nexit;\n?>"
+        "solutionCode": "<?php\nsession_start();\n// after verifying credentials:\n$_SESSION['user_id'] = $userId;\nheader('Location: dashboard.php');\nexit;\n?>"
       }
     },
     {
@@ -369,7 +369,7 @@
       "codeExamples": [
         {
           "language": "php",
-          "code": "<?php\nheader('Content-Type: application/json');\n$data = json_decode(file_get_contents('php://input'), true);\nif ($_SERVER['REQUEST_METHOD']==='POST') {\n    echo json_encode(['received' => $data]);\n}\n?>",
+          "code": "<?php\nheader('Content-Type: application/json');\n$data = json_decode(file_get_contents('php://input'), true);\nif ($_SERVER['REQUEST_METHOD'] === 'POST') {\n    echo json_encode(['received' => $data]);\n}\n?>",
           "commentLanguage": "en",
           "comment": "Simple POST endpoint handling JSON."
         }
@@ -396,7 +396,7 @@
         "hintEn": "switch $_SERVER['REQUEST_METHOD']",
         "expectedResultRu": "API возвращает корректные JSON для каждой операции.",
         "expectedResultEn": "API returns correct JSON for each operation.",
-        "solutionCode": "<?php\nheader('Content-Type: application/json');\n$method = $_SERVER['REQUEST_METHOD'];\n$input = json_decode(file_get_contents('php://input'), true);\nswitch ($method) {\n    case 'GET':\n        echo json_encode(['users'=>[]]);\n        break;\n    case 'POST':\n        echo json_encode(['created'=>$input]);\n        break;\n    case 'PUT':\n        echo json_encode(['updated'=>$input]);\n        break;\n    case 'DELETE':\n        echo json_encode(['deleted'=>true]);\n        break;\n}\n?>"
+        "solutionCode": "<?php\nheader('Content-Type: application/json');\n$method = $_SERVER['REQUEST_METHOD'];\n$input = json_decode(file_get_contents('php://input'), true);\nswitch ($method) {\n    case 'GET':\n        echo json_encode(['users' => []]);\n        break;\n    case 'POST':\n        echo json_encode(['created' => $input]);\n        break;\n    case 'PUT':\n        echo json_encode(['updated' => $input]);\n        break;\n    case 'DELETE':\n        echo json_encode(['deleted' => true]);\n        break;\n}\n?>"
       }
     }
   ]

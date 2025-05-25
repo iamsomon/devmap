@@ -1,0 +1,403 @@
+{
+  "courseTitle": {
+    "ru": "Полный курс по PHP",
+    "en": "Complete PHP Course"
+  },
+  "language": "PHP",
+  "iconUrl": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/php/php-original.svg",
+  "tags": [
+    "web-development",
+    "backend",
+    "scripting",
+    "fullstack",
+    "cms",
+    "api",
+    "oop"
+  ],
+  "description": {
+    "ru": "Этот курс охватывает язык программирования PHP — от установки и базового синтаксиса до современных возможностей PHP 8. Мы рассмотрим переменные и типы, управление потоком, функции и области видимости, работу с массивами и строками, объектно-ориентированное программирование, взаимодействие с БД через PDO, обработку ошибок, сессии и куки, Composer и автозагрузку, а также основы построения REST-API. Каждый раздел содержит подробные объяснения, примеры кода, викторины и практические задания.",
+    "en": "This course covers the PHP programming language — from installation and basic syntax to modern features of PHP 8. We will study variables and types, control flow, functions and scope, working with arrays and strings, object-oriented programming, database access via PDO, error handling, sessions and cookies, Composer and autoloading, and basics of building REST APIs. Each section includes detailed explanations, code examples, quizzes, and hands-on tasks."
+  },
+  "topics": [
+    {
+      "titleRu": "Установка и конфигурация",
+      "titleEn": "Installation and Configuration",
+      "descriptionRu": "Установка PHP и веб-сервера (Apache/Nginx), настройка php.ini, работа через встроенный сервер CLI для разработки.",
+      "descriptionEn": "Installing PHP and web server (Apache/Nginx), configuring php.ini, using the built-in CLI server for development.",
+      "codeExamples": [
+        {
+          "language": "bash",
+          "code": "sudo apt install php libapache2-mod-php\nphp -S localhost:8000 -t public",
+          "commentLanguage": "en",
+          "comment": "Install PHP module for Apache and run built-in server on port 8000."
+        }
+      ],
+      "quiz": [
+        {
+          "questionRu": "Какая директива в php.ini включает отображение ошибок?",
+          "questionEn": "Which php.ini directive enables error display?",
+          "options": [
+            "display_errors",
+            "show_errors",
+            "error_display",
+            "log_errors"
+          ],
+          "correctAnswerIndex": 0
+        }
+      ],
+      "task": {
+        "titleRu": "Встроенный сервер",
+        "titleEn": "Built-in Server",
+        "instructionRu": "Запустите встроенный сервер PHP для папки public на порту 8080.",
+        "instructionEn": "Start PHP’s built-in server for the public folder on port 8080.",
+        "hintRu": "php -S localhost:8080 -t public",
+        "hintEn": "php -S localhost:8080 -t public",
+        "expectedResultRu": "Сервер доступен по http://localhost:8080",
+        "expectedResultEn": "Server is accessible at http://localhost:8080",
+        "solutionCode": "php -S localhost:8080 -t public"
+      }
+    },
+    {
+      "titleRu": "Синтаксис, переменные и типы",
+      "titleEn": "Syntax, Variables and Types",
+      "descriptionRu": "PHP-скрипты оборачиваются в <?php … ?>. Переменные начинаются с $. Типы: int, float, string, bool, array, object, null. PHP 8 поддерживает объединённые типы и типы возвращаемых значений.",
+      "descriptionEn": "PHP scripts are enclosed in <?php … ?>. Variables begin with $. Types: int, float, string, bool, array, object, null. PHP 8 supports union types and return type declarations.",
+      "codeExamples": [
+        {
+          "language": "php",
+          "code": "<?php\n$int = 10;\n$flt = 3.14;\n$str = \"Hello\";\n$flag = true;\n$array = [1, 2, 3];\nfunction sum(int|float $a, int|float $b): float {\n    return $a + $b;\n}\necho sum($int, $flt);\n?>",
+          "commentLanguage": "ru",
+          "comment": "Объединённый тип в PHP 8 и объявление функции с возвращаемым типом."
+        }
+      ],
+      "quiz": [
+        {
+          "questionRu": "Как обозначается переменная в PHP?",
+          "questionEn": "How do you denote a variable in PHP?",
+          "options": [
+            "$var",
+            "%var",
+            "@var",
+            "&var"
+          ],
+          "correctAnswerIndex": 0
+        }
+      ],
+      "task": {
+        "titleRu": "Арифметика",
+        "titleEn": "Arithmetic",
+        "instructionRu": "Напишите функцию multiply, принимающую два числа и возвращающую их произведение, с типами int.",
+        "instructionEn": "Write function multiply taking two ints and returning their product.",
+        "hintRu": "function multiply(int $a, int $b): int",
+        "hintEn": "function multiply(int $a, int $b): int",
+        "expectedResultRu": "multiply(3,4) == 12",
+        "expectedResultEn": "multiply(3,4) == 12",
+        "solutionCode": "<?php\nfunction multiply(int $a, int $b): int {\n    return $a * $b;\n}\necho multiply(3, 4);\n?>"
+      }
+    },
+    {
+      "titleRu": "Управляющие конструкции",
+      "titleEn": "Control Structures",
+      "descriptionRu": "PHP поддерживает if/elseif/else, switch, while, do-while, for, foreach для итерации по массивам.",
+      "descriptionEn": "PHP supports if/elseif/else, switch, while, do-while, for, foreach for iterating arrays.",
+      "codeExamples": [
+        {
+          "language": "php",
+          "code": "<?php\nfor ($i = 0; $i < 3; $i++) {\n    echo $i;\n}\n$arr = ['a','b','c'];\nforeach ($arr as $item) {\n    echo $item;\n}\n?>",
+          "commentLanguage": "en",
+          "comment": "Examples of for and foreach loops."
+        }
+      ],
+      "quiz": [
+        {
+          "questionRu": "Какой цикл гарантированно выполнится хотя бы один раз?",
+          "questionEn": "Which loop will execute at least once?",
+          "options": [
+            "do-while",
+            "while",
+            "for",
+            "foreach"
+          ],
+          "correctAnswerIndex": 0
+        }
+      ],
+      "task": {
+        "titleRu": "Фильтрация массива",
+        "titleEn": "Filter Array",
+        "instructionRu": "Используя foreach, создайте новый массив только с чётными числами из исходного.",
+        "instructionEn": "Using foreach, create a new array containing only even numbers from the original.",
+        "hintRu": "if ($n % 2 === 0) $res[] = $n;",
+        "hintEn": "if ($n % 2 === 0) $res[] = $n;",
+        "expectedResultRu": "[2,4] из [1,2,3,4]",
+        "expectedResultEn": "[2,4] from [1,2,3,4]",
+        "solutionCode": "<?php\nfunction filterEven(array $nums): array {\n    $res = [];\n    foreach ($nums as $n) {\n        if ($n % 2 === 0) {\n            $res[] = $n;\n        }\n    }\n    return $res;\n}\nprint_r(filterEven([1,2,3,4]));\n?>"
+      }
+    },
+    {
+      "titleRu": "Функции и области видимости",
+      "titleEn": "Functions and Scope",
+      "descriptionRu": "Объявление функций function name(...). В PHP есть глобальная и локальная область. static внутри функции сохраняет значение между вызовами. Анонимные функции и use для захвата переменных.",
+      "descriptionEn": "Declare functions with function name(...). PHP has global and local scope. static inside a function preserves value between calls. Anonymous functions and use keyword capture variables.",
+      "codeExamples": [
+        {
+          "language": "php",
+          "code": "<?php\nfunction counter() {\n    static $count = 0;\n    $count++;\n    return $count;\n}\necho counter(); // 1\necho counter(); // 2\n?>",
+          "commentLanguage": "ru",
+          "comment": "Статическая переменная внутри функции."
+        }
+      ],
+      "quiz": [
+        {
+          "questionRu": "Что делает ключевое слово static в функции?",
+          "questionEn": "What does static do inside a function?",
+          "options": [
+            "Сохраняет значение между вызовами",
+            "Объявляет глобальную переменную",
+            "Очищает переменную после выполнения",
+            "Создаёт константу"
+          ],
+          "correctAnswerIndex": 0
+        }
+      ],
+      "task": {
+        "titleRu": "Фабрика функций",
+        "titleEn": "Function Factory",
+        "instructionRu": "Создайте функцию makeAdder($x), возвращающую анонимную функцию, складывающую свой аргумент с $x.",
+        "instructionEn": "Write function makeAdder($x) returning an anonymous function that adds its argument to $x.",
+        "hintRu": "return fn($y) => $x + $y;",
+        "hintEn": "return fn($y) => $x + $y;",
+        "expectedResultRu": "add5 = makeAdder(5); add5(3)==8",
+        "expectedResultEn": "add5 = makeAdder(5); add5(3)==8",
+        "solutionCode": "<?php\nfunction makeAdder(int $x): callable {\n    return fn(int $y): int => $x + $y;\n}\n$add5 = makeAdder(5);\necho $add5(3);\n?>"
+      }
+    },
+    {
+      "titleRu": "Работа с массивами и строками",
+      "titleEn": "Arrays and Strings",
+      "descriptionRu": "Массивы ассоциативные и индексные. Функции array_map, array_filter, implode, explode. Строковые функции strlen, substr, str_replace, mb_* для юникода.",
+      "descriptionEn": "Associative and indexed arrays. Functions array_map, array_filter, implode, explode. String functions strlen, substr, str_replace, mb_* for unicode support.",
+      "codeExamples": [
+        {
+          "language": "php",
+          "code": "<?php\n$str = \"hello,world\";\n$arr = explode(',', $str);\necho implode('-', $arr);\n?>",
+          "commentLanguage": "en",
+          "comment": "Split and join a string using explode and implode."
+        }
+      ],
+      "quiz": [
+        {
+          "questionRu": "Какая функция разбивает строку по разделителю?",
+          "questionEn": "Which function splits a string by delimiter?",
+          "options": [
+            "explode",
+            "implode",
+            "split",
+            "join"
+          ],
+          "correctAnswerIndex": 0
+        }
+      ],
+      "task": {
+        "titleRu": "Преобразование массива",
+        "titleEn": "Transform Array",
+        "instructionRu": "Используя array_map, возведите каждый элемент числового массива в квадрат.",
+        "instructionEn": "Using array_map, square each element of a numeric array.",
+        "hintRu": "array_map(fn($n)=>$n*$n, $arr)",
+        "hintEn": "array_map(fn($n)=>$n*$n, $arr)",
+        "expectedResultRu": "[1,4,9] из [1,2,3]",
+        "expectedResultEn": "[1,4,9] from [1,2,3]",
+        "solutionCode": "<?php\n$arr = [1,2,3];\n$sq = array_map(fn($n) => $n*$n, $arr);\nprint_r($sq);\n?>"
+      }
+    },
+    {
+      "titleRu": "ООП в PHP",
+      "titleEn": "OOP in PHP",
+      "descriptionRu": "Классы, свойства, методы, конструктор __construct, модификаторы public/protected/private, статические члены, наследование, интерфейсы, трейты, пространства имён (namespace).",
+      "descriptionEn": "Classes, properties, methods, __construct, public/protected/private, static members, inheritance, interfaces, traits, namespaces.",
+      "codeExamples": [
+        {
+          "language": "php",
+          "code": "<?php\nnamespace App;\n\nclass User {\n    private string $name;\n    public function __construct(string $name) {\n        \$this->name = \$name;\n    }\n    public function getName(): string {\n        return \$this->name;\n    }\n}\n?>",
+          "commentLanguage": "ru",
+          "comment": "Класс User в пространстве имён App."
+        }
+      ],
+      "quiz": [
+        {
+          "questionRu": "Какой метод вызывается при создании объекта?",
+          "questionEn": "Which method is called upon object instantiation?",
+          "options": [
+            "__construct",
+            "__init",
+            "__create",
+            "__new"
+          ],
+          "correctAnswerIndex": 0
+        }
+      ],
+      "task": {
+        "titleRu": "Класс Rectangle",
+        "titleEn": "Rectangle Class",
+        "instructionRu": "Создайте класс Rectangle с шириной и высотой и методом area().",
+        "instructionEn": "Create class Rectangle with width, height and method area().",
+        "hintRu": "public function area(): float",
+        "hintEn": "public function area(): float",
+        "expectedResultRu": "Rectangle(3,4)->area()==12",
+        "expectedResultEn": "Rectangle(3,4)->area()==12",
+        "solutionCode": "<?php\nclass Rectangle {\n    private float \$w, \$h;\n    public function __construct(float \$w, float \$h) {\n        \$this->w = \$w;\n        \$this->h = \$h;\n    }\n    public function area(): float {\n        return \$this->w * \$this->h;\n    }\n}\n\$r = new Rectangle(3, 4);\necho \$r->area();\n?>"
+      }
+    },
+    {
+      "titleRu": "PDO и работа с базами",
+      "titleEn": "PDO and Database Access",
+      "descriptionRu": "Подключение к MySQL через PDO, подготовленные запросы (prepared statements), транзакции, обработка ошибок через исключения PDOException.",
+      "descriptionEn": "Connecting to MySQL via PDO, prepared statements, transactions, error handling via PDOException.",
+      "codeExamples": [
+        {
+          "language": "php",
+          "code": "<?php\ntry {\n    \$pdo = new PDO('mysql:host=localhost;dbname=testdb', 'user', 'pass');\n    \$stmt = \$pdo->prepare('SELECT * FROM users WHERE id = :id');\n    \$stmt->execute(['id'=>1]);\n    \$user = \$stmt->fetch();\n} catch (PDOException \$e) {\n    echo \$e->getMessage();\n}\n?>",
+          "commentLanguage": "en",
+          "comment": "Example of PDO connection and prepared statement."
+        }
+      ],
+      "quiz": [
+        {
+          "questionRu": "Какой класс используется для работы с базой через PDO?",
+          "questionEn": "Which class is used for DB with PDO?",
+          "options": [
+            "PDO",
+            "MySQLi",
+            "DB",
+            "Database"
+          ],
+          "correctAnswerIndex": 0
+        }
+      ],
+      "task": {
+        "titleRu": "CRUD через PDO",
+        "titleEn": "CRUD with PDO",
+        "instructionRu": "Реализуйте функции createUser, getUser, updateUser и deleteUser с использованием PDO.",
+        "instructionEn": "Implement createUser, getUser, updateUser, and deleteUser functions using PDO.",
+        "hintRu": "prepare, execute, fetch",
+        "hintEn": "prepare, execute, fetch",
+        "expectedResultRu": "Все операции выполняются без ошибок.",
+        "expectedResultEn": "All operations execute without errors.",
+        "solutionCode": "<?php\nfunction createUser(PDO \$pdo, string \$name) {\n    \$stmt = \$pdo->prepare('INSERT INTO users(name) VALUES(:name)');\n    \$stmt->execute(['name'=>\$name]);\n}\nfunction getUser(PDO \$pdo, int \$id) {\n    \$stmt = \$pdo->prepare('SELECT * FROM users WHERE id=:id');\n    \$stmt->execute(['id'=>\$id]);\n    return \$stmt->fetch();\n}\nfunction updateUser(PDO \$pdo, int \$id, string \$name) {\n    \$stmt = \$pdo->prepare('UPDATE users SET name=:name WHERE id=:id');\n    \$stmt->execute(['name'=>\$name,'id'=>\$id]);\n}\nfunction deleteUser(PDO \$pdo, int \$id) {\n    \$stmt = \$pdo->prepare('DELETE FROM users WHERE id=:id');\n    \$stmt->execute(['id'=>\$id]);\n}\n?>"
+      }
+    },
+    {
+      "titleRu": "Сессии и куки",
+      "titleEn": "Sessions and Cookies",
+      "descriptionRu": "Работа с суперглобальными $_SESSION и $_COOKIE, установка параметров сессии session_start(), session_destroy(), setcookie().",
+      "descriptionEn": "Handling $_SESSION and $_COOKIE superglobals, session_start(), session_destroy(), setcookie().",
+      "codeExamples": [
+        {
+          "language": "php",
+          "code": "<?php\nsession_start();\n$_SESSION['user']='Alice';\nsetcookie('lang','ru', time()+3600);\n?>",
+          "commentLanguage": "ru",
+          "comment": "Пример установки сессии и куки."
+        }
+      ],
+      "quiz": [
+        {
+          "questionRu": "Какая функция уничтожает сессию?",
+          "questionEn": "Which function destroys the session?",
+          "options": [
+            "session_destroy()",
+            "session_end()",
+            "destroy_session()",
+            "session_unset()"
+          ],
+          "correctAnswerIndex": 0
+        }
+      ],
+      "task": {
+        "titleRu": "Авторизация через сессию",
+        "titleEn": "Session Authentication",
+        "instructionRu": "После проверки логина сохраните user_id в сессии и перенаправьте на dashboard.php.",
+        "instructionEn": "After login validation, store user_id in session and redirect to dashboard.php.",
+        "hintRu": "$_SESSION['user_id']=…; header('Location: dashboard.php');",
+        "hintEn": "$_SESSION['user_id']=…; header('Location: dashboard.php');",
+        "expectedResultRu": "После успешного входа происходит редирект.",
+        "expectedResultEn": "Redirect occurs after successful login.",
+        "solutionCode": "<?php\nsession_start();\n// after verifying credentials:\n$_SESSION['user_id'] = \$userId;\nheader('Location: dashboard.php');\nexit;\n?>"
+      }
+    },
+    {
+      "titleRu": "Composer и автозагрузка",
+      "titleEn": "Composer and Autoloading",
+      "descriptionRu": "Composer — менеджер пакетов PHP. Описание зависимостей в composer.json, автозагрузка PSR-4. Команды composer require, composer dump-autoload.",
+      "descriptionEn": "Composer — PHP package manager. Declare dependencies in composer.json, PSR-4 autoloading. Commands composer require, composer dump-autoload.",
+      "codeExamples": [
+        {
+          "language": "bash",
+          "code": "composer require monolog/monolog\ncomposer dump-autoload",
+          "commentLanguage": "en",
+          "comment": "Install Monolog and regenerate autoloader."
+        }
+      ],
+      "quiz": [
+        {
+          "questionRu": "Какой файл содержит зависимости Composer?",
+          "questionEn": "Which file declares Composer dependencies?",
+          "options": [
+            "composer.json",
+            "composer.lock",
+            "autoload.php",
+            "packages.json"
+          ],
+          "correctAnswerIndex": 0
+        }
+      ],
+      "task": {
+        "titleRu": "Подключение пакета",
+        "titleEn": "Require Package",
+        "instructionRu": "Установите пакет vlucas/phpdotenv и загрузите `.env` в скрипт.",
+        "instructionEn": "Install vlucas/phpdotenv and load `.env` in your script.",
+        "hintRu": "Dotenv\\Dotenv::createImmutable(__DIR__)->load();",
+        "hintEn": "Dotenv\\Dotenv::createImmutable(__DIR__)->load();",
+        "expectedResultRu": "Переменные окружения доступны через getenv().",
+        "expectedResultEn": "Environment variables available via getenv().",
+        "solutionCode": "<?php\nrequire 'vendor/autoload.php';\n\$dotenv = Dotenv\\Dotenv::createImmutable(__DIR__);\n\$dotenv->load();\necho getenv('APP_ENV');\n?>"
+      }
+    },
+    {
+      "titleRu": "REST-API на PHP",
+      "titleEn": "REST API in PHP",
+      "descriptionRu": "Создание простого REST-API на чистом PHP: маршрутизация запроса, чтение JSON-тела через php://input, отправка JSON-ответа, установка заголовков.",
+      "descriptionEn": "Building a simple REST API in plain PHP: request routing, reading JSON body via php://input, sending JSON response, setting headers.",
+      "codeExamples": [
+        {
+          "language": "php",
+          "code": "<?php\nheader('Content-Type: application/json');\n\$data = json_decode(file_get_contents('php://input'), true);\nif (\$_SERVER['REQUEST_METHOD']==='POST') {\n    echo json_encode(['received' => \$data]);\n}\n?>",
+          "commentLanguage": "en",
+          "comment": "Simple POST endpoint handling JSON."
+        }
+      ],
+      "quiz": [
+        {
+          "questionRu": "Как прочитать сырой JSON-тело запроса?",
+          "questionEn": "How to read raw JSON request body?",
+          "options": [
+            "file_get_contents('php://input')",
+            "json_get_body()",
+            "\$_POST",
+            "php://json"
+          ],
+          "correctAnswerIndex": 0
+        }
+      ],
+      "task": {
+        "titleRu": "CRUD-API для пользователей",
+        "titleEn": "User CRUD API",
+        "instructionRu": "Реализуйте обработчики GET, POST, PUT, DELETE для ресурса /users.",
+        "instructionEn": "Implement GET, POST, PUT, DELETE handlers for /users resource.",
+        "hintRu": "switch \$_SERVER['REQUEST_METHOD']",
+        "hintEn": "switch \$_SERVER['REQUEST_METHOD']",
+        "expectedResultRu": "API возвращает корректные JSON для каждой операции.",
+        "expectedResultEn": "API returns correct JSON for each operation.",
+        "solutionCode": "<?php\nheader('Content-Type: application/json');\n\$method = \$_SERVER['REQUEST_METHOD'];\n\$input = json_decode(file_get_contents('php://input'), true);\nswitch (\$method) {\n    case 'GET':\n        echo json_encode(['users'=>[]]);\n        break;\n    case 'POST':\n        echo json_encode(['created'=>\$input]);\n        break;\n    case 'PUT':\n        echo json_encode(['updated'=>\$input]);\n        break;\n    case 'DELETE':\n        echo json_encode(['deleted'=>true]);\n        break;\n}\n?>"
+      }
+    }
+  ]
+}

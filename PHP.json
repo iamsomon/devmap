@@ -358,7 +358,7 @@
         "hintEn": "Dotenv\\Dotenv::createImmutable(__DIR__)->load();",
         "expectedResultRu": "Переменные окружения доступны через getenv().",
         "expectedResultEn": "Environment variables available via getenv().",
-        "solutionCode": "<?php\nrequire 'vendor/autoload.php';\n\$dotenv = Dotenv\\Dotenv::createImmutable(__DIR__);\n\$dotenv->load();\necho getenv('APP_ENV');\n?>"
+        "solutionCode": "<?php\nrequire 'vendor/autoload.php';\n$dotenv = Dotenv\\Dotenv::createImmutable(__DIR__);\n$dotenv->load();\necho getenv('APP_ENV');\n?>"
       }
     },
     {
@@ -369,7 +369,7 @@
       "codeExamples": [
         {
           "language": "php",
-          "code": "<?php\nheader('Content-Type: application/json');\n\$data = json_decode(file_get_contents('php://input'), true);\nif (\$_SERVER['REQUEST_METHOD']==='POST') {\n    echo json_encode(['received' => \$data]);\n}\n?>",
+          "code": "<?php\nheader('Content-Type: application/json');\n$data = json_decode(file_get_contents('php://input'), true);\nif ($_SERVER['REQUEST_METHOD']==='POST') {\n    echo json_encode(['received' => $data]);\n}\n?>",
           "commentLanguage": "en",
           "comment": "Simple POST endpoint handling JSON."
         }
@@ -381,7 +381,7 @@
           "options": [
             "file_get_contents('php://input')",
             "json_get_body()",
-            "\$_POST",
+            "$_POST",
             "php://json"
           ],
           "correctAnswerIndex": 0
@@ -392,11 +392,11 @@
         "titleEn": "User CRUD API",
         "instructionRu": "Реализуйте обработчики GET, POST, PUT, DELETE для ресурса /users.",
         "instructionEn": "Implement GET, POST, PUT, DELETE handlers for /users resource.",
-        "hintRu": "switch \$_SERVER['REQUEST_METHOD']",
-        "hintEn": "switch \$_SERVER['REQUEST_METHOD']",
+        "hintRu": "switch $_SERVER['REQUEST_METHOD']",
+        "hintEn": "switch $_SERVER['REQUEST_METHOD']",
         "expectedResultRu": "API возвращает корректные JSON для каждой операции.",
         "expectedResultEn": "API returns correct JSON for each operation.",
-        "solutionCode": "<?php\nheader('Content-Type: application/json');\n\$method = \$_SERVER['REQUEST_METHOD'];\n\$input = json_decode(file_get_contents('php://input'), true);\nswitch (\$method) {\n    case 'GET':\n        echo json_encode(['users'=>[]]);\n        break;\n    case 'POST':\n        echo json_encode(['created'=>\$input]);\n        break;\n    case 'PUT':\n        echo json_encode(['updated'=>\$input]);\n        break;\n    case 'DELETE':\n        echo json_encode(['deleted'=>true]);\n        break;\n}\n?>"
+        "solutionCode": "<?php\nheader('Content-Type: application/json');\n$method = $_SERVER['REQUEST_METHOD'];\n$input = json_decode(file_get_contents('php://input'), true);\nswitch ($method) {\n    case 'GET':\n        echo json_encode(['users'=>[]]);\n        break;\n    case 'POST':\n        echo json_encode(['created'=>$input]);\n        break;\n    case 'PUT':\n        echo json_encode(['updated'=>$input]);\n        break;\n    case 'DELETE':\n        echo json_encode(['deleted'=>true]);\n        break;\n}\n?>"
       }
     }
   ]

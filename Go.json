@@ -4,7 +4,7 @@
     "en": "Complete Go Course"
   },
   "language": "Go",
-  "iconUrl": "https://golang.org/lib/godoc/images/go-logo-blue.svg",
+  "iconUrl": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/go/go-original.svg",
   "tags": [
     "systems-programming",
     "web-development",

@@ -5,6 +5,15 @@
   },
   "language": "C#",
   "iconUrl": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/csharp/csharp-original.svg",
+"tags": [
+  "web-development",
+  "desktop-apps",
+  "game-development",
+  "enterprise",
+  "cloud",
+  "windows",
+  "unity"
+],
   "description": {
     "ru": "Этот курс охватывает C# от основ синтаксиса и структуры программы до продвинутых тем: LINQ, асинхронного программирования, делегатов, событий и многого другого. Включает теорию, примеры кода, тестовые вопросы и практические задания.",
     "en": "This course covers C# from basic syntax and program structure to advanced topics: LINQ, asynchronous programming, delegates, events, and more. It includes theory, code examples, quizzes, and practical tasks."

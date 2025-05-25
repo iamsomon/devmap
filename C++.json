@@ -5,6 +5,15 @@
   },
   "language": "C++",
   "iconUrl": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/cplusplus/cplusplus-original.svg",
+"tags": [
+  "systems-programming",
+  "embedded",
+  "game-development",
+  "high-performance",
+  "desktop-apps",
+  "cross-platform",
+  "graphics"
+],
   "description": {
     "ru": "Этот курс по C++ охватывает как базовые, так и современные возможности языка C++ вплоть до стандарта C++20. В нем рассматриваются синтаксис языка, типы данных, операторы, условия и циклы, функции, массивы, указатели, строки, ООП (классы, наследование, полиморфизм), шаблоны, стандартная библиотека (STL), обработка исключений, пространства имен, файловый ввод/вывод, умные указатели, лямбда-выражения, а также новые возможности C++11-20 (модули, корутины, концепты, диапазоны и др.).",
     "en": "This C++ course covers both basic and modern features of the C++ language up to the C++20 standard. It includes language syntax, data types, operators, conditional statements and loops, functions, arrays, pointers, strings, OOP (classes, inheritance, polymorphism), templates, the standard library (STL), exception handling, namespaces, file I/O, smart pointers, lambda expressions, as well as new features of C++11-20 (modules, coroutines, concepts, ranges, etc.)."

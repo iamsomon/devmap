@@ -1,0 +1,365 @@
+{
+  "courseTitle": {
+    "ru": "Полный курс по MySQL",
+    "en": "Complete MySQL Course"
+  },
+  "language": "MySQL",
+  "iconUrl": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mysql/mysql-original.svg",
+  "tags": [
+    "database",
+    "sql",
+    "relational",
+    "backend",
+    "data-storage",
+    "transactions",
+    "analytics"
+  ],
+  "description": {
+    "ru": "Этот курс подробно знакомит с системой управления базами данных MySQL: от установки и базового синтаксиса SQL до продвинутых тем — нормализация, индексы, транзакции, хранимые процедуры, репликация и оптимизация запросов. Включает теорию, примеры запросов, викторины и практические задания на русском и английском.",
+    "en": "This course provides an in-depth introduction to the MySQL database management system: from installation and basic SQL syntax to advanced topics—normalization, indexes, transactions, stored procedures, replication, and query optimization. It includes theory, query examples, quizzes, and hands-on tasks in both Russian and English."
+  },
+  "topics": [
+    {
+      "titleRu": "Установка и настройка",
+      "titleEn": "Installation and Configuration",
+      "descriptionRu": "Установка MySQL-сервера на локальную машину, настройка аутентификации, создание пользователя и базы. Основные параметры в my.cnf.",
+      "descriptionEn": "Installing MySQL server locally, configuring authentication, creating a user and database. Key parameters in my.cnf.",
+      "codeExamples": [
+        {
+          "language": "bash",
+          "code": "sudo apt install mysql-server\nsudo mysql_secure_installation\nmysql -u root -p",
+          "commentLanguage": "ru",
+          "comment": "Установка и первичная настройка MySQL."
+        }
+      ],
+      "quiz": [
+        {
+          "questionRu": "Какая команда запускает интерактивную настройку root-пароля?",
+          "questionEn": "Which command launches interactive root password setup?",
+          "options": [
+            "mysql_secure_installation",
+            "mysql_configure",
+            "mysql_init",
+            "mysql_setup"
+          ],
+          "correctAnswerIndex": 0
+        }
+      ],
+      "task": {
+        "titleRu": "Создание пользователя",
+        "titleEn": "Create User",
+        "instructionRu": "Создайте пользователя appuser с паролем и дайте ему все права на базу testdb.",
+        "instructionEn": "Create user appuser with a password and grant all privileges on database testdb.",
+        "hintRu": "CREATE USER …; GRANT ALL ON testdb.* TO …;",
+        "hintEn": "CREATE USER …; GRANT ALL ON testdb.* TO …;",
+        "expectedResultRu": "Пользователь создан и может подключаться к testdb.",
+        "expectedResultEn": "User created and can access testdb.",
+        "solutionCode": "CREATE DATABASE testdb;\nCREATE USER 'appuser'@'localhost' IDENTIFIED BY 'P@ssw0rd';\nGRANT ALL PRIVILEGES ON testdb.* TO 'appuser'@'localhost';\nFLUSH PRIVILEGES;"
+      }
+    },
+    {
+      "titleRu": "Базовый синтаксис SQL",
+      "titleEn": "Basic SQL Syntax",
+      "descriptionRu": "Создание таблиц, INSERT, SELECT, UPDATE, DELETE. Типы данных INT, VARCHAR, DATE и т.д.",
+      "descriptionEn": "Table creation, INSERT, SELECT, UPDATE, DELETE. Data types INT, VARCHAR, DATE, etc.",
+      "codeExamples": [
+        {
+          "language": "sql",
+          "code": "CREATE TABLE users (\n  id INT AUTO_INCREMENT PRIMARY KEY,\n  name VARCHAR(100),\n  created DATE\n);\nINSERT INTO users(name, created) VALUES('Alice', '2025-01-01');\nSELECT * FROM users;",
+          "commentLanguage": "en",
+          "comment": "Create table, insert and select."
+        }
+      ],
+      "quiz": [
+        {
+          "questionRu": "Какое ключевое слово создает уникальный автоинкремент?",
+          "questionEn": "Which keyword creates an auto-incrementing primary key?",
+          "options": [
+            "AUTO_INCREMENT",
+            "SERIAL",
+            "IDENTITY",
+            "INCREMENT"
+          ],
+          "correctAnswerIndex": 0
+        }
+      ],
+      "task": {
+        "titleRu": "CRUD для продуктов",
+        "titleEn": "Products CRUD",
+        "instructionRu": "Создайте таблицу products и выполните вставку, выборку, обновление и удаление записи.",
+        "instructionEn": "Create products table and perform insert, select, update and delete operations.",
+        "hintRu": "CREATE TABLE; INSERT; UPDATE; DELETE;",
+        "hintEn": "CREATE TABLE; INSERT; UPDATE; DELETE;",
+        "expectedResultRu": "Все операции успешно выполняются.",
+        "expectedResultEn": "All operations execute successfully.",
+        "solutionCode": "CREATE TABLE products(\n  id INT AUTO_INCREMENT PRIMARY KEY,\n  name VARCHAR(50),\n  price DECIMAL(10,2)\n);\nINSERT INTO products(name, price) VALUES('Book', 9.99);\nSELECT * FROM products;\nUPDATE products SET price=12.50 WHERE id=1;\nDELETE FROM products WHERE id=1;"
+      }
+    },
+    {
+      "titleRu": "Фильтрация и сортировка",
+      "titleEn": "Filtering and Sorting",
+      "descriptionRu": "Использование WHERE, ORDER BY, LIMIT, BETWEEN, LIKE, IN для выборки подмножеств данных.",
+      "descriptionEn": "Using WHERE, ORDER BY, LIMIT, BETWEEN, LIKE, IN to query data subsets.",
+      "codeExamples": [
+        {
+          "language": "sql",
+          "code": "SELECT * FROM orders\n WHERE amount BETWEEN 100 AND 500\n ORDER BY created DESC\n LIMIT 10;",
+          "commentLanguage": "ru",
+          "comment": "Фильтрация по диапазону, сортировка и ограничение."
+        }
+      ],
+      "quiz": [
+        {
+          "questionRu": "Что делает оператор LIKE?",
+          "questionEn": "What does the LIKE operator do?",
+          "options": [
+            "Поиск по шаблону",
+            "Сжатие строк",
+            "Тип данных",
+            "Сортировка"
+          ],
+          "correctAnswerIndex": 0
+        }
+      ],
+      "task": {
+        "titleRu": "Поиск пользователей",
+        "titleEn": "User Search",
+        "instructionRu": "Выберите пользователей, чей name начинается с 'A', отсортируйте по id DESC.",
+        "instructionEn": "Select users whose name starts with 'A', sorted by id DESC.",
+        "hintRu": "WHERE name LIKE 'A%';",
+        "hintEn": "WHERE name LIKE 'A%';",
+        "expectedResultRu": "Только записи с name 'Alice', 'Adam' и т.д.",
+        "expectedResultEn": "Only records with names 'Alice', 'Adam', etc.",
+        "solutionCode": "SELECT * FROM users\n WHERE name LIKE 'A%'\n ORDER BY id DESC;"
+      }
+    },
+    {
+      "titleRu": "Агрегатные функции",
+      "titleEn": "Aggregate Functions",
+      "descriptionRu": "COUNT, SUM, AVG, MIN, MAX и GROUP BY, HAVING для групповой обработки.",
+      "descriptionEn": "COUNT, SUM, AVG, MIN, MAX and GROUP BY, HAVING for grouped queries.",
+      "codeExamples": [
+        {
+          "language": "sql",
+          "code": "SELECT customer_id, SUM(amount) AS total\n FROM payments\n GROUP BY customer_id\n HAVING total > 1000;",
+          "commentLanguage": "en",
+          "comment": "Sum per customer with HAVING filter."
+        }
+      ],
+      "quiz": [
+        {
+          "questionRu": "Что выполняет GROUP BY?",
+          "questionEn": "What does GROUP BY do?",
+          "options": [
+            "Группирует строки по значению столбца",
+            "Удаляет дубликаты",
+            "Сортирует результат",
+            "Ограничивает кол-во"
+          ],
+          "correctAnswerIndex": 0
+        }
+      ],
+      "task": {
+        "titleRu": "Отчёт по продажам",
+        "titleEn": "Sales Report",
+        "instructionRu": "Посчитайте среднюю сумму order_amount по каждому месяцу.",
+        "instructionEn": "Compute the average order_amount per month.",
+        "hintRu": "GROUP BY YEAR(created), MONTH(created)",
+        "hintEn": "GROUP BY YEAR(created), MONTH(created)",
+        "expectedResultRu": "По строке для каждого месяца avg.",
+        "expectedResultEn": "One row per month with avg.",
+        "solutionCode": "SELECT\n  YEAR(created) AS yr,\n  MONTH(created) AS m,\n  AVG(order_amount) AS avg_amount\nFROM orders\nGROUP BY yr, m;"
+      }
+    },
+    {
+      "titleRu": "Соединения таблиц",
+      "titleEn": "Joins",
+      "descriptionRu": "INNER JOIN, LEFT/RIGHT JOIN, CROSS JOIN для объединения данных из нескольких таблиц.",
+      "descriptionEn": "INNER JOIN, LEFT/RIGHT JOIN, CROSS JOIN to combine data from multiple tables.",
+      "codeExamples": [
+        {
+          "language": "sql",
+          "code": "SELECT u.name, o.amount\n FROM users u\n JOIN orders o ON u.id = o.user_id\n WHERE o.status = 'paid';",
+          "commentLanguage": "ru",
+          "comment": "INNER JOIN users с orders."
+        }
+      ],
+      "quiz": [
+        {
+          "questionRu": "Какое соединение возвращает все записи из левой таблицы?",
+          "questionEn": "Which join returns all records from the left table?",
+          "options": [
+            "LEFT JOIN",
+            "INNER JOIN",
+            "RIGHT JOIN",
+            "CROSS JOIN"
+          ],
+          "correctAnswerIndex": 0
+        }
+      ],
+      "task": {
+        "titleRu": "Полный отчёт",
+        "titleEn": "Full Report",
+        "instructionRu": "Выведите всех пользователей и их заказы, включая тех, у кого нет заказов.",
+        "instructionEn": "List all users and their orders, including users with no orders.",
+        "hintRu": "LEFT JOIN orders",
+        "hintEn": "LEFT JOIN orders",
+        "expectedResultRu": "name NULL если нет заказов.",
+        "expectedResultEn": "name NULL if no orders.",
+        "solutionCode": "SELECT u.name, o.id AS order_id\n FROM users u\n LEFT JOIN orders o ON u.id = o.user_id;"
+      }
+    },
+    {
+      "titleRu": "Индексы и оптимизация",
+      "titleEn": "Indexes and Optimization",
+      "descriptionRu": "Создание обычных и составных индексов, EXPLAIN для анализа плана выполнения, советы по оптимизации запросов.",
+      "descriptionEn": "Creating single-column and composite indexes, using EXPLAIN to analyze query plans, and optimization tips.",
+      "codeExamples": [
+        {
+          "language": "sql",
+          "code": "CREATE INDEX idx_users_name ON users(name);\nEXPLAIN SELECT * FROM users WHERE name = 'Bob';",
+          "commentLanguage": "en",
+          "comment": "Adding index and explaining query."
+        }
+      ],
+      "quiz": [
+        {
+          "questionRu": "Что показывает команда EXPLAIN?",
+          "questionEn": "What does EXPLAIN show?",
+          "options": [
+            "План выполнения запроса",
+            "Ошибки синтаксиса",
+            "Статус сервера",
+            "Логи транзакций"
+          ],
+          "correctAnswerIndex": 0
+        }
+      ],
+      "task": {
+        "titleRu": "Индексирование",
+        "titleEn": "Indexing",
+        "instructionRu": "Добавьте индекс по payment_date в таблице payments и проанализируйте SELECT.",
+        "instructionEn": "Add an index on payment_date in payments table and analyze a SELECT.",
+        "hintRu": "CREATE INDEX idx_pay_date",
+        "hintEn": "CREATE INDEX idx_pay_date",
+        "expectedResultRu": "EXPLAIN показывает использование индекса.",
+        "expectedResultEn": "EXPLAIN shows index usage.",
+        "solutionCode": "CREATE INDEX idx_pay_date ON payments(payment_date);\nEXPLAIN SELECT * FROM payments WHERE payment_date = '2025-05-01';"
+      }
+    },
+    {
+      "titleRu": "Транзакции",
+      "titleEn": "Transactions",
+      "descriptionRu": "BEGIN, COMMIT, ROLLBACK для обеспечения атомарности. Уровни изоляции TRANSACTION ISOLATION LEVEL.",
+      "descriptionEn": "BEGIN, COMMIT, ROLLBACK for atomicity. Transaction isolation levels via SET TRANSACTION ISOLATION LEVEL.",
+      "codeExamples": [
+        {
+          "language": "sql",
+          "code": "START TRANSACTION;\nUPDATE accounts SET balance=balance-100 WHERE id=1;\nUPDATE accounts SET balance=balance+100 WHERE id=2;\nCOMMIT;",
+          "commentLanguage": "ru",
+          "comment": "Перевод денег между счетами."
+        }
+      ],
+      "quiz": [
+        {
+          "questionRu": "Что делает ROLLBACK?",
+          "questionEn": "What does ROLLBACK do?",
+          "options": [
+            "Отменяет все изменения в транзакции",
+            "Подтверждает изменения",
+            "Начинает новую транзакцию",
+            "Создает точку сохранения"
+          ],
+          "correctAnswerIndex": 0
+        }
+      ],
+      "task": {
+        "titleRu": "Безопасная транзакция",
+        "titleEn": "Safe Transfer",
+        "instructionRu": "Реализуйте перевод средств между двумя счетами в одной транзакции с откатом при ошибке.",
+        "instructionEn": "Implement funds transfer between two accounts in one transaction with rollback on error.",
+        "hintRu": "START TRANSACTION; COMMIT; ROLLBACK",
+        "hintEn": "START TRANSACTION; COMMIT; ROLLBACK",
+        "expectedResultRu": "Баланс корректен после ошибки или успеха.",
+        "expectedResultEn": "Balances correct after failure or success.",
+        "solutionCode": "START TRANSACTION;\nUPDATE accounts SET balance=balance-amt WHERE id=1;\nUPDATE accounts SET balance=balance+amt WHERE id=2;\n-- on error ROLLBACK;\nCOMMIT;"
+      }
+    },
+    {
+      "titleRu": "Хранимые процедуры и триггеры",
+      "titleEn": "Stored Procedures and Triggers",
+      "descriptionRu": "Создание PROCEDURE и FUNCTION, использование BEGIN…END, DECLARE, параметры IN/OUT. Триггеры BEFORE/AFTER INSERT/UPDATE/DELETE.",
+      "descriptionEn": "Creating PROCEDURE and FUNCTION with BEGIN…END, DECLARE, IN/OUT parameters. Triggers BEFORE/AFTER INSERT/UPDATE/DELETE.",
+      "codeExamples": [
+        {
+          "language": "sql",
+          "code": "DELIMITER //\nCREATE PROCEDURE add_user(IN uname VARCHAR(50))\nBEGIN\n  INSERT INTO users(name) VALUES(uname);\nEND;//\nDELIMITER ;",
+          "commentLanguage": "ru",
+          "comment": "Простая хранимая процедура."
+        }
+      ],
+      "quiz": [
+        {
+          "questionRu": "Как изменить разделитель для процедуры?",
+          "questionEn": "How change delimiter to define a procedure?",
+          "options": [
+            "DELIMITER //",
+            "SET DELIMITER",
+            "USE //",
+            "DEFINE DELIMITER"
+          ],
+          "correctAnswerIndex": 0
+        }
+      ],
+      "task": {
+        "titleRu": "Логирование вставки",
+        "titleEn": "Insert Logging Trigger",
+        "instructionRu": "Создайте триггер AFTER INSERT на users, записывающий имя в таблицу audit.",
+        "instructionEn": "Create AFTER INSERT trigger on users that logs name into audit table.",
+        "hintRu": "CREATE TRIGGER … AFTER INSERT ON users",
+        "hintEn": "CREATE TRIGGER … AFTER INSERT ON users",
+        "expectedResultRu": "Запись в audit при вставке пользователя.",
+        "expectedResultEn": "Audit entry on user insert.",
+        "solutionCode": "CREATE TRIGGER log_user_after_insert\nAFTER INSERT ON users\nFOR EACH ROW\nBEGIN\n  INSERT INTO audit(user_name, action)\n  VALUES(NEW.name, 'insert');\nEND;"
+      }
+    },
+    {
+      "titleRu": "Резервное копирование и восстановление",
+      "titleEn": "Backup and Restore",
+      "descriptionRu": "Использование mysqldump для дампа базы, восстановление через mysql. Параметры — single-transaction, lock-tables.",
+      "descriptionEn": "Using mysqldump for database export, restore with mysql. Options—single-transaction, lock-tables.",
+      "codeExamples": [
+        {
+          "language": "bash",
+          "code": "mysqldump -u root -p --single-transaction testdb > dump.sql\nmysql -u root -p testdb < dump.sql",
+          "commentLanguage": "en",
+          "comment": "Export and import database."
+        }
+      ],
+      "quiz": [
+        {
+          "questionRu": "Как сделать дамп без блокировки таблиц?",
+          "questionEn": "How to dump without table locking?",
+          "options": [
+            "--single-transaction",
+            "--no-lock",
+            "--skip-lock",
+            "--fast"
+          ],
+          "correctAnswerIndex": 0
+        }
+      ],
+      "task": {
+        "titleRu": "Полный бэкап",
+        "titleEn": "Full Backup",
+        "instructionRu": "Сделайте бэкап и восстановление базы production без простоев.",
+        "instructionEn": "Perform backup and restore of production database without downtime.",
+        "hintRu": "mysqldump --single-transaction",
+        "hintEn": "mysqldump --single-transaction",
+        "expectedResultRu": "База восстановлена корректно.",
+        "expectedResultEn": "Database restored correctly.",
+        "solutionCode": "mysqldump -u root -p --single-transaction production > prod_dump.sql\nmysql -u root -p production < prod_dump.sql"
+      }
+    }
+  ]
+}

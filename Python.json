@@ -5,6 +5,16 @@
   },
   "language": "Python",
   "iconUrl": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg",
+"tags": [
+  "web-development",
+  "data-science",
+  "machine-learning",
+  "scripting",
+  "automation",
+  "backend",
+  "devops",
+  "ai"
+],
   "description": {
     "ru": "Этот полный курс по Python охватывает все, от базового синтаксиса и типов данных до продвинутых возможностей Python 3.10 и выше. Он включает практические примеры, упражнения, викторины и задачи для каждой темы на русском и английском языках. По окончании курса вы получите прочные знания Python-программирования и сможете применять их в реальных проектах.",
     "en": "This comprehensive Python course covers everything from basic syntax and data types to advanced features of Python 3.10 and above. It includes practical examples, exercises, quizzes, and tasks for each topic in both Russian and English. By the end of the course, you will have a solid understanding of Python programming and be able to apply it to real-world projects."
